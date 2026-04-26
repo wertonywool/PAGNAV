@@ -117,13 +117,16 @@
         </button>
     </div>
 
-    <script src="js/store.js"></script>
     <script type="module">
         import Auth from "./js/auth.js";
+        import Store from "./js/store.js";
 
         // Cargar el tema preferido incluso antes de loguear
-        const theme = Store.getTheme();
-        document.getElementById('theme-link').href = `css/themes/${theme.themeName}.css`;
+        async function init() {
+            const theme = await Store.getTheme();
+            document.getElementById('theme-link').href = `css/themes/${theme.themeName}.css`;
+        }
+        init();
 
         // Si ya está logueado, mandarlo al index
         Auth.checkSession((user) => {
