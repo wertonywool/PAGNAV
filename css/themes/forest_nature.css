@@ -1,0 +1,125 @@
+/* --- TEMA: FOREST NATURE (ULTIMATE FOREST EDITION) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+:root {
+    --bg-main: #022c22;
+    --bg-card-base: rgba(6, 78, 59, 0.5);
+    --text-main: #ecfdf5;
+    --text-muted: #a7f3d0;
+    --accent: #10b981;
+    --accent-glow: rgba(16, 185, 129, 0.4);
+    --border-color: rgba(110, 231, 183, 0.2);
+    --glass-blur: 20px;
+}
+
+body {
+    background: radial-gradient(circle at top right, #064e3b, #022c22);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Lluvia de Hojas y Luciérnagas */
+body::before, body::after {
+    content: "🍃";
+    position: fixed;
+    top: -10%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+body::before {
+    left: 20%;
+    font-size: 2rem;
+    text-shadow: 
+        300px 400px 0 rgba(16, 185, 129, 0.2), 
+        -200px 700px 0 rgba(16, 185, 129, 0.1);
+    animation: leaf-fall 15s linear infinite;
+}
+
+body::after {
+    content: "🌿";
+    right: 25%;
+    font-size: 1.5rem;
+    text-shadow: 
+        -400px 300px 0 rgba(16, 185, 129, 0.2), 
+        200px 800px 0 rgba(16, 185, 129, 0.1);
+    animation: leaf-fall 20s linear infinite 5s;
+}
+
+@keyframes leaf-fall {
+    0% { transform: translateY(-10vh) rotate(0deg) translateX(0); opacity: 0; }
+    10% { opacity: 0.4; }
+    90% { opacity: 0.4; }
+    100% { transform: translateY(110vh) rotate(360deg) translateX(50px); opacity: 0; }
+}
+
+/* Luciérnagas mágicas */
+.fireflies-layer {
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(var(--accent) 1px, transparent 1px);
+    background-size: 80px 80px;
+    animation: fireflies-glow 10s ease-in-out infinite;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes fireflies-glow {
+    0%, 100% { opacity: 0.05; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(1.1); }
+}
+
+/* --- HEADER --- */
+.main-header {
+    background: rgba(2, 44, 34, 0.6) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 2px solid var(--accent);
+}
+
+.logo h1 {
+    font-weight: 800;
+    color: var(--accent) !important;
+    text-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+/* --- CARDS --- */
+.card-icon-wrapper {
+    background: linear-gradient(135deg, rgba(6, 78, 59, 0.6), rgba(2, 44, 34, 0.8));
+    border: 1px solid var(--border-color);
+    border-radius: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-card:hover .card-icon-wrapper {
+    transform: translateY(-20px) scale(1.05) rotate(-2deg);
+    border-color: var(--accent);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 30px var(--accent-glow);
+}
+
+.card-title {
+    color: var(--text-muted) !important;
+    font-weight: 700;
+    background: rgba(2, 44, 34, 0.4);
+    padding: 4px 15px !important;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+.nav-card:hover .card-title {
+    color: #fff !important;
+    background: var(--accent);
+}
+
+/* --- BOTONES --- */
+.primary-btn {
+    background: linear-gradient(135deg, #059669, #10b981) !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}

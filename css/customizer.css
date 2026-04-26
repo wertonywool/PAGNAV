@@ -1,0 +1,138 @@
+/* --- CUSTOMIZER: ESTUDIO DE ESTILO PREMIUM --- */
+.customizer-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    height: 100vh;
+    background: #09090b;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    z-index: 6000;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: -20px 0 50px rgba(0,0,0,0.5);
+}
+
+.customizer-panel.open {
+    right: 0;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.panel-header h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.settings-section {
+    margin-bottom: 35px;
+}
+
+.settings-section h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+/* --- THEME PRESETS GRID --- */
+.theme-presets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.preset-btn {
+    height: 60px;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.05);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #18181b;
+}
+
+.preset-btn:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.preset-btn.active {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Estilos específicos de previsualización para cada botón */
+.preset-btn[data-theme="modern_dark"] { background: linear-gradient(135deg, #050505 50%, #3b82f6 50%); }
+.preset-btn[data-theme="persona5"] { background: linear-gradient(135deg, #d31221 50%, #000 50%); }
+.preset-btn[data-theme="cyberpunk"] { background: linear-gradient(135deg, #fcee0a 50%, #ff003c 50%); }
+.preset-btn[data-theme="minimalist_white"] { background: linear-gradient(135deg, #fff 50%, #f4f4f5 50%); border: 1px solid #ddd; }
+.preset-btn[data-theme="forest_nature"] { background: linear-gradient(135deg, #064e3b 50%, #10b981 50%); }
+.preset-btn[data-theme="ocean_blue"] { background: linear-gradient(135deg, #0c4a6e 50%, #22d3ee 50%); }
+.preset-btn[data-theme="sunset_vibes"] { background: linear-gradient(135deg, #7c2d12 50%, #db2777 50%); }
+.preset-btn[data-theme="neon_purple"] { background: linear-gradient(135deg, #4c1d95 50%, #ff00ff 50%); }
+.preset-btn[data-theme="industrial_gold"] { background: linear-gradient(135deg, #1c1917 50%, #ca8a04 50%); }
+.preset-btn[data-theme="retro_console"] { background: linear-gradient(135deg, #374151 50%, #8bab13 50%); }
+.preset-btn[data-theme="coffee"] { background: linear-gradient(135deg, #2c1810 50%, #6f4e37 50%); }
+.preset-btn[data-theme="miku_hatsune"] { background: linear-gradient(135deg, #39c5bb 50%, #ff007f 50%); }
+.preset-btn[data-theme="steampunk"] { background: linear-gradient(135deg, #3d2b1f 50%, #cd7f32 50%); }
+.preset-btn[data-theme="sakura_zen"] { background: linear-gradient(135deg, #fff5f7 50%, #ffb7c5 50%); }
+.preset-btn[data-theme="space_nebula"] { background: linear-gradient(135deg, #020617 50%, #818cf8 50%); }
+.preset-btn[data-theme="vaporwave"] { background: linear-gradient(135deg, #ff71ce 50%, #01cdfe 50%); }
+
+/* Añadir el nombre del tema al hover */
+.preset-btn::after {
+    content: attr(title);
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.preset-btn:hover::after {
+    opacity: 1;
+}
+
+/* Controles de Rango */
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}

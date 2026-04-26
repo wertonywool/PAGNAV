@@ -1,0 +1,101 @@
+/* --- TEMA: COFFEE (ARTISAN BREW) --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --bg-main: #2c1810;
+    --bg-card-base: #3d2b1f;
+    --text-main: #f3e5ab;
+    --text-muted: #d2b48c;
+    --accent: #6f4e37;
+    --accent-secondary: #c0a080;
+    --accent-glow: rgba(111, 78, 55, 0.4);
+    --border-color: rgba(243, 229, 171, 0.1);
+    --glass-blur: 12px;
+    --radius-lg: 20px;
+}
+
+body {
+    background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Efecto de textura de papel/café */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+/* --- HEADER --- */
+.main-header {
+    background: rgba(44, 24, 16, 0.8) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 2px solid var(--accent);
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--text-main) !important;
+}
+
+/* --- CARDS --- */
+.card-icon-wrapper {
+    background: #3d2b1f;
+    border: 2px solid var(--accent);
+    border-radius: 40px 10px 40px 10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+}
+
+.nav-card:hover .card-icon-wrapper {
+    transform: rotate(-2deg) scale(1.05);
+    background: #4a3528;
+    border-color: var(--text-main);
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-muted) !important;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+.nav-card:hover .card-title {
+    color: var(--text-main) !important;
+}
+
+/* --- BOTONES --- */
+.primary-btn {
+    background: #6f4e37 !important;
+    color: #f3e5ab !important;
+    border: 1px solid #f3e5ab44 !important;
+    border-radius: 30px !important;
+    font-family: 'Playfair Display', serif;
+}
+
+.primary-btn:hover {
+    background: #8b5e3c !important;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Modal y Paneles */
+.info-modal-content, .customizer-panel {
+    background: #2c1810 !important;
+    border: 1px solid var(--accent);
+    border-radius: 30px;
+}
+
+/* Scrollbar Coffee */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1a0f0a; }
+::-webkit-scrollbar-thumb { 
+    background: #6f4e37; 
+    border-radius: 10px;
+}

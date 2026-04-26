@@ -1,0 +1,11 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Temporales
+*.tmp
+*.log
+
+# Workspace
+.vscode/
+.idea/

@@ -1,0 +1,125 @@
+/* --- TEMA: CYBERPUNK 2077 (ULTIMATE EDITION) --- */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&display=swap');
+
+:root {
+    --bg-main: #0a0a0b;
+    --bg-card-base: #121214;
+    --text-main: #fcee0a;
+    --text-muted: #00f0ff;
+    --accent: #fcee0a;
+    --accent-secondary: #ff003c;
+    --accent-glow: rgba(252, 238, 10, 0.4);
+    --border-color: #fcee0a;
+    --glass-blur: 10px;
+}
+
+body {
+    background-color: var(--bg-main);
+    background-image: 
+        linear-gradient(rgba(252, 238, 10, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(252, 238, 10, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Línea de escaneo láser */
+body::before {
+    content: "";
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(252, 238, 10, 0.05) 50%,
+        rgba(252, 238, 10, 0.2) 50.5%,
+        transparent 51%
+    );
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(200%); }
+}
+
+/* --- HEADER --- */
+.main-header {
+    background: rgba(0, 0, 0, 0.95) !important;
+    border-bottom: 4px solid var(--accent-secondary);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 98% 100%, 0 100%);
+}
+
+.logo h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 0px var(--accent-secondary), -1px -1px 0px var(--text-muted);
+    animation: text-flicker 3s linear infinite;
+}
+
+@keyframes text-flicker {
+    0%, 100% { opacity: 1; }
+    92% { opacity: 1; }
+    93% { opacity: 0.5; }
+    94% { opacity: 1; }
+    96% { opacity: 0.2; }
+    97% { opacity: 1; }
+}
+
+/* --- CARDS --- */
+.card-icon-wrapper {
+    background: #000;
+    border: 3px solid var(--accent);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-icon-wrapper::after {
+    content: "SYSTEM_ONLINE";
+    position: absolute;
+    top: 5px; right: 10px;
+    font-size: 8px;
+    color: var(--accent-secondary);
+    font-weight: 900;
+}
+
+.nav-card:hover .card-icon-wrapper {
+    transform: translate(-4px, -4px);
+    box-shadow: 6px 6px 0px var(--accent-secondary), 12px 12px 0px var(--text-muted);
+    animation: glitch-anim 0.2s infinite;
+}
+
+.card-title {
+    background: #000;
+    color: var(--accent) !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-left: 5px solid var(--accent-secondary);
+    padding: 4px 12px !important;
+    margin-top: 15px;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+}
+
+/* --- BOTONES --- */
+.primary-btn {
+    background: var(--accent-secondary) !important;
+    color: #fff !important;
+    border-radius: 0 !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+}
+
+.primary-btn:hover {
+    background: var(--text-muted) !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px var(--text-muted);
+}

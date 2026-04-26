@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PagNav 2.0 | Dashboard</title>
+    
+    <!-- Icono de Pestaña (Favicon) -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <!-- Estructura y Temas -->
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" id="theme-link" href="css/themes/modern_dark.css">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/customizer.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <i class="fas fa-rocket"></i>
+            <h1>PagNav 2.0</h1>
+        </div>
+        <div class="header-actions">
+            <button id="logout-btn" title="Cerrar Sesión" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); width: 46px; height: 46px; border-radius: 14px; cursor: pointer;">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+            <button id="toggle-customizer" title="Personalizar">
+                <i class="fas fa-cog"></i>
+            </button>
+            <a href="config.html" class="primary-btn">
+                <i class="fas fa-plus"></i> <span>Nueva App</span>
+            </a>
+        </div>
+    </header>
+
+    <main id="app-grid" class="app-grid">
+        <!-- Apps dinámicas -->
+    </main>
+
+    <!-- Customizer Expandido para 10 temas -->
+    <aside id="customizer-panel" class="customizer-panel">
+        <div class="panel-header">
+            <h2>Estudio de Estilo</h2>
+            <button id="close-customizer" class="icon-btn"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="panel-content">
+            <section class="settings-section">
+                <h3>Colección de Temas</h3>
+                <div class="theme-presets">
+                    <!-- Fila 1 -->
+                    <button class="preset-btn" data-theme="modern_dark" title="Modern Dark"></button>
+                    <button class="preset-btn" data-theme="persona5" title="Persona 5"></button>
+                    <button class="preset-btn" data-theme="cyberpunk" title="Cyberpunk"></button>
+                    <button class="preset-btn" data-theme="minimalist_white" title="Minimalist"></button>
+                    <!-- Fila 2 -->
+                    <button class="preset-btn" data-theme="forest_nature" title="Forest"></button>
+                    <button class="preset-btn" data-theme="ocean_blue" title="Ocean"></button>
+                    <button class="preset-btn" data-theme="sunset_vibes" title="Sunset"></button>
+                    <button class="preset-btn" data-theme="neon_purple" title="Neon"></button>
+                    <!-- Fila 3 -->
+                    <button class="preset-btn" data-theme="industrial_gold" title="Industrial"></button>
+                    <button class="preset-btn" data-theme="retro_console" title="Retro"></button>
+                    <button class="preset-btn" data-theme="coffee" title="Coffee"></button>
+                    <button class="preset-btn" data-theme="miku_hatsune" title="Miku Hatsune"></button>
+                    <button class="preset-btn" data-theme="steampunk" title="Steampunk"></button>
+                    <button class="preset-btn" data-theme="sakura_zen" title="Sakura Zen"></button>
+                    <button class="preset-btn" data-theme="space_nebula" title="Space Nebula"></button>
+                    <button class="preset-btn" data-theme="vaporwave" title="Vaporwave"></button>
+                </div>
+            </section>
+
+            <section class="settings-section">
+                <h3>Ajustes de Grid</h3>
+                <div class="control-group">
+                    <label>Escala de Apps</label>
+                    <input type="range" id="config-icon-size" min="80" max="250" value="120">
+                </div>
+            </section>
+
+            <button id="reset-theme" class="primary-btn" style="width:100%; justify-content:center; background: rgba(255,255,255,0.05); color: #fff; margin-bottom: 10px;">
+                Limpiar Estilo
+            </button>
+
+            <button id="factory-reset" class="primary-btn" style="width:100%; justify-content:center; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2);">
+                <i class="fas fa-trash-alt"></i> Borrar Todo (Fix Error)
+            </button>
+        </div>
+    </aside>
+
+    <!-- Modal de Información -->
+    <div id="info-modal" class="info-modal">
+        <div class="info-modal-content">
+            <h2 id="info-title">App</h2>
+            <div class="info-divider"></div>
+            <p id="info-desc"></p>
+            <button id="close-info" class="primary-btn">Cerrar</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
+>

@@ -1,0 +1,95 @@
+/* --- TEMA: SUNSET VIBES (ULTIMATE HORIZON) --- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;800&display=swap');
+
+:root {
+    --bg-main: #2e1065;
+    --bg-card-base: rgba(124, 45, 18, 0.2);
+    --text-main: #fff7ed;
+    --text-muted: #fdba74;
+    --accent: #fb923c;
+    --accent-secondary: #db2777;
+    --accent-glow: rgba(251, 146, 60, 0.5);
+    --border-color: rgba(251, 146, 60, 0.2);
+    --glass-blur: 15px;
+}
+
+body {
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 30%, #7c2d12 70%, #9a3412 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Nubes en movimiento */
+body::before {
+    content: "";
+    position: fixed;
+    top: 10%; left: -100%;
+    width: 200%; height: 300px;
+    background: radial-gradient(circle, rgba(251, 146, 60, 0.05) 0%, transparent 70%);
+    filter: blur(50px);
+    animation: clouds-move 30s linear infinite;
+    z-index: -1;
+}
+
+@keyframes clouds-move {
+    from { transform: translateX(0); }
+    to { transform: translateX(50%); }
+}
+
+/* Resplandor del sol */
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -100px; left: 50%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(219, 39, 119, 0.1) 0%, transparent 70%);
+    transform: translateX(-50%);
+    pointer-events: none;
+    animation: sun-pulse 8s ease-in-out infinite;
+}
+
+@keyframes sun-pulse {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
+    50% { transform: translateX(-50%) scale(1.2); opacity: 0.5; }
+}
+
+/* --- HEADER --- */
+.main-header {
+    background: rgba(30, 27, 75, 0.6) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 2px solid var(--accent);
+}
+
+.logo h1 {
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(251, 146, 60, 0.3);
+}
+
+/* --- CARDS --- */
+.card-icon-wrapper {
+    background: linear-gradient(145deg, rgba(251, 146, 60, 0.1), rgba(124, 45, 18, 0.4));
+    border: 2px solid var(--border-color);
+    border-radius: 28px;
+    backdrop-filter: blur(10px);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-card:hover .card-icon-wrapper {
+    transform: translateY(-15px) rotate(-2deg);
+    border-color: var(--accent);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--accent-glow);
+}
+
+.card-title {
+    color: var(--text-muted) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-card:hover .card-title {
+    color: #fff !important;
+    text-shadow: 0 0 10px var(--accent-secondary);
+}

@@ -1,0 +1,147 @@
+/* --- TEMA: STEAMPUNK CHRONO (VICTORIAN MACHINE) --- */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+:root {
+    --bg-main: #3d2b1f;
+    --bg-card-base: #4b3621;
+    --text-main: #d4af37; /* Oro viejo */
+    --text-muted: #8b4513; /* Cuero */
+    --accent: #cd7f32; /* Bronce */
+    --accent-secondary: #ffd700;
+    --accent-glow: rgba(205, 127, 50, 0.4);
+    --border-color: #5d4037;
+    --glass-blur: 5px;
+    --radius-lg: 0px;
+}
+
+body {
+    background: 
+        radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%),
+        url('https://www.transparenttextures.com/patterns/leather.png'),
+        #3d2b1f;
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Special Elite', cursive;
+}
+
+/* Engranajes decorativos en el fondo */
+body::before {
+    content: "⚙";
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    font-size: 20rem;
+    color: rgba(212, 175, 55, 0.03);
+    z-index: -1;
+    animation: rotate-gear 20s linear infinite;
+}
+
+body::after {
+    content: "⚙";
+    position: fixed;
+    bottom: -5%;
+    right: 5%;
+    font-size: 15rem;
+    color: rgba(212, 175, 55, 0.03);
+    z-index: -1;
+    animation: rotate-gear 15s linear infinite reverse;
+}
+
+@keyframes rotate-gear {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --- HEADER --- */
+.main-header {
+    background: #2a1b12 !important;
+    border-bottom: 5px solid #8b4513;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.main-header::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: repeating-linear-gradient(90deg, #8b4513 0px, #8b4513 5px, #cd7f32 5px, #cd7f32 10px);
+}
+
+.logo h1 {
+    font-family: 'Special Elite', cursive;
+    color: #d4af37 !important;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px #000;
+}
+
+/* --- CARDS --- */
+.card-icon-wrapper {
+    background: #4b3621;
+    border: 4px solid #8b4513;
+    box-shadow: 
+        inset 0 0 20px rgba(0,0,0,0.5),
+        5px 5px 0px #2a1b12;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Remaches metálicos en las esquinas */
+.card-icon-wrapper::before {
+    content: "•";
+    position: absolute;
+    top: 5px; left: 5px;
+    color: #cd7f32;
+    font-size: 20px;
+    text-shadow: 1px 1px #000;
+}
+
+.nav-card:hover .card-icon-wrapper {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0px #cd7f32;
+    border-color: #d4af37;
+}
+
+.card-title {
+    background: #2a1b12;
+    color: #d4af37 !important;
+    padding: 5px 15px !important;
+    border: 1px solid #8b4513;
+    margin-top: 15px;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+}
+
+/* --- BOTONES --- */
+.primary-btn {
+    background: linear-gradient(#cd7f32, #8b4513) !important;
+    color: #fff !important;
+    border: 2px solid #d4af37 !important;
+    border-radius: 0 !important;
+    font-family: 'Special Elite', cursive;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0px #000;
+}
+
+.primary-btn:hover {
+    filter: brightness(1.2);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
+}
+
+/* Modal y Paneles */
+.info-modal-content, .customizer-panel {
+    background: #2a1b12 !important;
+    border: 10px double #8b4513;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+/* Scrollbar Steampunk */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #1a0f0a; }
+::-webkit-scrollbar-thumb { 
+    background: #8b4513; 
+    border: 3px solid #2a1b12;
+}

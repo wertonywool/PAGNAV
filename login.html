@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso | PagNav 2.0</title>
+    
+    <!-- Estructura y Temas -->
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" id="theme-link" href="css/themes/modern_dark.css">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: var(--bg-main);
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .login-card {
+            background: var(--bg-card-base);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg, 32px);
+            padding: 60px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(var(--glass-blur, 20px));
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 10;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: login-entry 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes login-entry {
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .login-logo {
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .login-card h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .login-card p {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .google-btn {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 16px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .google-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2), 0 0 20px var(--accent-glow);
+        }
+
+        .google-btn i {
+            font-size: 1.4rem;
+            color: #4285F4;
+        }
+
+        /* Capas de efectos especiales para temas */
+        .fireflies-layer, .surface-glow { pointer-events: none; }
+    </style>
+</head>
+<body>
+    <!-- Efectos de fondo heredados -->
+    <div class="fireflies-layer"></div>
+    <div class="surface-glow"></div>
+
+    <div class="login-card">
+        <div class="login-logo">
+            <i class="fas fa-rocket"></i>
+        </div>
+        <h2>PagNav 2.0</h2>
+        <p>Tu dashboard personal, sincronizado en la nube.</p>
+        
+        <button id="login-google" class="google-btn">
+            <i class="fab fa-google"></i>
+            Continuar con Google
+        </button>
+    </div>
+
+    <script src="js/store.js"></script>
+    <script type="module">
+        import Auth from "./js/auth.js";
+
+        // Cargar el tema preferido incluso antes de loguear
+        const theme = Store.getTheme();
+        document.getElementById('theme-link').href = `css/themes/${theme.themeName}.css`;
+
+        // Si ya está logueado, mandarlo al index
+        Auth.checkSession((user) => {
+            if (user) window.location.href = "index.html";
+        });
+
+        document.getElementById('login-google').onclick = () => {
+            Auth.login();
+        };
+    </script>
+</body>
+</html>

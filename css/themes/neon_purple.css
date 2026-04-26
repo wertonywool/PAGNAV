@@ -1,0 +1,109 @@
+/* --- TEMA: NEON PURPLE (ULTIMATE SYNTHWAVE) --- */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+    --bg-main: #050505;
+    --bg-card-base: rgba(46, 16, 101, 0.2);
+    --text-main: #ffffff;
+    --text-muted: #d8b4fe;
+    --accent: #ff00ff;
+    --accent-secondary: #00ffff;
+    --accent-glow: rgba(255, 0, 255, 0.6);
+    --border-color: #ff00ff;
+}
+
+body {
+    background-color: var(--bg-main);
+    background-image: 
+        linear-gradient(rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-attachment: fixed;
+    font-family: 'Righteous', cursive;
+    overflow-x: hidden;
+}
+
+/* Efecto de resplandor púrpura en el horizonte */
+body::before {
+    content: "";
+    position: fixed;
+    bottom: -10%; left: 0;
+    width: 100%; height: 50%;
+    background: linear-gradient(to top, rgba(76, 29, 149, 0.2), transparent);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Efecto de glitch de estática VHS */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1000;
+    animation: noise 0.2s infinite;
+}
+
+@keyframes noise {
+    0% { transform: translate(0,0); }
+    10% { transform: translate(-1px,-1px); }
+    20% { transform: translate(1px,1px); }
+    30% { transform: translate(-2px,0); }
+    100% { transform: translate(0,0); }
+}
+
+/* --- HEADER --- */
+.main-header {
+    background: rgba(5, 5, 5, 0.9) !important;
+    border-bottom: 3px solid var(--accent);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.logo h1 {
+    color: var(--accent-secondary) !important;
+    text-shadow: 0 0 10px var(--accent-secondary), 0 0 30px var(--accent-secondary);
+}
+
+/* --- CARDS --- */
+.card-icon-wrapper {
+    background: #000;
+    border: 3px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: inset 0 0 15px var(--accent-glow);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-card:hover .card-icon-wrapper {
+    transform: scale(1.1) rotate(2deg);
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 40px var(--accent-glow), inset 0 0 20px var(--accent-secondary);
+}
+
+.card-title {
+    color: var(--accent) !important;
+    text-shadow: 0 0 10px var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-card:hover .card-title {
+    color: var(--accent-secondary) !important;
+    text-shadow: 0 0 20px var(--accent-secondary);
+    transform: scale(1.1);
+}
+
+/* --- BOTONES --- */
+.primary-btn {
+    background: transparent !important;
+    color: var(--accent-secondary) !important;
+    border: 2px solid var(--accent-secondary) !important;
+    box-shadow: 0 0 15px var(--accent-secondary);
+}
+
+.primary-btn:hover {
+    background: var(--accent-secondary) !important;
+    color: #000 !important;
+    box-shadow: 0 0 30px var(--accent-secondary);
+}

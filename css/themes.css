@@ -1,0 +1,27 @@
+:root {
+    /* Paleta Deep Dark */
+    --bg-main: #050505; /* Negro profundo */
+    --bg-card: #0f0f11;
+    --border-color: rgba(255, 255, 255, 0.08);
+    
+    --text-main: #ffffff; /* Blanco puro */
+    --text-muted: #a1a1aa;
+    
+    --accent: #3b82f6;
+    --accent-glow: rgba(59, 130, 246, 0.3);
+    
+    /* Dimensiones */
+    --header-h: 70px;
+    --radius-squircle: 22%;
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    
+    /* Efectos */
+    --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.7);
+    --glass-blur: 24px;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
