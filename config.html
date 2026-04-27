@@ -84,50 +84,46 @@
                 if (['minimalist_white', 'sakura_zen'].includes(theme.themeName)) {
                     document.querySelector('.btn-save').style.color = '#fff';
                 }
+
+                // CARGAR DATOS SOLO DESPUÉS DE CONFIRMAR SESIÓN
+                if (editingId) {
+                    document.getElementById('form-title').innerText = 'Editar Identidad';
+                    
+                    const fillForm = (page) => {
+                        if (!page) return;
+                        document.getElementById('page-title').value = page.title || '';
+                        document.getElementById('page-url').value = page.url || '';
+                        document.getElementById('page-size').value = page.size || '1-1';
+                        
+                        const isImg = page.icon && (page.icon.startsWith('data:image') || page.icon.startsWith('http'));
+                        document.getElementById('page-icon').value = isImg ? '' : (page.icon || '');
+                        
+                        document.getElementById('page-color').value = page.color || '#18181b';
+                        document.getElementById('page-desc').value = page.desc || '';
+                    };
+
+                    Store.subscribePages((pages) => {
+                        const page = pages.find(p => String(p.id) === String(editingId));
+                        if (page) fillForm(page);
+                    });
+                }
             }
         });
-
-        // Cargar datos si es edición
-        if (editingId) {
-            document.getElementById('form-title').innerText = 'Editar Identidad';
-            
-            // Función para rellenar el formulario
-            const fillForm = (page) => {
-                if (!page) return;
-                document.getElementById('page-title').value = page.title || '';
-                document.getElementById('page-url').value = page.url || '';
-                document.getElementById('page-size').value = page.size || '1-1';
-                
-                // Si el icono es una imagen base64 o URL, dejamos el input de texto vacío para no mostrar código basura
-                // pero si es un emoji, lo mostramos.
-                const isImg = page.icon && (page.icon.startsWith('data:image') || page.icon.startsWith('http'));
-                document.getElementById('page-icon').value = isImg ? '' : (page.icon || '');
-                
-                document.getElementById('page-color').value = page.color || '#18181b';
-                document.getElementById('page-desc').value = page.desc || '';
-            };
-
-            // Intentar cargar desde el cache de Store inmediatamente
-            Store.subscribePages((pages) => {
-                const page = pages.find(p => String(p.id) === String(editingId));
-                if (page) fillForm(page);
-            });
-        }
 
         form.onsubmit = async (e) => {
             e.preventDefault();
             const btnSave = document.querySelector('.btn-save');
-            btnSave.innerText = "Guardando en la Nube...";
+            const originalText = btnSave.innerText;
+            btnSave.innerText = "Guardando...";
             btnSave.disabled = true;
             
             try {
                 const fileInput = document.getElementById('page-file');
                 let iconValue = document.getElementById('page-icon').value;
 
-                // Lógica de Icono (Compresión WebP ya integrada en toBase64)
                 if (fileInput.files && fileInput.files[0]) {
                     iconValue = await toBase64(fileInput.files[0]);
-                } else if (!iconValue) {
+                } else if (!iconValue && !editingId) {
                     iconValue = '🌐';
                 }
 
@@ -135,10 +131,14 @@
                     title: document.getElementById('page-title').value,
                     url: document.getElementById('page-url').value,
                     size: document.getElementById('page-size').value,
-                    icon: iconValue,
                     color: document.getElementById('page-color').value,
                     desc: document.getElementById('page-desc').value
                 };
+
+                // Solo actualizar icono si se cambió o si es nuevo
+                if (iconValue) {
+                    pageData.icon = iconValue;
+                }
 
                 if (editingId) {
                     await Store.updatePage(editingId, pageData);
@@ -146,11 +146,15 @@
                     await Store.savePage(pageData);
                 }
 
-                window.location.replace('index.html');
+                // Pequeña espera para asegurar que Firebase procese y el cache local se actualice
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 500);
+
             } catch (err) {
-                console.error('Error en la nube:', err);
-                alert('Error al sincronizar con Firebase.');
-                btnSave.innerText = "Guardar Cambios";
+                console.error('Error:', err);
+                alert('Error al guardar.');
+                btnSave.innerText = originalText;
                 btnSave.disabled = false;
             }
         };
