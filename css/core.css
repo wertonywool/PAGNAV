@@ -103,12 +103,25 @@
     .header-actions {
         gap: 8px;
     }
-    .logout-btn, #toggle-customizer, .primary-btn {
+    .logout-btn, #toggle-customizer {
         width: 38px;
         height: 38px;
+        padding: 0;
+        flex-shrink: 0;
+    }
+    .primary-btn {
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        justify-content: center;
+        flex-shrink: 0;
     }
     .primary-btn span {
         display: none;
+    }
+    .primary-btn i {
+        margin: 0;
+        font-size: 1.1rem;
     }
 }
 
