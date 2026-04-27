@@ -15,10 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentTheme = { themeName: 'modern_dark', iconSize: 120 };
 
-    // Inicializar Sortable
+    // Inicializar Sortable (Optimizado para móvil)
     new Sortable(appGrid, {
-        animation: 150,
+        animation: 250,
         ghostClass: 'sortable-ghost',
+        delay: 150, // Pequeño retraso para evitar drag accidental al hacer scroll
+        delayOnTouchOnly: true,
+        touchStartThreshold: 5,
+        forceFallback: true, // Mejor compatibilidad en navegadores móviles
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
         onEnd: () => {
             const ids = Array.from(appGrid.children).map(card => card.dataset.id);
             Store.reorderPages(ids);
