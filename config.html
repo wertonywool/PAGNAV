@@ -4,97 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurar App | PagNav 2.0</title>
-    <link rel="stylesheet" href="css/core.css">
-    <link rel="stylesheet" id="theme-link" href="css/themes/modern_dark.css">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/config.css">
+    <link rel="stylesheet" id="theme-link" href="css/themes/modern_dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: var(--bg-main);
-            padding: 20px;
-            transition: var(--transition-main, all 0.4s ease);
-        }
-        .studio-card {
-            background: var(--bg-card-base);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg, 24px);
-            padding: 45px;
-            max-width: 650px;
-            width: 100%;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-            backdrop-filter: blur(var(--glass-blur, 10px));
-            position: relative;
-            z-index: 10;
-        }
-        .studio-header { text-align: left; margin-bottom: 35px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
-        .studio-header h2 { font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin: 0; }
-        .studio-header p { color: var(--text-muted); font-size: 0.9rem; margin-top: 8px; }
-        
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .full-span { grid-column: span 2; }
-        
-        .input-box label {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
-        }
-        .input-box input, .input-box select, .input-box textarea {
-            width: 100%;
-            background: rgba(0,0,0,0.2);
-            border: 1px solid var(--border-color);
-            padding: 14px 16px;
-            border-radius: 12px;
-            color: var(--text-main);
-            font-size: 0.95rem;
-            transition: all 0.2s;
-        }
-
-        select option {
-            background: var(--bg-main);
-            color: var(--text-main);
-        }
-
-        .input-box input:focus, .input-box select:focus, .input-box textarea:focus {
-            border-color: var(--accent);
-            outline: none;
-            box-shadow: 0 0 10px var(--accent-glow);
-        }
-
-        .btn-group { margin-top: 40px; display: flex; gap: 15px; }
-        .btn-save {
-            flex: 2;
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            padding: 16px;
-            border-radius: 14px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .btn-cancel {
-            flex: 1;
-            background: rgba(255,255,255,0.05);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 14px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .btn-save:hover { transform: translateY(-2px); filter: brightness(1.1); }
-    </style>
 </head>
 <body>
     <!-- Capas de efectos especiales para temas que lo requieran -->

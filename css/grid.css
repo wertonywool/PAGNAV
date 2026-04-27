@@ -1,0 +1,27 @@
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-w), 1fr));
+    grid-auto-rows: var(--card-min-w); 
+    grid-auto-flow: dense;
+    gap: var(--cell-gap);
+    padding: calc(var(--header-h) + 40px) 40px 60px;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .app-grid {
+        padding: calc(var(--header-h) + 20px) 15px 40px;
+        gap: var(--cell-gap);
+    }
+}
+
+/* Control de Spans */
+.nav-card.size-1-1 { grid-column: span 1; grid-row: span 1; }
+.nav-card.size-2-1 { grid-column: span 2; grid-row: span 1; }
+.nav-card.size-3-1 { grid-column: span 3; grid-row: span 1; }
+.nav-card.size-1-2 { grid-column: span 1; grid-row: span 2; }
+.nav-card.size-1-3 { grid-column: span 1; grid-row: span 3; }
+.nav-card.size-2-2 { grid-column: span 2; grid-row: span 2; }
+.nav-card.size-3-2 { grid-column: span 3; grid-row: span 2; }
+.nav-card.size-3-3 { grid-column: span 3; grid-row: span 3; }

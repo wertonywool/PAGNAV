@@ -1,0 +1,27 @@
+:root {
+    --header-h: 80px;
+    --cell-gap: 25px;
+    --user-icon-size: 120px;
+    --card-min-w: var(--user-icon-size);
+    --transition-main: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --card-min-w: min(var(--user-icon-size), 110px);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --cell-gap: 15px;
+        --card-min-w: min(var(--user-icon-size), 90px);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --cell-gap: 12px;
+        --card-min-w: min(var(--user-icon-size), 75px);
+    }
+}
