@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
             card.dataset.id = String(page.id);
             
             card.innerHTML = `
+                <button class="card-btn delete-btn" title="Eliminar"><i class="fas fa-times"></i></button>
+                <button class="card-btn edit-btn" title="Editar"><i class="fas fa-edit"></i></button>
+                <button class="card-btn info-badge" title="Info"><i class="fas fa-info"></i></button>
                 <div class="card-icon-wrapper">
-                    <button class="card-btn delete-btn" title="Eliminar"><i class="fas fa-times"></i></button>
-                    <button class="card-btn edit-btn" title="Editar"><i class="fas fa-edit"></i></button>
-                    <button class="card-btn info-badge" title="Info"><i class="fas fa-info"></i></button>
                     <div class="card-icon-container" style="--this-card-bg: ${page.color || '#18181b'}">
                         ${isImage 
                             ? `<img src="${icon}" class="card-icon-img">` 

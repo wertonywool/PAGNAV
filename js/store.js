@@ -3,26 +3,36 @@ import { db, auth } from "./firebase-config.js";
 import { collection, doc, setDoc, addDoc, onSnapshot, query, orderBy, deleteDoc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 const Store = {
-    // Escuchar cambios en tiempo real
+    // Escuchar cambios en tiempo real y cachear localmente
     subscribePages(callback) {
         try {
             const user = auth.currentUser;
-            if (!user) return;
+            if (!user) {
+                // Si no hay usuario, intentar cargar de cache por si acaso
+                const cached = localStorage.getItem('pagnav_apps_cache');
+                if (cached) callback(JSON.parse(cached));
+                return;
+            }
+
+            // Cargar inmediatamente desde cache para velocidad
+            const cached = localStorage.getItem(`pagnav_apps_${user.uid}`);
+            if (cached) callback(JSON.parse(cached));
 
             const q = query(collection(db, "users", user.uid, "apps"), orderBy("order", "asc"));
             return onSnapshot(q, (snapshot) => {
                 const apps = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                // Actualizar cache
+                localStorage.setItem(`pagnav_apps_${user.uid}`, JSON.stringify(apps));
                 callback(apps);
             }, (error) => {
                 console.error("Error en suscripción:", error);
-                callback([]);
             });
         } catch (e) {
             console.error("Error crítico en subscribePages:", e);
         }
     },
 
-    // Guardar nueva App (Imagen guardada directamente en Firestore como Base64 optimizado)
+    // Guardar nueva App
     async savePage(pageData) {
         const user = auth.currentUser;
         if (!user) throw new Error("No hay usuario");
@@ -62,6 +72,7 @@ const Store = {
         const user = auth.currentUser;
         if (!user) return;
         try {
+            localStorage.setItem(`pagnav_theme_${user.uid}`, JSON.stringify(theme));
             await setDoc(doc(db, "users", user.uid), { theme }, { merge: true });
         } catch (e) {
             console.error("Error guardando tema:", e);
@@ -71,11 +82,19 @@ const Store = {
     async getTheme() {
         try {
             const user = auth.currentUser;
-            if (!user) return { themeName: 'modern_dark', iconSize: 120 };
+            const defaultTheme = { themeName: 'modern_dark', iconSize: 120 };
+            
+            if (!user) return defaultTheme;
+
+            // Intentar cache primero
+            const cached = localStorage.getItem(`pagnav_theme_${user.uid}`);
+            if (cached) return JSON.parse(cached);
             
             const userDoc = await getDoc(doc(db, "users", user.uid));
             if (userDoc.exists() && userDoc.data().theme) {
-                return userDoc.data().theme;
+                const theme = userDoc.data().theme;
+                localStorage.setItem(`pagnav_theme_${user.uid}`, JSON.stringify(theme));
+                return theme;
             }
         } catch (e) {
             console.warn("Fallo al leer tema:", e);
