@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyTheme(theme) {
         if (!theme || !theme.themeName) return;
         themeLink.href = `css/themes/${theme.themeName}.css`;
-        document.documentElement.style.setProperty('--card-min-w', `${theme.iconSize}px`);
+        document.documentElement.style.setProperty('--user-icon-size', `${theme.iconSize}px`);
         presetBtns.forEach(btn => {
             btn.classList.toggle('active', btn.dataset.theme === theme.themeName);
         });
