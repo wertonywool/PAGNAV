@@ -1,7 +1,6 @@
-// --- MOTOR DE NUBE: STORE 2.0 (FIREBASE EDITION) ---
-import { db, storage, auth } from "./firebase-config.js";
+// --- MOTOR DE NUBE: STORE 2.0 (MODO SIN PAGO / SOLO FIRESTORE) ---
+import { db, auth } from "./firebase-config.js";
 import { collection, doc, setDoc, addDoc, onSnapshot, query, orderBy, deleteDoc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-import { ref, uploadString, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
 
 const Store = {
     // Escuchar cambios en tiempo real
@@ -16,30 +15,21 @@ const Store = {
                 callback(apps);
             }, (error) => {
                 console.error("Error en suscripción:", error);
-                callback([]); // Devolver vacío si falla
+                callback([]);
             });
         } catch (e) {
             console.error("Error crítico en subscribePages:", e);
         }
     },
 
-    // Guardar nueva App en la Nube
+    // Guardar nueva App (Imagen guardada directamente en Firestore como Base64 optimizado)
     async savePage(pageData) {
         const user = auth.currentUser;
         if (!user) throw new Error("No hay usuario");
 
-        let iconUrl = pageData.icon;
-
-        if (iconUrl.startsWith('data:image')) {
-            const storageRef = ref(storage, `users/${user.uid}/apps/${Date.now()}.webp`);
-            const uploadTask = await uploadString(storageRef, iconUrl, 'data_url');
-            iconUrl = await getDownloadURL(uploadTask.ref);
-        }
-
         const appsRef = collection(db, "users", user.uid, "apps");
         await addDoc(appsRef, {
             ...pageData,
-            icon: iconUrl,
             order: Date.now(),
             createdAt: new Date()
         });
@@ -49,15 +39,8 @@ const Store = {
         const user = auth.currentUser;
         if (!user) throw new Error("No hay usuario");
 
-        let iconUrl = updatedData.icon;
-        if (iconUrl.startsWith('data:image')) {
-            const storageRef = ref(storage, `users/${user.uid}/apps/${appId}.webp`);
-            const uploadTask = await uploadString(storageRef, iconUrl, 'data_url');
-            iconUrl = await getDownloadURL(uploadTask.ref);
-        }
-
         const appRef = doc(db, "users", user.uid, "apps", appId);
-        await updateDoc(appRef, { ...updatedData, icon: iconUrl });
+        await updateDoc(appRef, updatedData);
     },
 
     async deletePage(appId) {
@@ -95,7 +78,7 @@ const Store = {
                 return userDoc.data().theme;
             }
         } catch (e) {
-            console.warn("Fallo al leer tema de la nube, usando defecto:", e);
+            console.warn("Fallo al leer tema:", e);
         }
         return { themeName: 'modern_dark', iconSize: 120 };
     }
