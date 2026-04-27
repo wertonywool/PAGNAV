@@ -77,67 +77,122 @@
     box-shadow: 0 0 20px var(--accent-glow);
 }
 
-/* --- BOTONES DE TARJETA TEMATIZADOS --- */
+/* --- BOTONES DE TARJETA TEMATIZADOS (DISEÑO ÚNICO POR TEMA) --- */
 .card-btn {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: var(--card-btn-radius, 10px);
-    border: 1px solid var(--border-color);
+    width: 32px;
+    height: 32px;
     z-index: 1000;
     cursor: pointer;
     opacity: 0;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(10px);
+    border: none;
 }
 
-.delete-btn { 
-    top: -5px; 
-    left: -5px; 
-    background: var(--btn-delete-bg, rgba(239, 68, 68, 0.8)); 
-    color: #fff; 
+.nav-card:hover .card-btn { opacity: 1; }
+
+/* --- POSICIONES BASE --- */
+.delete-btn { top: -10px; left: -10px; }
+.edit-btn { top: -10px; right: -10px; }
+.info-badge { bottom: 35px; right: -10px; }
+
+/* --- ESTILOS POR TEMA --- */
+
+/* 1. CYBERPUNK: Rectangulares y Neón */
+.theme-cyberpunk .card-btn {
+    border-radius: 0;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    font-weight: bold;
+}
+.theme-cyberpunk .delete-btn { background: #fcee0a; color: #000; border: 2px solid #ff003c; }
+.theme-cyberpunk .edit-btn { background: #00ff00; color: #000; }
+.theme-cyberpunk .info-badge { background: #00f0ff; color: #000; }
+
+/* 2. PERSONA 5: Estilo "Thieves" (Formas irregulares y Rojo/Negro) */
+.theme-persona5 .card-btn {
+    border-radius: 4px;
+    transform: rotate(-10deg);
+    font-size: 1.1rem;
+}
+.theme-persona5 .delete-btn { background: #000; color: #d31221; border: 2px solid #fff; transform: rotate(5deg) translate(-5px, -5px); }
+.theme-persona5 .edit-btn { background: #d31221; color: #fff; transform: rotate(-15deg) translate(5px, -5px); }
+.theme-persona5 .info-badge { background: #fff; color: #000; transform: skewX(10deg); }
+
+/* 3. RETRO CONSOLE: Pixel Art / Gameboy */
+.theme-retro_console .card-btn {
+    border-radius: 0;
+    box-shadow: 3px 3px 0 #000;
+    border: 2px solid #000;
+}
+.theme-retro_console .delete-btn { background: #ff4545; }
+.theme-retro_console .edit-btn { background: #45ff45; }
+.theme-retro_console .info-badge { background: #4545ff; }
+
+/* 4. COFFEE: Tonos madera y redondeados */
+.theme-coffee .card-btn {
+    border-radius: 12px;
+    background: #4e342e;
+    color: #d7ccc8;
+    border: 2px solid #3e2723;
+}
+.theme-coffee .delete-btn:hover { background: #795548; }
+
+/* 5. VAPORWAVE: Gradientes y Estética 80s */
+.theme-vaporwave .card-btn {
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff71ce, #01cdfe);
+    box-shadow: 0 0 10px #b967ff;
+    color: #fff;
 }
 
-.edit-btn { 
-    top: -5px; 
-    right: -5px; 
-    background: var(--btn-edit-bg, rgba(59, 130, 246, 0.8)); 
-    color: #fff; 
+/* 6. MINIMALIST: Puntos limpios */
+.theme-minimalist_white .card-btn {
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #666;
 }
 
-.info-badge { 
-    bottom: 30px; 
-    right: -5px; 
-    background: var(--btn-info-bg, rgba(255, 255, 255, 0.8)); 
-    color: #000; 
+/* 7. MIKU HATSUNE: Teal y Rosa */
+.theme-miku_hatsune .card-btn {
+    border-radius: 50% 0 50% 0;
+    background: #39c5bb;
+    border: 2px solid #ff007f;
+    color: #fff;
 }
 
-.nav-card:hover .card-btn { 
-    opacity: 1; 
-    transform: translateY(0);
+/* 8. STEAMPUNK: Engranajes (Cobre/Bronce) */
+.theme-steampunk .card-btn {
+    border-radius: 50%;
+    background: #8b4513;
+    border: 3px double #cd7f32;
+    color: #ffd700;
 }
 
-.card-btn:hover {
-    transform: scale(1.15);
-    filter: brightness(1.2);
-    box-shadow: 0 0 15px var(--accent-glow);
+/* 9. OCEAN BLUE: Burbujas */
+.theme-ocean_blue .card-btn {
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #fff;
 }
 
-/* Variables por defecto si el tema no las define */
-:root {
-    --card-btn-radius: 50%;
+/* 10. MODERN DARK (Por defecto) */
+.theme-modern_dark .card-btn {
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
 }
-
-/* Ejemplo de cómo los temas pueden sobreescribir estos botones (Cyberpunk, Persona 5, etc) */
-.cyberpunk .card-btn { --card-btn-radius: 0; }
-.persona5 .card-btn { --card-btn-radius: 5px; transform: rotate(-5deg); }
-
-
+.theme-modern_dark .delete-btn:hover { background: #ef4444; }
+.theme-modern_dark .edit-btn:hover { background: #3b82f6; }
 
 /* Botones Globales */
+
 .primary-btn {
     background: #fff;
     color: #000;
