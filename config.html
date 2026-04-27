@@ -177,23 +177,27 @@
         if (editingId) {
             document.getElementById('form-title').innerText = 'Editar Identidad';
             
-            // Usar una función que espere a que Store tenga los datos
-            const loadPageData = (pages) => {
-                if (!pages || pages.length === 0) return;
-                const page = pages.find(p => String(p.id) === String(editingId));
-                if (page) {
-                    document.getElementById('page-title').value = page.title || '';
-                    document.getElementById('page-url').value = page.url || '';
-                    document.getElementById('page-size').value = page.size || '1-1';
-                    document.getElementById('page-icon').value = (page.icon && (page.icon.startsWith('http') || page.icon.startsWith('data:image'))) ? '' : (page.icon || '');
-                    document.getElementById('page-color').value = page.color || '#18181b';
-                    document.getElementById('page-desc').value = page.desc || '';
-                    // Una vez cargado, podemos desuscribirnos si fuera necesario, 
-                    // pero por ahora lo dejamos para asegurar que se llene.
-                }
+            // Función para rellenar el formulario
+            const fillForm = (page) => {
+                if (!page) return;
+                document.getElementById('page-title').value = page.title || '';
+                document.getElementById('page-url').value = page.url || '';
+                document.getElementById('page-size').value = page.size || '1-1';
+                
+                // Si el icono es una imagen base64 o URL, dejamos el input de texto vacío para no mostrar código basura
+                // pero si es un emoji, lo mostramos.
+                const isImg = page.icon && (page.icon.startsWith('data:image') || page.icon.startsWith('http'));
+                document.getElementById('page-icon').value = isImg ? '' : (page.icon || '');
+                
+                document.getElementById('page-color').value = page.color || '#18181b';
+                document.getElementById('page-desc').value = page.desc || '';
             };
 
-            Store.subscribePages(loadPageData);
+            // Intentar cargar desde el cache de Store inmediatamente
+            Store.subscribePages((pages) => {
+                const page = pages.find(p => String(p.id) === String(editingId));
+                if (page) fillForm(page);
+            });
         }
 
         form.onsubmit = async (e) => {

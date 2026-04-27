@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const logoutBtn = document.getElementById('logout-btn');
+
     // --- PROTECCIÓN Y CARGA ---
     Auth.checkSession(async (user) => {
         if (user) {
@@ -39,6 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
             configIconSize.value = currentTheme.iconSize;
         }
     });
+
+    if (logoutBtn) {
+        logoutBtn.onclick = () => {
+            if(confirm("¿Cerrar sesión?")) Auth.logout();
+        };
+    }
 
     toggleCustomizer.onclick = () => customizerPanel.classList.add('open');
     closeCustomizer.onclick = () => customizerPanel.classList.remove('open');
@@ -137,6 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!theme || !theme.themeName) return;
         themeLink.href = `css/themes/${theme.themeName}.css`;
         document.documentElement.style.setProperty('--user-icon-size', `${theme.iconSize}px`);
+        
+        // Añadir clase del tema al body para CSS específico
+        document.body.className = '';
+        document.body.classList.add(`theme-${theme.themeName}`);
+        
         presetBtns.forEach(btn => {
             btn.classList.toggle('active', btn.dataset.theme === theme.themeName);
         });

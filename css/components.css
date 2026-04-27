@@ -77,13 +77,13 @@
     box-shadow: 0 0 20px var(--accent-glow);
 }
 
-/* --- BOTONES DE TARJETA --- */
+/* --- BOTONES DE TARJETA TEMATIZADOS --- */
 .card-btn {
     position: absolute;
-    width: 28px; /* Ligeramente más pequeños para dar aire */
-    height: 28px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 30px;
+    height: 30px;
+    border-radius: var(--card-btn-radius, 10px);
+    border: 1px solid var(--border-color);
     z-index: 1000;
     cursor: pointer;
     opacity: 0;
@@ -91,45 +91,50 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
 }
 
 .delete-btn { 
-    top: -8px; 
-    left: -8px; 
-    background: #ef4444; 
+    top: -5px; 
+    left: -5px; 
+    background: var(--btn-delete-bg, rgba(239, 68, 68, 0.8)); 
     color: #fff; 
 }
 
 .edit-btn { 
-    top: -8px; 
-    right: -8px; 
-    background: #3b82f6; 
+    top: -5px; 
+    right: -5px; 
+    background: var(--btn-edit-bg, rgba(59, 130, 246, 0.8)); 
     color: #fff; 
 }
 
 .info-badge { 
-    bottom: 25px; /* Ajustado para que no toque el título */
-    right: -8px; 
-    background: #ffffff; 
+    bottom: 30px; 
+    right: -5px; 
+    background: var(--btn-info-bg, rgba(255, 255, 255, 0.8)); 
     color: #000; 
-}
-
-/* En móviles o tablets, los botones siempre son un poco más visibles o tienen más espacio */
-@media (max-width: 768px) {
-    .card-btn {
-        width: 26px;
-        height: 26px;
-    }
 }
 
 .nav-card:hover .card-btn { 
     opacity: 1; 
+    transform: translateY(0);
 }
 
-.delete-btn:hover { background: #ff5f5f; transform: scale(1.2); }
-.edit-btn:hover { background: #60a5fa; transform: scale(1.2); }
-.info-badge:hover { background: #f3f4f6; transform: scale(1.2); }
+.card-btn:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Variables por defecto si el tema no las define */
+:root {
+    --card-btn-radius: 50%;
+}
+
+/* Ejemplo de cómo los temas pueden sobreescribir estos botones (Cyberpunk, Persona 5, etc) */
+.cyberpunk .card-btn { --card-btn-radius: 0; }
+.persona5 .card-btn { --card-btn-radius: 5px; transform: rotate(-5deg); }
+
 
 
 /* Botones Globales */
