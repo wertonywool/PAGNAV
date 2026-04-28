@@ -1,0 +1,25 @@
+/* --- GALACTIC HORIZON: CARD DESIGN --- */
+.theme-galactic_horizon .nav-card {
+    background: rgba(5, 5, 32, 0.6) !important;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(142, 68, 173, 0.3);
+    border-radius: 50px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.theme-galactic_horizon .nav-card:hover {
+    border-color: #fff;
+    box-shadow: 0 0 40px rgba(142, 68, 173, 0.4);
+    transform: translateY(-10px) scale(1.05);
+}
+
+.theme-galactic_horizon .card-icon-wrapper {
+    background: radial-gradient(circle, #1a1a40 0%, #020210 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.theme-galactic_horizon .card-title {
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(142, 68, 173, 0.8);
+}

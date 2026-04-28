@@ -1,0 +1,31 @@
+/* --- CYBERPUNK RED: THEME & ATMOSPHERE --- */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+    --bg-main: #000000;
+    --bg-card-base: #050000;
+    --text-main: #ff0000;
+    --text-muted: #8b0000;
+    --accent: #ff0000;
+    --accent-glow: rgba(255, 0, 0, 0.7);
+    --border-color: #ff0000;
+}
+
+body.theme-cyberpunk_red {
+    background: #000;
+    background-image: 
+        linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+body.theme-cyberpunk_red::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 1000;
+}

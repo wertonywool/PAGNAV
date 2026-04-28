@@ -1,0 +1,14 @@
+/* --- ARCANE ACADEMY: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+
+.theme-arcane_academy .main-header {
+    background: #0d041a;
+    border-bottom: 3px solid #f1c40f;
+}
+
+.theme-arcane_academy .header-btn {
+    border-radius: 5px;
+    border-color: #4a235a;
+    background: rgba(241, 196, 15, 0.05);
+}

@@ -149,6 +149,11 @@
 .preset-btn[data-theme="sakura_zen"] { background: linear-gradient(135deg, #ffb7c5, #fff); }
 .preset-btn[data-theme="space_nebula"] { background: linear-gradient(135deg, #240b36, #c31432); }
 .preset-btn[data-theme="vaporwave"] { background: linear-gradient(135deg, #ff71ce, #01cdfe); }
+.preset-btn[data-theme="cyberpunk_red"] { background: linear-gradient(135deg, #ff0000, #550000); }
+.preset-btn[data-theme="abyssal_deep"] { background: linear-gradient(135deg, #001f2b, #00f2ff); }
+.preset-btn[data-theme="galactic_horizon"] { background: linear-gradient(135deg, #020210, #8e44ad); }
+.preset-btn[data-theme="arcane_academy"] { background: linear-gradient(135deg, #1a0a2e, #f1c40f); }
+.preset-btn[data-theme="dragon_lair"] { background: linear-gradient(135deg, #0c0800, #ff9d00); }
 .preset-btn[data-theme="glitch_void"] { background: repeating-linear-gradient(45deg, #000, #000 5px, #ff00ff 5px, #ff00ff 10px); }
 .preset-btn[data-theme="neon_jungle"] { background: linear-gradient(135deg, #040d04, #39ff14); }
 .preset-btn[data-theme="ice_kingdom"] { background: linear-gradient(135deg, #eef2f3, #3498db); border-color: #fff; }

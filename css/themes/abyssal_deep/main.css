@@ -1,0 +1,13 @@
+/* --- ABYSSAL DEEP: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+
+.theme-abyssal_deep .main-header {
+    background: rgba(0, 5, 10, 0.9);
+    border-bottom: 2px solid #00f2ff;
+}
+
+.theme-abyssal_deep .header-btn {
+    border-radius: 50px;
+    border-color: #005f6b;
+}

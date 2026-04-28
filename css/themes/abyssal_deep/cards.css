@@ -1,0 +1,25 @@
+/* --- ABYSSAL DEEP: CARD DESIGN --- */
+.theme-abyssal_deep .nav-card {
+    background: rgba(0, 12, 20, 0.8) !important;
+    border: 1px solid #005f6b;
+    backdrop-filter: blur(10px);
+    border-radius: 20px 5px 20px 5px !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.theme-abyssal_deep .nav-card:hover {
+    border-color: #00f2ff;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.theme-abyssal_deep .card-icon-wrapper {
+    background: rgba(0, 242, 255, 0.05);
+    border: 1px solid rgba(0, 242, 255, 0.1);
+}
+
+.theme-abyssal_deep .card-title {
+    color: #00f2ff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}

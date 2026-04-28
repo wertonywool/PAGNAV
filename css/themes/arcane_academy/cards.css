@@ -1,0 +1,35 @@
+/* --- ARCANE ACADEMY: CARD DESIGN --- */
+.theme-arcane_academy .nav-card {
+    background: linear-gradient(135deg, #2d144d 0%, #1a0a2e 100%) !important;
+    border: 2px solid #f1c40f;
+    border-radius: 0 !important;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8), inset 0 0 10px rgba(241, 196, 15, 0.2);
+    position: relative;
+}
+
+.theme-arcane_academy .nav-card:hover {
+    transform: scale(1.05) rotate(1deg);
+    border-color: #fff;
+    box-shadow: 0 0 40px rgba(241, 196, 15, 0.4);
+}
+
+/* Runas en las esquinas */
+.theme-arcane_academy .nav-card::before {
+    content: '✧';
+    position: absolute;
+    top: 5px; left: 5px;
+    color: #f1c40f;
+    font-size: 0.8rem;
+}
+
+.theme-arcane_academy .card-icon-wrapper {
+    background: #000;
+    border: 1px solid #4a235a;
+}
+
+.theme-arcane_academy .card-title {
+    color: #f1c40f;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

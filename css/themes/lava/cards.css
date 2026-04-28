@@ -1,38 +1,49 @@
-/* --- LAVA THEME: CARD DESIGN --- */
+/* --- LAVA THEME: CRACKED CARDS --- */
 .theme-lava_eruption .nav-card {
-    background: linear-gradient(135deg, #111 0%, #000 100%) !important;
-    border: 1px solid #333;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #000 !important;
+    border: 2px solid #331100;
+    border-radius: 4px !important;
+    /* Efecto de resplandor interno de magma */
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,1),
+        inset 0 0 15px rgba(255, 69, 0, 0.2);
+    overflow: hidden;
 }
 
 .theme-lava_eruption .nav-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: #ff4500;
-    box-shadow: 0 15px 40px rgba(255, 69, 0, 0.3);
-}
-
-/* Borde inferior de lava dinámica */
-.theme-lava_eruption .nav-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; width: 100%; height: 4px;
-    background: linear-gradient(90deg, #ff0000, #ffcc00, #ff0000);
-    background-size: 200% auto;
-    animation: lava-flow 2s linear infinite;
-    box-shadow: 0 0 15px #ff4500;
+    transform: scale(1.05) translateY(-10px);
+    border-color: #ff6600;
+    box-shadow: 
+        0 0 40px rgba(255, 69, 0, 0.5),
+        inset 0 0 20px rgba(255, 102, 0, 0.4);
 }
 
 .theme-lava_eruption .card-icon-wrapper {
     background: #000;
-    border: 1px solid #1a1a1a;
-    box-shadow: inset 0 0 20px rgba(255, 69, 0, 0.1);
+    /* Líneas de fractura volcánica */
+    background-image: linear-gradient(135deg, rgba(255,69,0,0.1) 1px, transparent 1px);
+    background-size: 15px 15px;
 }
 
 .theme-lava_eruption .card-title {
     font-family: 'Rubik Mono One', sans-serif;
+    background: linear-gradient(180deg, #000 0%, #220000 100%);
     color: #ffcc00;
-    text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
-    background: rgba(0,0,0,0.5);
-    padding: 8px 0;
+    border-top: 2px solid #ff4500;
+    padding: 10px 0 !important;
+}
+
+/* Partícula de lava individual */
+.theme-lava_eruption .nav-card::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle at center, rgba(255,69,0,0.15) 0%, transparent 40%);
+    pointer-events: none;
+    animation: lava-pulse-core 4s infinite alternate;
+}
+
+@keyframes lava-pulse-core {
+    0% { opacity: 0.5; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.1); }
 }

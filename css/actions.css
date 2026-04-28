@@ -250,6 +250,52 @@
     transform: scale(1.2) rotate(-10deg);
 }
 
+/* 21. CYBERPUNK RED */
+.theme-cyberpunk_red .card-btn {
+    border-radius: 0;
+    background: #000;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+}
+.theme-cyberpunk_red .card-btn:hover {
+    background: #ff0000;
+    color: #fff;
+    box-shadow: 0 0 20px #ff0000;
+}
+
+/* 22. ABYSSAL DEEP */
+.theme-abyssal_deep .card-btn {
+    border-radius: 50%;
+    background: rgba(0, 242, 255, 0.1);
+    border: 1px solid #00f2ff;
+    color: #00f2ff;
+}
+
+/* 23. GALACTIC HORIZON */
+.theme-galactic_horizon .card-btn {
+    border-radius: 50%;
+    background: rgba(142, 68, 173, 0.2);
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+/* 24. ARCANE ACADEMY */
+.theme-arcane_academy .card-btn {
+    border-radius: 0;
+    background: #1a0a2e;
+    border: 1px solid #f1c40f;
+    color: #f1c40f;
+}
+
+/* 25. DRAGON LAIR */
+.theme-dragon_lair .card-btn {
+    border-radius: 4px;
+    background: #1a1200;
+    border: 1px solid #ff9d00;
+    color: #ff9d00;
+}
+
+
 
 
 

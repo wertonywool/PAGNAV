@@ -1,0 +1,13 @@
+/* --- GALACTIC HORIZON: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+
+.theme-galactic_horizon .main-header {
+    background: rgba(2, 2, 16, 0.8);
+    border-bottom: 2px solid #8e44ad;
+}
+
+.theme-galactic_horizon .header-btn {
+    border-radius: 30px;
+    border-color: rgba(142, 68, 173, 0.3);
+}

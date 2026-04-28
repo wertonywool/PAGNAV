@@ -1,0 +1,35 @@
+/* --- DRAGON'S LAIR: CARD DESIGN --- */
+.theme-dragon_lair .nav-card {
+    background: #1a1200 !important;
+    border: 3px solid #ff9d00;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+.theme-dragon_lair .nav-card:hover {
+    border-color: #ffd700;
+    box-shadow: 0 0 30px rgba(255, 157, 0, 0.3);
+    transform: scale(1.05) rotate(-1deg);
+}
+
+/* Efecto de fuego en la base */
+.theme-dragon_lair .nav-card::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 10%; width: 80%; height: 2px;
+    background: #ff4500;
+    box-shadow: 0 0 15px #ff4500, 0 0 30px #ff0000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.theme-dragon_lair .nav-card:hover::after {
+    opacity: 1;
+}
+
+.theme-dragon_lair .card-title {
+    color: #ffd700;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

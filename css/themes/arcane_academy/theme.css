@@ -1,0 +1,37 @@
+/* --- ARCANE ACADEMY: THEME & ATMOSPHERE --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;900&display=swap');
+
+:root {
+    --bg-main: #1a0a2e;
+    --bg-card-base: #2d144d;
+    --text-main: #f1c40f;
+    --text-muted: #9b59b6;
+    --accent: #f1c40f;
+    --accent-glow: rgba(241, 196, 15, 0.4);
+    --border-color: #4a235a;
+}
+
+body.theme-arcane_academy {
+    background: #1a0a2e;
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(155, 89, 182, 0.1) 0%, transparent 80%),
+        url('https://www.transparenttextures.com/patterns/papyros.png');
+    font-family: 'Cinzel', serif;
+}
+
+/* Partículas de maná */
+body.theme-arcane_academy::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(#f1c40f 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.1;
+    pointer-events: none;
+    animation: mana-float 15s linear infinite;
+}
+
+@keyframes mana-float {
+    from { background-position: 0 0; }
+    to { background-position: 500px -500px; }
+}

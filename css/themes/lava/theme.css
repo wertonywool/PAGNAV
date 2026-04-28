@@ -1,36 +1,36 @@
-/* --- LAVA THEME: BASE & ATMOSPHERE --- */
+/* --- LAVA THEME: REBORN (CRACKED OBSIDIAN) --- */
 :root {
-    --bg-main: #050200;
-    --bg-card-base: #0d0d0d;
+    --bg-main: #0a0500;
+    --bg-card-base: #000000;
     --text-main: #ffcc00;
     --text-muted: #ff4500;
-    --accent: #ff4500;
-    --accent-glow: rgba(255, 69, 0, 0.6);
-    --border-color: #222;
-    --glass-blur: 0px;
+    --accent: #ff6600;
+    --accent-glow: rgba(255, 69, 0, 0.8);
+    --border-color: #442200;
 }
 
 body.theme-lava_eruption {
-    background-color: #000;
+    background-color: #050200;
     background-image: 
-        /* Partículas de ceniza flotantes (Simuladas con gradientes) */
-        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.05) 1px, transparent 1px),
-        radial-gradient(circle at 90% 10%, rgba(255,255,255,0.05) 1.5px, transparent 1.5px),
-        radial-gradient(circle at 50% 50%, rgba(255,69,0,0.05) 2px, transparent 2px),
-        /* Humo volcánico */
-        radial-gradient(ellipse at bottom, rgba(255, 69, 0, 0.15) 0%, transparent 70%);
-    background-size: 150px 150px, 200px 200px, 300px 300px, 100% 100%;
-    font-family: 'Montserrat', sans-serif;
-    position: relative;
+        radial-gradient(circle at 50% 100%, #331100 0%, transparent 60%),
+        /* Partículas de ceniza roja */
+        radial-gradient(circle at 20% 30%, rgba(255, 69, 0, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 0, 0.1) 0%, transparent 25%);
+    background-size: 100% 100%, 400px 400px, 500px 500px;
+    animation: background-heat 10s ease-in-out infinite alternate;
 }
 
-/* Efecto de partículas animadas */
-body.theme-lava_eruption::after {
+@keyframes background-heat {
+    0% { filter: contrast(1.1) brightness(0.9); }
+    100% { filter: contrast(1.3) brightness(1.1); }
+}
+
+/* Capa de "Calor" (Distorsión sutil) */
+body.theme-lava_eruption::before {
     content: '';
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('https://www.transparenttextures.com/patterns/dust.png');
-    opacity: 0.2;
+    background: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
+    opacity: 0.03;
     pointer-events: none;
-    animation: ash-float 60s linear infinite;
 }

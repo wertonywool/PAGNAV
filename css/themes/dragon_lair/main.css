@@ -1,0 +1,20 @@
+/* --- DRAGON'S LAIR: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+
+.theme-dragon_lair .main-header {
+    background: #000;
+    border-bottom: 4px solid #ff9d00;
+}
+
+.theme-dragon_lair .header-btn {
+    border-radius: 4px;
+    background: #1a1200;
+    border-color: #ff9d00;
+    color: #ff9d00;
+}
+
+.theme-dragon_lair .header-btn:hover {
+    background: #ff9d00;
+    color: #000;
+}
