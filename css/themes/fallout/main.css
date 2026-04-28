@@ -1,0 +1,14 @@
+/* --- FALLOUT: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+
+.theme-fallout .main-header {
+    background: #0d0d08;
+    border-bottom: 4px solid #32cd32;
+}
+.theme-fallout .header-btn {
+    border-radius: 0;
+    border-color: #32cd32;
+    background: rgba(50, 205, 50, 0.1);
+    color: #32cd32;
+}

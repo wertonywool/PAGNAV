@@ -1,0 +1,18 @@
+/* --- SHADOW REALM: THEME & ATMOSPHERE --- */
+:root {
+    --bg-main: #02000a;
+    --bg-card-base: #050014;
+    --text-main: #ffffff;
+    --text-muted: #5d00ff;
+    --accent: #5d00ff;
+    --accent-glow: rgba(93, 0, 255, 0.4);
+    --border-color: #1a003d;
+}
+
+body.theme-shadow_realm {
+    background: #02000a;
+    background-image: 
+        radial-gradient(circle at 50% 50%, #0a001a 0%, transparent 100%),
+        url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    font-family: 'Barlow Condensed', sans-serif;
+}

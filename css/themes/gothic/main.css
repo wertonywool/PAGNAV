@@ -1,0 +1,19 @@
+/* --- GOTHIC: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+@import url('./animations.css');
+
+.theme-gothic .main-header {
+    background: #050000;
+    border-bottom: 3px solid #8b0000; /* Blood Red */
+}
+.theme-gothic .logo-text h1 {
+    color: #8b0000;
+    text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+}
+.theme-gothic .header-btn {
+    border-radius: 0;
+    border: 1px solid #444;
+    background: #111;
+    color: #8b0000;
+}

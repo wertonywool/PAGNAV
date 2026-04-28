@@ -1,0 +1,16 @@
+/* --- CELESTIAL: THEME & ATMOSPHERE --- */
+:root {
+    --bg-main: #ffffff;
+    --bg-card-base: #f9f9f9;
+    --text-main: #333;
+    --text-muted: #b8860b;
+    --accent: #ffd700;
+    --accent-glow: rgba(255, 215, 0, 0.3);
+    --border-color: #eee;
+}
+
+body.theme-celestial {
+    background: #fff;
+    background-image: radial-gradient(circle at 50% 0%, #fff9e6 0%, transparent 50%);
+    font-family: 'Inter', sans-serif;
+}

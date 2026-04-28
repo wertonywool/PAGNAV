@@ -1,0 +1,20 @@
+/* --- FALLOUT: THEME & ATMOSPHERE --- */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap');
+
+:root {
+    --bg-main: #0d0d08;
+    --bg-card-base: #1a1a0f;
+    --text-main: #32cd32;
+    --text-muted: #1e601e;
+    --accent: #32cd32;
+    --accent-glow: rgba(50, 205, 50, 0.4);
+    --border-color: #2a2a1a;
+}
+
+body.theme-fallout {
+    background: #0d0d08;
+    background-image: 
+        repeating-linear-gradient(0deg, rgba(50, 205, 50, 0.03) 0px, rgba(50, 205, 50, 0.03) 1px, transparent 1px, transparent 2px),
+        url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
+    font-family: 'Courier Prime', monospace;
+}

@@ -1,0 +1,15 @@
+/* --- RAPTURE: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+@import url('./animations.css');
+
+.theme-rapture .main-header {
+    background: #002b2b;
+    border-bottom: 4px solid #daa520; /* Gold */
+}
+.theme-rapture .header-btn {
+    border-radius: 0;
+    border: 2px solid #daa520;
+    background: rgba(218, 165, 32, 0.1);
+    color: #daa520;
+}

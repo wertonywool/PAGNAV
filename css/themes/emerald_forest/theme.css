@@ -1,0 +1,35 @@
+/* --- EMERALD FOREST: THEME & ATMOSPHERE --- */
+:root {
+    --bg-main: #050f05;
+    --bg-card-base: #0a1a0a;
+    --text-main: #2ecc71;
+    --text-muted: #27ae60;
+    --accent: #2ecc71;
+    --accent-glow: rgba(46, 204, 113, 0.3);
+    --border-color: #1a2e1a;
+}
+
+body.theme-emerald_forest {
+    background: #050f05;
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(46, 204, 113, 0.05) 0%, transparent 80%),
+        url('https://www.transparenttextures.com/patterns/leaf.png');
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Luciérnagas */
+body.theme-emerald_forest::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(#2ecc71 1.5px, transparent 1.5px);
+    background-size: 80px 80px;
+    opacity: 0.2;
+    animation: fireflies 10s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes fireflies {
+    from { background-position: 0 0; }
+    to { background-position: 80px 80px; }
+}

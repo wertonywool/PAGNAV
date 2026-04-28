@@ -1,0 +1,17 @@
+/* --- SAMURAI: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+@import url('./animations.css');
+
+.theme-samurai .main-header {
+    background: #fff;
+    border-bottom: 4px solid #bc002d; /* Japan Red */
+}
+.theme-samurai .logo-text h1 {
+    color: #000;
+}
+.theme-samurai .header-btn {
+    border-radius: 0;
+    border: 2px solid #000;
+    color: #000;
+}

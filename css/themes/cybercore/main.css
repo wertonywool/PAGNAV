@@ -1,0 +1,18 @@
+/* --- CYBERCORE: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+
+.theme-cybercore .main-header {
+    background: #fff;
+    border-bottom: 2px solid #00f2ff;
+    color: #000;
+}
+.theme-cybercore .header-btn {
+    border-radius: 5px;
+    border-color: #eee;
+    color: #333;
+}
+.theme-cybercore .header-btn:hover {
+    background: #00f2ff;
+    color: #000;
+}

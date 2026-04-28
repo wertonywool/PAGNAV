@@ -1,0 +1,18 @@
+/* --- DESERT MIRAGE: THEME & ATMOSPHERE --- */
+:root {
+    --bg-main: #1a120b;
+    --bg-card-base: #2d1e12;
+    --text-main: #f39c12;
+    --text-muted: #e67e22;
+    --accent: #e67e22;
+    --accent-glow: rgba(230, 126, 34, 0.3);
+    --border-color: #3e2a1a;
+}
+
+body.theme-desert_mirage {
+    background: #1a120b;
+    background-image: 
+        radial-gradient(circle at 50% 0%, #3e2a1a 0%, transparent 70%),
+        url('https://www.transparenttextures.com/patterns/sandpaper.png');
+    font-family: 'Montserrat', sans-serif;
+}

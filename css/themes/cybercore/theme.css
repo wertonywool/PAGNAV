@@ -1,0 +1,19 @@
+/* --- CYBERCORE: THEME & ATMOSPHERE --- */
+:root {
+    --bg-main: #f0f4f8;
+    --bg-card-base: #ffffff;
+    --text-main: #1a1a1a;
+    --text-muted: #00b8d4;
+    --accent: #00b8d4;
+    --accent-glow: rgba(0, 184, 212, 0.2);
+    --border-color: #d1d9e6;
+}
+
+body.theme-cybercore {
+    background: #f0f4f8;
+    background-image: 
+        linear-gradient(rgba(0, 184, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 184, 212, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    font-family: 'Inter', sans-serif;
+}

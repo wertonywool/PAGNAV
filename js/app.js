@@ -168,8 +168,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyTheme(theme) {
         if (!theme || !theme.themeName) return;
         
-        // Soporte para estructura modular (ej: lava) o plana antigua
-        const isModular = ['lava_eruption', 'glitch_void', 'neon_jungle', 'ice_kingdom', 'jojos', 'cyberpunk_red', 'abyssal_deep', 'galactic_horizon', 'arcane_academy', 'dragon_lair'].includes(theme.themeName);
+        // Soporte para estructura modular
+        const isModular = [
+            'lava_eruption', 'glitch_void', 'neon_jungle', 'ice_kingdom', 'jojos', 
+            'cyberpunk_red', 'abyssal_deep', 'galactic_horizon', 'arcane_academy', 'dragon_lair',
+            'synthwave', 'samurai', 'rapture', 'gothic', 'emerald_forest', 
+            'cybercore', 'desert_mirage', 'fallout', 'celestial', 'shadow_realm'
+        ].includes(theme.themeName);
         const themePath = isModular 
             ? `css/themes/${theme.themeName}/main.css` 
             : `css/themes/${theme.themeName}.css`;

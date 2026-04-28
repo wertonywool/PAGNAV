@@ -1,0 +1,13 @@
+/* --- SHADOW REALM: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+
+.theme-shadow_realm .main-header {
+    background: #000;
+    border-bottom: 2px solid #5d00ff;
+}
+.theme-shadow_realm .header-btn {
+    border-color: #2a004d;
+    background: #0a001a;
+    color: #5d00ff;
+}

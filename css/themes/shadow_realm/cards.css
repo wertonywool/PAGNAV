@@ -1,0 +1,19 @@
+/* --- SHADOW REALM: CARD DESIGN --- */
+.theme-shadow_realm .nav-card {
+    background: #050014 !important;
+    border: 1px solid #1a003d;
+    border-radius: 0 !important;
+    box-shadow: 0 0 20px #000;
+}
+
+.theme-shadow_realm .nav-card:hover {
+    border-color: #5d00ff;
+    box-shadow: 0 0 40px rgba(93, 0, 255, 0.3);
+    filter: brightness(1.2);
+}
+
+.theme-shadow_realm .card-title {
+    color: #5d00ff;
+    font-weight: bold;
+    text-transform: uppercase;
+}

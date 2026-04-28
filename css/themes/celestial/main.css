@@ -1,0 +1,13 @@
+/* --- CELESTIAL: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+
+.theme-celestial .main-header {
+    background: #fff;
+    border-bottom: 3px solid #ffd700;
+}
+.theme-celestial .header-btn {
+    border-radius: 50px;
+    border-color: #eee;
+    color: #b8860b;
+}

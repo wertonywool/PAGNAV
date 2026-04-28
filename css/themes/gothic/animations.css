@@ -1,0 +1,19 @@
+/* --- GOTHIC: ANIMATIONS --- */
+@keyframes pulse-blood {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+}
+
+.theme-gothic .main-header {
+    animation: pulse-blood 10s infinite;
+}
+
+@keyframes card-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+.theme-gothic .nav-card:hover {
+    animation: card-float 2s infinite alternate ease-in-out;
+}

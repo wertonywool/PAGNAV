@@ -1,0 +1,30 @@
+/* --- GOTHIC: THEME & ATMOSPHERE --- */
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IM+Fell+English+SC&display=swap');
+
+:root {
+    --bg-main: #050505;
+    --bg-card-base: #0a0a0a;
+    --text-main: #d4d4d4;
+    --text-muted: #8b0000;
+    --accent: #8b0000;
+    --accent-glow: rgba(139, 0, 0, 0.4);
+    --border-color: #222;
+}
+
+body.theme-gothic {
+    background: #050505;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(139, 0, 0, 0.1) 0%, transparent 70%),
+        url('https://www.transparenttextures.com/patterns/black-linen.png');
+    font-family: 'IM Fell English SC', serif;
+}
+
+/* Efecto de niebla sutil */
+body.theme-gothic::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(transparent 70%, rgba(0,0,0,0.8) 100%);
+    pointer-events: none;
+    z-index: 10;
+}

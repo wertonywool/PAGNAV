@@ -1,0 +1,17 @@
+/* --- SAMURAI: ANIMATIONS --- */
+@keyframes petal-fall {
+    0% { transform: translate(0, -10px) rotate(0deg); opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { transform: translate(100px, 100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Simulación de pétalos con pseudo-elementos en el body */
+body.theme-samurai::after {
+    content: '🌸';
+    position: fixed;
+    top: -20px;
+    left: 20%;
+    font-size: 1.5rem;
+    animation: petal-fall 10s linear infinite;
+    pointer-events: none;
+}

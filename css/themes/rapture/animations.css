@@ -1,0 +1,15 @@
+/* --- RAPTURE: ANIMATIONS --- */
+@keyframes bubbles-up {
+    from { background-position: 0 0; }
+    to { background-position: 0 -1000px; }
+}
+
+@keyframes gold-shimmer {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+    100% { filter: brightness(1); }
+}
+
+.theme-rapture .logo-icon {
+    animation: gold-shimmer 3s infinite ease-in-out;
+}

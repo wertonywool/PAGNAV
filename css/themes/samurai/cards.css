@@ -1,0 +1,25 @@
+/* --- SAMURAI: CARD DESIGN --- */
+.theme-samurai .nav-card {
+    border: 1px solid #000;
+    border-left: 8px solid #bc002d;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.theme-samurai .nav-card:hover {
+    transform: translateX(10px);
+    box-shadow: 15px 15px 0px rgba(188, 0, 45, 0.1);
+    border-color: #bc002d;
+}
+
+.theme-samurai .card-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.4rem !important;
+    color: #000;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.theme-samurai .card-icon-wrapper {
+    background: #fff;
+}

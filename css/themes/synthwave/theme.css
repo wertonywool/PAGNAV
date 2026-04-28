@@ -1,0 +1,31 @@
+/* --- SYNTHWAVE: THEME & ATMOSPHERE --- */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Exo+2:ital,wght@1,900&display=swap');
+
+:root {
+    --bg-main: #240b36;
+    --bg-card-base: #1a0633;
+    --text-main: #00ffff;
+    --text-muted: #ff00ff;
+    --accent: #ff00ff;
+    --accent-glow: rgba(255, 0, 255, 0.5);
+    --border-color: #3d1b5d;
+}
+
+body.theme-synthwave {
+    background: #240b36;
+    background-image: 
+        linear-gradient(180deg, #240b36 0%, #c31432 100%),
+        /* Rejilla retro */
+        linear-gradient(rgba(255, 0, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+body.theme-synthwave::before {
+    content: '';
+    position: fixed;
+    bottom: 0; left: 0; width: 100%; height: 50%;
+    background: linear-gradient(0deg, rgba(255, 0, 255, 0.1) 0%, transparent 100%);
+    pointer-events: none;
+}

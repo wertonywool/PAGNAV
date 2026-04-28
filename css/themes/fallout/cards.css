@@ -1,0 +1,23 @@
+/* --- FALLOUT: CARD DESIGN --- */
+.theme-fallout .nav-card {
+    background: #1a1a0f !important;
+    border: 2px solid #32cd32;
+    border-radius: 0 !important;
+    box-shadow: 0 0 10px rgba(50, 205, 50, 0.2);
+}
+
+.theme-fallout .nav-card:hover {
+    background: #32cd32 !important;
+    box-shadow: 0 0 25px #32cd32;
+}
+
+.theme-fallout .nav-card:hover .card-title,
+.theme-fallout .nav-card:hover .card-icon-container {
+    color: #000;
+}
+
+.theme-fallout .card-title {
+    color: #32cd32;
+    font-weight: bold;
+    text-transform: uppercase;
+}

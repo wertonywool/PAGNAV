@@ -1,0 +1,31 @@
+/* --- RAPTURE: THEME & ATMOSPHERE --- */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+    --bg-main: #001a1a;
+    --bg-card-base: #003333;
+    --text-main: #daa520;
+    --text-muted: #20b2aa;
+    --accent: #daa520;
+    --accent-glow: rgba(218, 165, 32, 0.4);
+    --border-color: #004d4d;
+}
+
+body.theme-rapture {
+    background: #001a1a;
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(32, 178, 170, 0.1) 0%, transparent 80%),
+        url('https://www.transparenttextures.com/patterns/dark-matter.png');
+    font-family: 'Righteous', cursive;
+}
+
+/* Efecto de partículas de agua */
+body.theme-rapture::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 100px 100px;
+    animation: bubbles-up 15s linear infinite;
+    pointer-events: none;
+}

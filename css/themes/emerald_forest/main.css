@@ -1,0 +1,14 @@
+/* --- EMERALD FOREST: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+@import url('./animations.css');
+
+.theme-emerald_forest .main-header {
+    background: #0a1f0a;
+    border-bottom: 4px solid #2ecc71;
+}
+.theme-emerald_forest .header-btn {
+    border-radius: 15px;
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}

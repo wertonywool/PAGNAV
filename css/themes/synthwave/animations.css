@@ -1,0 +1,18 @@
+/* --- SYNTHWAVE: ANIMATIONS --- */
+@keyframes grid-move {
+    from { background-position: 0 0; }
+    to { background-position: 0 40px; }
+}
+
+body.theme-synthwave {
+    animation: grid-move 2s linear infinite;
+}
+
+@keyframes neon-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.theme-synthwave .nav-card {
+    animation: neon-flicker 3s infinite alternate;
+}

@@ -148,6 +148,16 @@
 .preset-btn[data-theme="steampunk"] { background: linear-gradient(135deg, #8b4513, #cd7f32); }
 .preset-btn[data-theme="sakura_zen"] { background: linear-gradient(135deg, #ffb7c5, #fff); }
 .preset-btn[data-theme="space_nebula"] { background: linear-gradient(135deg, #240b36, #c31432); }
+.preset-btn[data-theme="synthwave"] { background: linear-gradient(135deg, #240b36, #c31432, #ff00ff); }
+.preset-btn[data-theme="samurai"] { background: #f5f5f5; border-color: #bc002d; }
+.preset-btn[data-theme="rapture"] { background: linear-gradient(135deg, #003333, #daa520); }
+.preset-btn[data-theme="gothic"] { background: linear-gradient(135deg, #050505, #8b0000); }
+.preset-btn[data-theme="emerald_forest"] { background: linear-gradient(135deg, #0a1a0a, #2ecc71); }
+.preset-btn[data-theme="cybercore"] { background: #ffffff; border-color: #00b8d4; }
+.preset-btn[data-theme="desert_mirage"] { background: linear-gradient(135deg, #1a120b, #e67e22); }
+.preset-btn[data-theme="fallout"] { background: #0d0d08; border-color: #32cd32; }
+.preset-btn[data-theme="celestial"] { background: #ffffff; border-color: #ffd700; }
+.preset-btn[data-theme="shadow_realm"] { background: linear-gradient(135deg, #02000a, #5d00ff); }
 .preset-btn[data-theme="vaporwave"] { background: linear-gradient(135deg, #ff71ce, #01cdfe); }
 .preset-btn[data-theme="cyberpunk_red"] { background: linear-gradient(135deg, #ff0000, #550000); }
 .preset-btn[data-theme="abyssal_deep"] { background: linear-gradient(135deg, #001f2b, #00f2ff); }

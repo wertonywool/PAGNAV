@@ -295,6 +295,87 @@
     color: #ff9d00;
 }
 
+/* 26. SYNTHWAVE */
+.theme-synthwave .card-btn {
+    border-radius: 0;
+    background: #1a0633;
+    border: 2px solid #ff00ff;
+    color: #00ffff;
+}
+
+/* 27. SAMURAI */
+.theme-samurai .card-btn {
+    border-radius: 0;
+    background: #fff;
+    border: 2px solid #000;
+    color: #bc002d;
+}
+
+/* 28. RAPTURE */
+.theme-rapture .card-btn {
+    border-radius: 0;
+    background: #003333;
+    border: 1px solid #daa520;
+    color: #daa520;
+}
+
+/* 29. GOTHIC */
+.theme-gothic .card-btn {
+    border-radius: 0;
+    background: #000;
+    border: 1px solid #444;
+    color: #8b0000;
+}
+
+/* 30. EMERALD FOREST */
+.theme-emerald_forest .card-btn {
+    border-radius: 10px;
+    background: #0a1a0a;
+    border: 1px solid #2ecc71;
+    color: #2ecc71;
+}
+
+/* 31. CYBERCORE */
+.theme-cybercore .card-btn {
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid #d1d9e6;
+    color: #00b8d4;
+}
+
+/* 32. DESERT MIRAGE */
+.theme-desert_mirage .card-btn {
+    border-radius: 0;
+    background: #2d1e12;
+    border: 1px solid #e67e22;
+    color: #f39c12;
+}
+
+/* 33. FALLOUT */
+.theme-fallout .card-btn {
+    border-radius: 0;
+    background: #1a1a0f;
+    border: 1px solid #32cd32;
+    color: #32cd32;
+}
+
+/* 34. CELESTIAL */
+.theme-celestial .card-btn {
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #eee;
+    color: #ffd700;
+}
+
+/* 35. SHADOW REALM */
+.theme-shadow_realm .card-btn {
+    border-radius: 0;
+    background: #050014;
+    border: 1px solid #5d00ff;
+    color: #5d00ff;
+}
+
+
 
 
 

@@ -1,0 +1,36 @@
+/* --- GOTHIC: CARD DESIGN --- */
+.theme-gothic .nav-card {
+    background: #0a0a0a !important;
+    border: 1px solid #333;
+    border-radius: 0 !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,1);
+    position: relative;
+}
+
+.theme-gothic .nav-card:hover {
+    border-color: #8b0000;
+    box-shadow: 0 0 40px rgba(139, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.theme-gothic .card-title {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 1.5rem !important;
+    color: #8b0000;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+}
+
+.theme-gothic .card-icon-wrapper {
+    background: #000;
+    border: 1px solid #111;
+}
+
+/* Esquinas ornamentales */
+.theme-gothic .nav-card::after {
+    content: '♰';
+    position: absolute;
+    bottom: 5px; right: 5px;
+    color: #333;
+    font-size: 0.8rem;
+}
