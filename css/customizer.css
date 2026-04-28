@@ -132,6 +132,7 @@
 /* Previsualización de colores en botones (Más precisas) */
 .preset-btn[data-theme="modern_dark"] { background: linear-gradient(135deg, #0a0a0c, #1e1e20); }
 .preset-btn[data-theme="persona5"] { background: linear-gradient(135deg, #d31221, #000); border-color: #fff; }
+.preset-btn[data-theme="persona3"] { background: linear-gradient(135deg, #00ccff, #004080); border-color: #fff; }
 .preset-btn[data-theme="cyberpunk"] { background: linear-gradient(135deg, #fcee0a, #00f0ff); }
 .preset-btn[data-theme="minimalist_white"] { background: #ffffff; border-color: #eee; }
 .preset-btn[data-theme="forest_nature"] { background: linear-gradient(135deg, #2d5a27, #1a3a16); }
