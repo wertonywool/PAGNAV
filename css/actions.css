@@ -3,7 +3,7 @@
     position: absolute;
     width: 32px;
     height: 32px;
-    z-index: 1000;
+    z-index: 5000; /* Asegurar que esté por encima de TODO el contenido de la tarjeta */
     cursor: pointer;
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -11,9 +11,23 @@
     align-items: center;
     justify-content: center;
     border: none;
+    pointer-events: auto; /* Forzar que reciba clics */
 }
 
-.nav-card:hover .card-btn { opacity: 1; }
+/* Evitar que el wrapper o el contenedor recorten el botón si se mueve un poco hacia afuera */
+.nav-card {
+    overflow: visible !important;
+}
+
+.card-icon-wrapper {
+    overflow: hidden; /* El icono sí se recorta, pero el botón está fuera de este wrapper en el JS */
+    z-index: 1;
+}
+
+.nav-card:hover .card-btn { 
+    opacity: 1; 
+    transform: scale(1);
+}
 
 /* --- POSICIONES BASE --- */
 .delete-btn { top: -10px; left: -10px; }
