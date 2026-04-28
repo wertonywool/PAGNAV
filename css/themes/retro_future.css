@@ -1,0 +1,34 @@
+/* --- TEMA: RETRO FUTURE (VISION 1970) --- */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+    --bg-main: #2b1d42;
+    --bg-card-base: #3e2a5e;
+    --text-main: #ff9e00;
+    --text-muted: #ff5e00;
+    --accent: #00f0ff;
+    --accent-glow: rgba(0, 240, 255, 0.4);
+    --border-color: #ff9e00;
+}
+
+body.theme-retro_future {
+    background: #2b1d42;
+    background-image: 
+        linear-gradient(transparent 50%, rgba(0,0,0,0.5) 50%),
+        linear-gradient(90deg, transparent 50%, rgba(255,158,0,0.05) 50%);
+    background-size: 100% 4px, 40px 100%;
+    font-family: 'Righteous', cursive;
+}
+
+.theme-retro_future .card-icon-wrapper {
+    background: #3e2a5e;
+    border: 4px solid var(--text-main);
+    border-radius: 30px;
+    box-shadow: 8px 8px 0px var(--accent);
+}
+
+.theme-retro_future .card-title {
+    color: var(--text-main);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}

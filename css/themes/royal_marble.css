@@ -1,0 +1,32 @@
+/* --- TEMA: ROYAL MARBLE (LUJO ETERNO) --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap');
+
+:root {
+    --bg-main: #ffffff;
+    --bg-card-base: #fdfdfd;
+    --text-main: #1a1a1a;
+    --text-muted: #8b7355;
+    --accent: #daa520;
+    --accent-glow: rgba(218, 165, 32, 0.2);
+    --border-color: #e5e5e5;
+}
+
+body.theme-royal_marble {
+    background: #fff;
+    background-image: url('https://www.transparenttextures.com/patterns/marble-as-polished-white.png');
+    font-family: 'Cinzel', serif;
+}
+
+.theme-royal_marble .card-icon-wrapper {
+    background: #fff;
+    border: 2px solid var(--accent);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1), inset 0 0 15px rgba(218,165,32,0.05);
+}
+
+.theme-royal_marble .card-title {
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--accent);
+}

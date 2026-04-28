@@ -1,0 +1,47 @@
+/* --- TEMA: MIDNIGHT SAKURA (NOCHE EN KIOTO) --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --bg-main: #0a0a0f;
+    --bg-card-base: #12121a;
+    --text-main: #ffd1dc;
+    --text-muted: #b19cd9;
+    --accent: #ff007f;
+    --accent-glow: rgba(255, 0, 127, 0.4);
+    --border-color: rgba(255, 209, 220, 0.1);
+}
+
+body.theme-midnight_sakura {
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0f 100%);
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+
+body.theme-midnight_sakura::before {
+    content: "🌸";
+    position: fixed;
+    top: -10%;
+    animation: sakura-fall 15s linear infinite;
+    opacity: 0.2;
+    filter: blur(1px);
+    font-size: 2rem;
+    text-shadow: 200px 400px 0 #ff007f, -300px 800px 0 #b19cd9;
+}
+
+@keyframes sakura-fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.3; }
+    100% { transform: translateY(110vh) rotate(720deg) translateX(50px); opacity: 0; }
+}
+
+.theme-midnight_sakura .card-icon-wrapper {
+    background: linear-gradient(135deg, #12121a, #1a1a2e);
+    border: 1px solid var(--accent);
+    border-radius: 50% 5% 50% 5%;
+}
+
+.theme-midnight_sakura .card-title {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--text-main);
+    text-shadow: 0 0 10px var(--accent-glow);
+}

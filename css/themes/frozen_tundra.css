@@ -1,0 +1,29 @@
+/* --- TEMA: FROZEN TUNDRA (CRISTAL GÉLIDO) --- */
+:root {
+    --bg-main: #e0f2f1;
+    --bg-card-base: rgba(255, 255, 255, 0.6);
+    --text-main: #006064;
+    --text-muted: #00838f;
+    --accent: #4dd0e1;
+    --accent-glow: rgba(77, 208, 225, 0.3);
+    --border-color: rgba(255, 255, 255, 0.8);
+}
+
+body.theme-frozen_tundra {
+    background: linear-gradient(180deg, #ffffff 0%, #e0f2f1 100%);
+    font-family: 'Inter', sans-serif;
+}
+
+.theme-frozen_tundra .card-icon-wrapper {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,96,100,0.05);
+}
+
+.theme-frozen_tundra .card-title {
+    color: var(--text-main);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
