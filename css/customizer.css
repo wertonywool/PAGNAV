@@ -106,24 +106,25 @@
     font-size: 0.8rem;
 }
 
-/* Previsualización de colores en botones */
-.preset-btn[data-theme=\"modern_dark\"] { background: #0a0a0c; }
-.preset-btn[data-theme=\"persona5\"] { background: #d31221; }
-.preset-btn[data-theme=\"cyberpunk\"] { background: #fcee0a; }
-.preset-btn[data-theme=\"minimalist_white\"] { background: #ffffff; }
-.preset-btn[data-theme=\"forest_nature\"] { background: #2d5a27; }
-.preset-btn[data-theme=\"ocean_blue\"] { background: #0077be; }
-.preset-btn[data-theme=\"sunset_vibes\"] { background: #ff5f6d; }
-.preset-btn[data-theme=\"neon_purple\"] { background: #b967ff; }
-.preset-btn[data-theme=\"industrial_gold\"] { background: #daa520; }
-.preset-btn[data-theme=\"retro_console\"] { background: #8bac0f; }
-.preset-btn[data-theme=\"coffee\"] { background: #6f4e37; }
-.preset-btn[data-theme=\"miku_hatsune\"] { background: #39c5bb; }
-.preset-btn[data-theme=\"steampunk\"] { background: #8b4513; }
-.preset-btn[data-theme=\"sakura_zen\"] { background: #ffb7c5; }
-.preset-btn[data-theme=\"space_nebula\"] { background: #240b36; }
-.preset-btn[data-theme=\"vaporwave\"] { background: #ff71ce; }
-.preset-btn[data-theme=\"danganronpa\"] { background: #ff005d; }
+/* Previsualización de colores en botones (Más precisas) */
+.preset-btn[data-theme="modern_dark"] { background: linear-gradient(135deg, #0a0a0c, #1e1e20); }
+.preset-btn[data-theme="persona5"] { background: linear-gradient(135deg, #d31221, #000); border-color: #fff; }
+.preset-btn[data-theme="cyberpunk"] { background: linear-gradient(135deg, #fcee0a, #00f0ff); }
+.preset-btn[data-theme="minimalist_white"] { background: #ffffff; border-color: #eee; }
+.preset-btn[data-theme="forest_nature"] { background: linear-gradient(135deg, #2d5a27, #1a3a16); }
+.preset-btn[data-theme="ocean_blue"] { background: linear-gradient(135deg, #0077be, #00aaff); }
+.preset-btn[data-theme="sunset_vibes"] { background: linear-gradient(135deg, #ff5f6d, #ffc371); }
+.preset-btn[data-theme="neon_purple"] { background: linear-gradient(135deg, #b967ff, #050505); }
+.preset-btn[data-theme="industrial_gold"] { background: linear-gradient(135deg, #daa520, #4b3f2f); }
+.preset-btn[data-theme="retro_console"] { background: #8bac0f; border: 4px double #306230; }
+.preset-btn[data-theme="coffee"] { background: linear-gradient(135deg, #6f4e37, #2d1b0e); }
+.preset-btn[data-theme="miku_hatsune"] { background: linear-gradient(135deg, #39c5bb, #ff007f); }
+.preset-btn[data-theme="steampunk"] { background: linear-gradient(135deg, #8b4513, #cd7f32); }
+.preset-btn[data-theme="sakura_zen"] { background: linear-gradient(135deg, #ffb7c5, #fff); }
+.preset-btn[data-theme="space_nebula"] { background: linear-gradient(135deg, #240b36, #c31432); }
+.preset-btn[data-theme="vaporwave"] { background: linear-gradient(135deg, #ff71ce, #01cdfe); }
+.preset-btn[data-theme="danganronpa"] { background: linear-gradient(135deg, #000 50%, #ff005d 50%); border-color: #fff; }
+
 
 .control-group {
     background: rgba(255,255,255,0.03);
