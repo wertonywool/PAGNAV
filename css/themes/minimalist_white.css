@@ -1,11 +1,11 @@
-/* --- TEMA: MINIMALIST WHITE (SOPHISTICATED STUDIO) --- */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap');
+/* --- TEMA: MINIMALIST WHITE (ULTIMATE STUDIO) --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;600;800&display=swap');
 
 :root {
-    --bg-main: #f1f5f9; /* Gris azulado ultra claro */
+    --bg-main: #f8fafc;
     --bg-card-base: #ffffff;
-    --text-main: #0f172a; /* Azul pizarra oscuro */
-    --text-muted: #64748b; /* Gris medio */
+    --text-main: #0f172a;
+    --text-muted: #64748b;
     --accent: #334155; 
     --accent-glow: rgba(15, 23, 42, 0.05);
     --border-color: #e2e8f0;
@@ -13,84 +13,75 @@
 }
 
 body {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     background-attachment: fixed;
     color: var(--text-main);
     font-family: 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
 }
 
-/* Patrón de puntos sutil para textura de papel */
+/* Patrón de puntos ultra sutil */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-    background-size: 32px 32px;
-    opacity: 0.2;
+    background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+    background-size: 40px 40px;
+    opacity: 0.15;
     z-index: -1;
 }
 
 /* --- HEADER --- */
 .main-header {
-    background: rgba(255, 255, 255, 0.7) !important;
-    backdrop-filter: blur(var(--glass-blur));
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(var(--glass-blur)) saturate(150%);
     border-bottom: 1px solid var(--border-color);
 }
 
 .logo h1 {
     font-weight: 800;
     color: #0f172a !important;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
-/* --- CARDS --- */
+/* --- CARDS (SOFT DEPTH) --- */
 .card-icon-wrapper {
     background: #ffffff;
     border: 1px solid var(--border-color);
     border-radius: 28px;
-    /* Capas de sombras para realismo */
     box-shadow: 
-        0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 10px 15px -3px rgba(0, 0, 0, 0.02),
+        0 10px 15px -3px rgba(0, 0, 0, 0.05),
+        0 4px 6px -2px rgba(0, 0, 0, 0.02),
         inset 0 2px 4px rgba(255,255,255,1);
-    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-    position: relative;
-}
-
-/* Efecto de brillo superior */
-.card-icon-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .nav-card:hover .card-icon-wrapper {
-    transform: translateY(-12px);
-    background: #f8fafc;
-    border-color: #cbd5e1;
+    transform: translateY(-8px) scale(1.02);
+    background: #ffffff;
+    border-color: #94a3b8;
     box-shadow: 
-        0 20px 25px -5px rgba(0, 0, 0, 0.05),
-        0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        0 25px 30px -5px rgba(0, 0, 0, 0.08),
+        0 15px 15px -5px rgba(0, 0, 0, 0.03);
 }
 
 .card-title {
     color: var(--text-muted) !important;
     font-weight: 700;
-    font-size: 0.95rem;
-    margin-top: 18px;
-    background: #ffffff;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    background: rgba(255,255,255,0.8);
     padding: 6px 16px !important;
-    border-radius: 12px;
+    border-radius: 14px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    backdrop-filter: blur(5px);
     transition: all 0.3s ease;
 }
 
 .nav-card:hover .card-title {
     color: var(--text-main) !important;
     border-color: var(--text-main);
+    background: #fff;
     transform: scale(1.05);
 }
 
@@ -98,15 +89,15 @@ body::before {
 .primary-btn {
     background: #0f172a !important;
     color: #ffffff !important;
-    border-radius: 14px !important;
+    border-radius: 12px !important;
     font-weight: 600;
-    border: 1px solid #1e293b !important;
-    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.1);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
 }
 
 .primary-btn:hover {
     background: #1e293b !important;
     transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(15, 23, 42, 0.2);
 }
 
 /* Scrollbar Minimal */

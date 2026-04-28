@@ -82,10 +82,7 @@
         Auth.checkSession(async (user) => {
             if (user) {
                 const theme = await Store.getTheme();
-                document.getElementById('theme-link').href = `css/themes/${theme.themeName}.css`;
-                if (['minimalist_white', 'sakura_zen'].includes(theme.themeName)) {
-                    document.querySelector('.btn-save').style.color = '#fff';
-                }
+                applyTheme(theme);
 
                 // CARGAR DATOS SOLO DESPUÉS DE CONFIRMAR SESIÓN
                 if (editingId) {
@@ -180,6 +177,28 @@
             };
             reader.onerror = error => reject(error);
         });
+
+        function applyTheme(theme) {
+            if (!theme || !theme.themeName) return;
+            
+            const modularThemes = [
+                'lava', 'glitch_void', 'neon_jungle', 'ice_kingdom', 'jojos', 
+                'cyberpunk_red', 'abyssal_deep', 'galactic_horizon', 'arcane_academy', 'dragon_lair',
+                'synthwave', 'samurai', 'rapture', 'gothic', 'emerald_forest', 
+                'cybercore', 'desert_mirage', 'fallout', 'celestial', 'shadow_realm',
+                'mars_colony', 'liminal_space', 'candy_land', 'pirate_cove', 'ancient_egypt',
+                'cyber_city', 'viking_runes', 'doodle_sketch', 'toxic_slime', 'luxury_onyx'
+            ];
+
+            const isModular = modularThemes.includes(theme.themeName);
+            const themePath = isModular 
+                ? `css/themes/${theme.themeName}/main.css` 
+                : `css/themes/${theme.themeName}.css`;
+
+            document.getElementById('theme-link').href = themePath;
+            document.body.className = '';
+            document.body.classList.add(`theme-${theme.themeName}`);
+        }
     </script>
 </body>
 </html>

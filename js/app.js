@@ -169,14 +169,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!theme || !theme.themeName) return;
         
         // Soporte para estructura modular
-        const isModular = [
-            'lava_eruption', 'glitch_void', 'neon_jungle', 'ice_kingdom', 'jojos', 
+        const modularThemes = [
+            'lava', 'glitch_void', 'neon_jungle', 'ice_kingdom', 'jojos', 
             'cyberpunk_red', 'abyssal_deep', 'galactic_horizon', 'arcane_academy', 'dragon_lair',
             'synthwave', 'samurai', 'rapture', 'gothic', 'emerald_forest', 
             'cybercore', 'desert_mirage', 'fallout', 'celestial', 'shadow_realm',
             'mars_colony', 'liminal_space', 'candy_land', 'pirate_cove', 'ancient_egypt',
             'cyber_city', 'viking_runes', 'doodle_sketch', 'toxic_slime', 'luxury_onyx'
-        ].includes(theme.themeName);
+        ];
+
+        const isModular = modularThemes.includes(theme.themeName);
         const themePath = isModular 
             ? `css/themes/${theme.themeName}/main.css` 
             : `css/themes/${theme.themeName}.css`;
