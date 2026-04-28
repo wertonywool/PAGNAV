@@ -1,0 +1,75 @@
+/* --- TEMA: PSICOLOGÍA DEPORTIVA (HIGH PERFORMANCE) --- */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --bg-main: #f4f7f6;
+    --bg-card-base: #ffffff;
+    --text-main: #1a2a3a;
+    --text-muted: #5d6d7e;
+    --accent: #27ae60; /* Turf Green */
+    --accent-glow: rgba(39, 174, 96, 0.3);
+    --border-color: #dcdde1;
+    --glass-blur: 10px;
+    --radius-lg: 16px;
+}
+
+body {
+    background-color: var(--bg-main);
+    background-image: 
+        /* Líneas de pista de atletismo sutiles */
+        linear-gradient(90deg, rgba(39, 174, 96, 0.03) 1px, transparent 1px),
+        linear-gradient(rgba(39, 174, 96, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-card {
+    border: none;
+    border-bottom: 4px solid var(--accent);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.nav-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(39, 174, 96, 0.2);
+}
+
+.card-icon-wrapper {
+    background: #f8f9fa;
+    border-radius: 12px !important;
+    margin: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 60px);
+}
+
+.card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.main-header {
+    background: #1a2a3a;
+    color: #fff;
+    border-bottom: 4px solid var(--accent);
+}
+
+.logo-text h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    color: #fff;
+}
+
+.logo-icon {
+    background: var(--accent);
+    border-radius: 50% 50% 50% 0;
+}
+
+.header-btn {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+}

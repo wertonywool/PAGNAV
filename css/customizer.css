@@ -124,6 +124,8 @@
 .preset-btn[data-theme="space_nebula"] { background: linear-gradient(135deg, #240b36, #c31432); }
 .preset-btn[data-theme="vaporwave"] { background: linear-gradient(135deg, #ff71ce, #01cdfe); }
 .preset-btn[data-theme="danganronpa"] { background: linear-gradient(135deg, #000 50%, #ff005d 50%); border-color: #fff; }
+.preset-btn[data-theme="sports_psychology"] { background: linear-gradient(135deg, #27ae60, #ffffff); }
+
 
 
 .control-group {

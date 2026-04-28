@@ -118,3 +118,16 @@
 .theme-danganronpa .edit-btn { background: #ff005d; color: #fff; }
 .theme-danganronpa .info-badge { background: #fff; color: #000; }
 
+/* 12. PSICOLOGÍA DEPORTIVA */
+.theme-sports_psychology .card-btn {
+    border-radius: 8px;
+    background: #fff;
+    color: #1a2a3a;
+    border: 1px solid #dcdde1;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.theme-sports_psychology .delete-btn { color: #e74c3c; }
+.theme-sports_psychology .edit-btn { color: #3498db; }
+.theme-sports_psychology .info-badge { color: #27ae60; }
+
+
