@@ -11,9 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme Elements
     const configIconSize = document.getElementById('config-icon-size');
     const resetThemeBtn = document.getElementById('reset-theme');
+    const factoryResetBtn = document.getElementById('factory-reset');
     const presetBtns = document.querySelectorAll('.preset-btn');
 
     let currentTheme = { themeName: 'modern_dark', iconSize: 120 };
+
+    // ... (Sortable init remains same)
+
+    if (factoryResetBtn) {
+        factoryResetBtn.onclick = async () => {
+            if(confirm("⚠ ¿ESTÁS SEGURO?\nEsto eliminará TODAS tus aplicaciones y reseteará tu configuración a los valores de fábrica.")) {
+                if(confirm("Confirmación final: Esta acción no se puede deshacer.")) {
+                    const ids = Array.from(appGrid.children).map(card => card.dataset.id);
+                    for(const id of ids) {
+                        await Store.deletePage(id);
+                    }
+                    localStorage.clear();
+                    window.location.reload();
+                }
+            }
+        };
+    }
 
     // Inicializar Sortable (Optimizado para móvil)
     new Sortable(appGrid, {
