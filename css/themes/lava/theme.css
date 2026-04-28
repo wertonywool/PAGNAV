@@ -1,0 +1,36 @@
+/* --- LAVA THEME: BASE & ATMOSPHERE --- */
+:root {
+    --bg-main: #050200;
+    --bg-card-base: #0d0d0d;
+    --text-main: #ffcc00;
+    --text-muted: #ff4500;
+    --accent: #ff4500;
+    --accent-glow: rgba(255, 69, 0, 0.6);
+    --border-color: #222;
+    --glass-blur: 0px;
+}
+
+body.theme-lava_eruption {
+    background-color: #000;
+    background-image: 
+        /* Partículas de ceniza flotantes (Simuladas con gradientes) */
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.05) 1px, transparent 1px),
+        radial-gradient(circle at 90% 10%, rgba(255,255,255,0.05) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 50% 50%, rgba(255,69,0,0.05) 2px, transparent 2px),
+        /* Humo volcánico */
+        radial-gradient(ellipse at bottom, rgba(255, 69, 0, 0.15) 0%, transparent 70%);
+    background-size: 150px 150px, 200px 200px, 300px 300px, 100% 100%;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+/* Efecto de partículas animadas */
+body.theme-lava_eruption::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/dust.png');
+    opacity: 0.2;
+    pointer-events: none;
+    animation: ash-float 60s linear infinite;
+}

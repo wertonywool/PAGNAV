@@ -167,7 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyTheme(theme) {
         if (!theme || !theme.themeName) return;
-        themeLink.href = `css/themes/${theme.themeName}.css`;
+        
+        // Soporte para estructura modular (ej: lava) o plana antigua
+        const isModular = ['lava_eruption'].includes(theme.themeName);
+        const themePath = isModular 
+            ? `css/themes/${theme.themeName}/main.css` 
+            : `css/themes/${theme.themeName}.css`;
+
+        themeLink.href = themePath;
         document.documentElement.style.setProperty('--user-icon-size', `${theme.iconSize}px`);
         
         // Añadir clase del tema al body para CSS específico
@@ -175,7 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add(`theme-${theme.themeName}`);
         
         presetBtns.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.theme === theme.themeName);
+            const btnTheme = btn.closest('.theme-option').querySelector('.preset-btn').dataset.theme;
+            btn.classList.toggle('active', btnTheme === theme.themeName);
         });
     }
 });

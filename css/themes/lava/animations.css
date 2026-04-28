@@ -1,0 +1,20 @@
+/* --- LAVA THEME: ANIMATIONS --- */
+@keyframes lava-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+@keyframes ash-float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); }
+}
+
+@keyframes lava-pulse {
+    0% { box-shadow: 0 0 10px #ff4500; }
+    50% { box-shadow: 0 0 25px #ffcc00; }
+    100% { box-shadow: 0 0 10px #ff4500; }
+}
+
+.theme-lava_eruption .logo-icon {
+    animation: lava-pulse 2s infinite ease-in-out;
+}

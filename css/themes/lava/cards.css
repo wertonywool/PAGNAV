@@ -1,0 +1,38 @@
+/* --- LAVA THEME: CARD DESIGN --- */
+.theme-lava_eruption .nav-card {
+    background: linear-gradient(135deg, #111 0%, #000 100%) !important;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.theme-lava_eruption .nav-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #ff4500;
+    box-shadow: 0 15px 40px rgba(255, 69, 0, 0.3);
+}
+
+/* Borde inferior de lava dinámica */
+.theme-lava_eruption .nav-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; width: 100%; height: 4px;
+    background: linear-gradient(90deg, #ff0000, #ffcc00, #ff0000);
+    background-size: 200% auto;
+    animation: lava-flow 2s linear infinite;
+    box-shadow: 0 0 15px #ff4500;
+}
+
+.theme-lava_eruption .card-icon-wrapper {
+    background: #000;
+    border: 1px solid #1a1a1a;
+    box-shadow: inset 0 0 20px rgba(255, 69, 0, 0.1);
+}
+
+.theme-lava_eruption .card-title {
+    font-family: 'Rubik Mono One', sans-serif;
+    color: #ffcc00;
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+    background: rgba(0,0,0,0.5);
+    padding: 8px 0;
+}
