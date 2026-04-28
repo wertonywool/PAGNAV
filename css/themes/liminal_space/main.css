@@ -1,0 +1,5 @@
+/* --- LIMINAL SPACE: MAIN --- */
+@import url('./theme.css');
+@import url('./cards.css');
+.theme-liminal_space .main-header { background: #e2d192; border-bottom: 2px solid #c4b576; color: #444; }
+.theme-liminal_space .header-btn { border-color: #aaa; color: #444; }

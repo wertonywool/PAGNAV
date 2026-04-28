@@ -1,0 +1,4 @@
+/* --- DOODLE SKETCH: CARDS --- */
+.theme-doodle_sketch .nav-card { background: #fff !important; border: 3px solid #000; border-radius: 15px 5px 25px 8px !important; box-shadow: 5px 5px 0px #000; }
+.theme-doodle_sketch .nav-card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0px #000; }
+.theme-doodle_sketch .card-title { color: #000; font-weight: bold; font-size: 1.2rem !important; }

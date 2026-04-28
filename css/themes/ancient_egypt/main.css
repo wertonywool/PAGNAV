@@ -1,0 +1,5 @@
+/* --- ANCIENT EGYPT: MAIN --- */
+@import url('./theme.css');
+@import url('./cards.css');
+.theme-ancient_egypt .main-header { background: #2d1e12; border-bottom: 5px solid #ffd700; }
+.theme-ancient_egypt .header-btn { border-radius: 0; border-color: #ffd700; color: #ffd700; }

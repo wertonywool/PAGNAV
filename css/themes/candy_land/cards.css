@@ -1,0 +1,4 @@
+/* --- CANDY LAND: CARDS --- */
+.theme-candy_land .nav-card { background: #fff !important; border: 4px solid #ff7eb3; border-radius: 40px !important; box-shadow: 0 10px 0 #ff7eb3; }
+.theme-candy_land .nav-card:hover { transform: rotate(2deg) scale(1.05); box-shadow: 0 15px 0 #ff7eb3; }
+.theme-candy_land .card-title { color: #ff4d6d; font-size: 1.1rem !important; }

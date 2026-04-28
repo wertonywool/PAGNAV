@@ -375,6 +375,28 @@
     color: #5d00ff;
 }
 
+/* 36. MARS COLONY */
+.theme-mars_colony .card-btn { border-radius: 4px; background: #2a0f0a; border: 1px solid #ff5e00; color: #ff5e00; }
+/* 37. LIMINAL SPACE */
+.theme-liminal_space .card-btn { border-radius: 0; background: #e2d192; border: 1px solid #c4b576; color: #444; }
+/* 38. CANDY LAND */
+.theme-candy_land .card-btn { border-radius: 50%; background: #fff; border: 2px solid #ff7eb3; color: #ff7eb3; }
+/* 39. PIRATE COVE */
+.theme-pirate_cove .card-btn { border-radius: 0; background: #2b1d12; border: 1px solid #daa520; color: #daa520; }
+/* 40. ANCIENT EGYPT */
+.theme-ancient_egypt .card-btn { border-radius: 0; background: #2d1e12; border: 1px solid #ffd700; color: #ffd700; }
+/* 41. CYBER CITY */
+.theme-cyber_city .card-btn { border-radius: 0; background: #000; border: 1px solid #00f2ff; color: #fcee0a; }
+/* 42. VIKING RUNES */
+.theme-viking_runes .card-btn { border-radius: 2px; background: #1a1a1a; border: 1px solid #8e8e8e; color: #fff; }
+/* 43. DOODLE SKETCH */
+.theme-doodle_sketch .card-btn { border-radius: 10px; background: #fff; border: 2px solid #000; color: #000; }
+/* 44. TOXIC SLIME */
+.theme-toxic_slime .card-btn { border-radius: 50% 5px; background: #0a1400; border: 1px solid #adff2f; color: #adff2f; }
+/* 45. LUXURY ONYX */
+.theme-luxury_onyx .card-btn { border-radius: 0; background: #000; border: 1px solid #e5e4e2; color: #e5e4e2; }
+
+
 
 
 

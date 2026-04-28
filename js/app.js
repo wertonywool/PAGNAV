@@ -173,7 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'lava_eruption', 'glitch_void', 'neon_jungle', 'ice_kingdom', 'jojos', 
             'cyberpunk_red', 'abyssal_deep', 'galactic_horizon', 'arcane_academy', 'dragon_lair',
             'synthwave', 'samurai', 'rapture', 'gothic', 'emerald_forest', 
-            'cybercore', 'desert_mirage', 'fallout', 'celestial', 'shadow_realm'
+            'cybercore', 'desert_mirage', 'fallout', 'celestial', 'shadow_realm',
+            'mars_colony', 'liminal_space', 'candy_land', 'pirate_cove', 'ancient_egypt',
+            'cyber_city', 'viking_runes', 'doodle_sketch', 'toxic_slime', 'luxury_onyx'
         ].includes(theme.themeName);
         const themePath = isModular 
             ? `css/themes/${theme.themeName}/main.css` 

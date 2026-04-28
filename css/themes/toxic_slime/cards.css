@@ -1,0 +1,6 @@
+/* --- TOXIC SLIME: CARDS --- */
+.theme-toxic_slime .nav-card { background: #0a1400 !important; border: 2px solid #adff2f; border-radius: 20px 50px !important; box-shadow: 0 0 15px #adff2f; overflow: hidden; }
+.theme-toxic_slime .nav-card:hover { box-shadow: 0 0 30px #adff2f; transform: scale(1.05); }
+.theme-toxic_slime .nav-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: #adff2f; animation: slime-drip 3s infinite alternate; }
+@keyframes slime-drip { from { height: 5px; } to { height: 15px; } }
+.theme-toxic_slime .card-title { color: #adff2f; text-shadow: 0 0 5px #000; }

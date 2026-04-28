@@ -1,0 +1,4 @@
+/* --- CANDY LAND: THEME --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+:root { --bg-main: #fff5f8; --bg-card-base: #ffffff; --text-main: #ff4d6d; --text-muted: #ff8fa3; --accent: #ff7eb3; --accent-glow: rgba(255, 126, 179, 0.3); --border-color: #ffccd5; }
+body.theme-candy_land { background: #fff5f8; background-image: radial-gradient(#ffccd5 10px, transparent 10px); background-size: 60px 60px; font-family: 'Fredoka One', cursive; }

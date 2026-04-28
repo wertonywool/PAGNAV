@@ -1,0 +1,4 @@
+/* --- CYBER CITY 2077: CARDS --- */
+.theme-cyber_city .nav-card { background: #000 !important; border: 2px solid #00f2ff; border-radius: 0 !important; clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%); }
+.theme-cyber_city .nav-card:hover { border-color: #fcee0a; box-shadow: 0 0 20px #fcee0a; }
+.theme-cyber_city .card-title { background: #fcee0a; color: #000; font-weight: 900; }

@@ -1,0 +1,5 @@
+/* --- VIKING RUNES: MAIN --- */
+@import url('./theme.css');
+@import url('./cards.css');
+.theme-viking_runes .main-header { background: #1a1a1a; border-bottom: 3px solid #8e8e8e; }
+.theme-viking_runes .header-btn { border-radius: 2px; border-color: #8e8e8e; color: #fff; }

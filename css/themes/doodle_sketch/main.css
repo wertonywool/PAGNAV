@@ -1,0 +1,5 @@
+/* --- DOODLE SKETCH: MAIN --- */
+@import url('./theme.css');
+@import url('./cards.css');
+.theme-doodle_sketch .main-header { background: #fff; border-bottom: 2px dashed #000; }
+.theme-doodle_sketch .header-btn { border: 2px solid #000; color: #000; border-radius: 10px 50px 10px 50px; }

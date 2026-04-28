@@ -1,0 +1,5 @@
+/* --- TOXIC SLIME: MAIN --- */
+@import url('./theme.css');
+@import url('./cards.css');
+.theme-toxic_slime .main-header { background: #0a1400; border-bottom: 4px solid #adff2f; }
+.theme-toxic_slime .header-btn { border-color: #adff2f; color: #adff2f; background: rgba(173, 255, 47, 0.1); }

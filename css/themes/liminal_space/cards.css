@@ -1,0 +1,4 @@
+/* --- LIMINAL SPACE: CARDS --- */
+.theme-liminal_space .nav-card { background: #e2d192 !important; border: 1px solid #c4b576; border-radius: 0 !important; box-shadow: 10px 10px 0px rgba(0,0,0,0.05); }
+.theme-liminal_space .nav-card:hover { transform: none; box-shadow: none; filter: brightness(0.95); }
+.theme-liminal_space .card-title { color: #555; font-size: 0.8rem !important; }

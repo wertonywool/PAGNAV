@@ -1,0 +1,4 @@
+/* --- MARS COLONY: CARDS --- */
+.theme-mars_colony .nav-card { border: 2px solid #3e1a0a; background: #2a0f0a !important; border-radius: 4px !important; }
+.theme-mars_colony .nav-card:hover { border-color: #ff5e00; box-shadow: 0 0 20px rgba(255, 94, 0, 0.2); }
+.theme-mars_colony .card-title { color: #ff9d6a; font-weight: 800; text-transform: uppercase; }

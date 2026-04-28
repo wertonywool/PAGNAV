@@ -1,0 +1,5 @@
+/* --- PIRATE COVE: MAIN --- */
+@import url('./theme.css');
+@import url('./cards.css');
+.theme-pirate_cove .main-header { background: #2b1d12; border-bottom: 4px solid #daa520; }
+.theme-pirate_cove .header-btn { border-radius: 0; border-color: #daa520; color: #daa520; }

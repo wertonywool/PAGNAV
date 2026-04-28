@@ -1,0 +1,4 @@
+/* --- LIMINAL SPACE: THEME --- */
+:root { --bg-main: #ede0a6; --bg-card-base: #e2d192; --text-main: #333; --text-muted: #777; --accent: #c4b576; --accent-glow: rgba(0,0,0,0.1); --border-color: #c4b576; }
+body.theme-liminal_space { background: #ede0a6; background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px); background-size: 50px 50px; font-family: 'Inter', sans-serif; }
+body.theme-liminal_space::after { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 0, 0.02); pointer-events: none; }

@@ -1,0 +1,4 @@
+/* --- VIKING RUNES: CARDS --- */
+.theme-viking_runes .nav-card { background: #1a1a1a !important; border: 2px solid #333; border-radius: 0 !important; box-shadow: 0 0 15px #000; }
+.theme-viking_runes .nav-card:hover { border-color: #fff; box-shadow: 0 0 25px rgba(255,255,255,0.1); transform: scale(1.02); }
+.theme-viking_runes .card-title { color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }

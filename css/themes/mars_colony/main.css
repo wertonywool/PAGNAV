@@ -1,0 +1,5 @@
+/* --- MARS COLONY: MAIN --- */
+@import url('./theme.css');
+@import url('./cards.css');
+.theme-mars_colony .main-header { background: #1a0a05; border-bottom: 3px solid #ff5e00; }
+.theme-mars_colony .header-btn { border-radius: 4px; border-color: #ff5e00; color: #ff5e00; }

@@ -1,0 +1,4 @@
+/* --- DOODLE SKETCH: THEME --- */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+:root { --bg-main: #f0f0f0; --bg-card-base: #ffffff; --text-main: #111; --text-muted: #555; --accent: #000; --accent-glow: rgba(0,0,0,0.1); --border-color: #000; }
+body.theme-doodle_sketch { background: #f0f0f0; background-image: linear-gradient(#ddd 1px, transparent 1px), linear-gradient(90deg, #ddd 1px, transparent 1px); background-size: 30px 30px; font-family: 'Indie Flower', cursive; }

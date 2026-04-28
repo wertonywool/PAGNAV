@@ -1,0 +1,3 @@
+/* --- VIKING RUNES: THEME --- */
+:root { --bg-main: #0f0f0f; --bg-card-base: #1a1a1a; --text-main: #e0e0e0; --text-muted: #8e8e8e; --accent: #8e8e8e; --accent-glow: rgba(255,255,255,0.1); --border-color: #333; }
+body.theme-viking_runes { background: #0f0f0f; background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); font-family: 'Cinzel', serif; }

@@ -1,0 +1,4 @@
+/* --- PIRATE COVE: CARDS --- */
+.theme-pirate_cove .nav-card { background: #2b1d12 !important; border: 2px solid #daa520; border-radius: 0 !important; box-shadow: 0 0 20px #000; }
+.theme-pirate_cove .nav-card:hover { border-color: #fff; box-shadow: 0 0 30px rgba(218, 165, 32, 0.4); }
+.theme-pirate_cove .card-title { color: #f1c40f; text-transform: uppercase; letter-spacing: 2px; }

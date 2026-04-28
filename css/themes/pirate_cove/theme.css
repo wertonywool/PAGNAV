@@ -1,0 +1,3 @@
+/* --- PIRATE COVE: THEME --- */
+:root { --bg-main: #1a120b; --bg-card-base: #2b1d12; --text-main: #f1c40f; --text-muted: #a67c00; --accent: #daa520; --accent-glow: rgba(218, 165, 32, 0.3); --border-color: #3e2a1a; }
+body.theme-pirate_cove { background: #1a120b; background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); font-family: 'MedievalSharp', cursive; }

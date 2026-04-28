@@ -1,0 +1,4 @@
+/* --- ANCIENT EGYPT: CARDS --- */
+.theme-ancient_egypt .nav-card { background: #2d1e12 !important; border: 3px solid #ffd700; border-radius: 0 !important; box-shadow: 10px 10px 0px #1a120b; }
+.theme-ancient_egypt .nav-card:hover { border-color: #fff; transform: translateY(-5px); }
+.theme-ancient_egypt .card-title { color: #ffd700; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; }

@@ -1,0 +1,5 @@
+/* --- CANDY LAND: MAIN --- */
+@import url('./theme.css');
+@import url('./cards.css');
+.theme-candy_land .main-header { background: #fff; border-bottom: 5px solid #ff7eb3; }
+.theme-candy_land .header-btn { border-radius: 20px; border-color: #ff7eb3; color: #ff7eb3; }
