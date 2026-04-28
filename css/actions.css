@@ -130,4 +130,17 @@
 .theme-sports_psychology .edit-btn { color: #3498db; }
 .theme-sports_psychology .info-badge { color: #27ae60; }
 
+/* 13. HELLO KITTY */
+.theme-hello_kitty .card-btn {
+    border-radius: 12px;
+    background: #fff;
+    border: 2px solid #ffccd5;
+    color: #ff4d6d;
+}
+.theme-hello_kitty .card-btn:hover {
+    background: #ff4d6d;
+    color: #fff;
+}
+
+
 

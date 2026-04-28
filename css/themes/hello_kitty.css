@@ -1,0 +1,81 @@
+/* --- TEMA: HELLO KITTY (KAWAII EDITION) --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap');
+
+:root {
+    --bg-main: #fff0f3;
+    --bg-card-base: #ffffff;
+    --text-main: #ff4d6d;
+    --text-muted: #ff8fa3;
+    --accent: #ff4d6d; /* Kitty Red/Pink */
+    --accent-glow: rgba(255, 77, 109, 0.3);
+    --border-color: #ffccd5;
+    --glass-blur: 8px;
+    --radius-lg: 30px; /* Super rounded */
+}
+
+body {
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(#ffccd5 2px, transparent 2px);
+    background-size: 30px 30px;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.nav-card {
+    border: 3px solid #ffccd5;
+    box-shadow: 0 10px 0px #ffccd5;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 0px #ffccd5;
+    border-color: var(--accent);
+}
+
+.card-icon-wrapper {
+    background: #fff;
+    border-radius: 25px !important;
+}
+
+.card-title {
+    font-weight: 700;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.main-header {
+    background: #ffffff;
+    border-bottom: 5px solid #ff4d6d;
+}
+
+.logo-text h1 {
+    color: #ff4d6d;
+    text-shadow: 2px 2px 0px #ffccd5;
+}
+
+.logo-icon {
+    background: #ff4d6d;
+    border-radius: 50% 50% 50% 10px;
+    position: relative;
+}
+
+/* El lacito icónico */
+.logo-icon::after {
+    content: '🎀';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.2rem;
+}
+
+.header-btn {
+    background: #fff0f3;
+    border-color: #ffccd5;
+    color: #ff4d6d;
+}
+
+.header-btn:hover {
+    background: #ff4d6d;
+    color: #fff;
+}
