@@ -15,13 +15,14 @@
 @media (max-width: 768px) {
     :root {
         --cell-gap: 15px;
-        --card-min-w: min(var(--user-icon-size), 90px);
+        /* Permitir que el slider controle el tamaño pero con una base reducida */
+        --card-min-w: calc(var(--user-icon-size) * 0.85);
     }
 }
 
 @media (max-width: 480px) {
     :root {
         --cell-gap: 12px;
-        --card-min-w: min(var(--user-icon-size), 75px);
+        --card-min-w: calc(var(--user-icon-size) * 0.75);
     }
 }
