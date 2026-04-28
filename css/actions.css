@@ -107,3 +107,14 @@
     border: 1px solid rgba(255,255,255,0.1);
     color: #fff;
 }
+
+/* 11. DANGANRONPA */
+.theme-danganronpa .card-btn {
+    border-radius: 0;
+    border: 2px solid #fff;
+    box-shadow: 4px 4px 0 #ff005d;
+}
+.theme-danganronpa .delete-btn { background: #000; color: #ff005d; }
+.theme-danganronpa .edit-btn { background: #ff005d; color: #fff; }
+.theme-danganronpa .info-badge { background: #fff; color: #000; }
+

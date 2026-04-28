@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 380px;
+    width: 400px;
     max-width: 100%;
     height: 100vh;
     background: #09090b;
@@ -12,16 +12,8 @@
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
-    padding: 30px;
     box-sizing: border-box;
     box-shadow: -20px 0 50px rgba(0,0,0,0.5);
-}
-
-@media (max-width: 480px) {
-    .customizer-panel {
-        width: 100%;
-        padding: 20px;
-    }
 }
 
 .customizer-panel.open {
@@ -29,118 +21,135 @@
 }
 
 .panel-header {
+    padding: 30px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .panel-header h2 {
     font-size: 1.5rem;
     font-weight: 800;
-    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.panel-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
+}
+
+/* Scrollbar para el panel */
+.panel-content::-webkit-scrollbar {
+    width: 6px;
+}
+.panel-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+.panel-content::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
 }
 
 .settings-section {
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 .settings-section h3 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    color: var(--text-muted);
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+    color: var(--accent, #fff);
     margin-bottom: 20px;
+    font-weight: 800;
 }
 
-/* --- THEME PRESETS GRID --- */
 .theme-presets {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
 
 .preset-btn {
-    height: 60px;
+    aspect-ratio: 1;
     border-radius: 12px;
-    border: 2px solid rgba(255,255,255,0.05);
+    border: 2px solid rgba(255,255,255,0.1);
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: #18181b;
+    padding: 0;
 }
 
 .preset-btn:hover {
-    transform: translateY(-3px);
-    border-color: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+    border-color: #fff;
+    z-index: 10;
 }
 
 .preset-btn.active {
-    border-color: var(--accent);
-    box-shadow: 0 0 20px var(--accent-glow);
+    border-color: var(--accent, #fff);
+    box-shadow: 0 0 15px var(--accent-glow, rgba(255,255,255,0.2));
 }
 
-/* Estilos específicos de previsualización para cada botón */
-.preset-btn[data-theme="modern_dark"] { background: linear-gradient(135deg, #050505 50%, #3b82f6 50%); }
-.preset-btn[data-theme="persona5"] { background: linear-gradient(135deg, #d31221 50%, #000 50%); }
-.preset-btn[data-theme="cyberpunk"] { background: linear-gradient(135deg, #fcee0a 50%, #ff003c 50%); }
-.preset-btn[data-theme="minimalist_white"] { background: linear-gradient(135deg, #fff 50%, #f4f4f5 50%); border: 1px solid #ddd; }
-.preset-btn[data-theme="forest_nature"] { background: linear-gradient(135deg, #064e3b 50%, #10b981 50%); }
-.preset-btn[data-theme="ocean_blue"] { background: linear-gradient(135deg, #0c4a6e 50%, #22d3ee 50%); }
-.preset-btn[data-theme="sunset_vibes"] { background: linear-gradient(135deg, #7c2d12 50%, #db2777 50%); }
-.preset-btn[data-theme="neon_purple"] { background: linear-gradient(135deg, #4c1d95 50%, #ff00ff 50%); }
-.preset-btn[data-theme="industrial_gold"] { background: linear-gradient(135deg, #1c1917 50%, #ca8a04 50%); }
-.preset-btn[data-theme="retro_console"] { background: linear-gradient(135deg, #374151 50%, #8bab13 50%); }
-.preset-btn[data-theme="coffee"] { background: linear-gradient(135deg, #2c1810 50%, #6f4e37 50%); }
-.preset-btn[data-theme="miku_hatsune"] { background: linear-gradient(135deg, #39c5bb 50%, #ff007f 50%); }
-.preset-btn[data-theme="steampunk"] { background: linear-gradient(135deg, #3d2b1f 50%, #cd7f32 50%); }
-.preset-btn[data-theme="sakura_zen"] { background: linear-gradient(135deg, #fff5f7 50%, #ffb7c5 50%); }
-.preset-btn[data-theme="space_nebula"] { background: linear-gradient(135deg, #020617 50%, #818cf8 50%); }
-.preset-btn[data-theme="vaporwave"] { background: linear-gradient(135deg, #ff71ce 50%, #01cdfe 50%); }
-
-/* Añadir el nombre del tema al hover */
-.preset-btn::after {
-    content: attr(title);
+.preset-btn.active::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 700;
-    opacity: 0;
-    transition: opacity 0.2s;
+    background: rgba(0,0,0,0.4);
+    font-size: 0.8rem;
 }
 
-.preset-btn:hover::after {
-    opacity: 1;
-}
+/* Previsualización de colores en botones */
+.preset-btn[data-theme=\"modern_dark\"] { background: #0a0a0c; }
+.preset-btn[data-theme=\"persona5\"] { background: #d31221; }
+.preset-btn[data-theme=\"cyberpunk\"] { background: #fcee0a; }
+.preset-btn[data-theme=\"minimalist_white\"] { background: #ffffff; }
+.preset-btn[data-theme=\"forest_nature\"] { background: #2d5a27; }
+.preset-btn[data-theme=\"ocean_blue\"] { background: #0077be; }
+.preset-btn[data-theme=\"sunset_vibes\"] { background: #ff5f6d; }
+.preset-btn[data-theme=\"neon_purple\"] { background: #b967ff; }
+.preset-btn[data-theme=\"industrial_gold\"] { background: #daa520; }
+.preset-btn[data-theme=\"retro_console\"] { background: #8bac0f; }
+.preset-btn[data-theme=\"coffee\"] { background: #6f4e37; }
+.preset-btn[data-theme=\"miku_hatsune\"] { background: #39c5bb; }
+.preset-btn[data-theme=\"steampunk\"] { background: #8b4513; }
+.preset-btn[data-theme=\"sakura_zen\"] { background: #ffb7c5; }
+.preset-btn[data-theme=\"space_nebula\"] { background: #240b36; }
+.preset-btn[data-theme=\"vaporwave\"] { background: #ff71ce; }
+.preset-btn[data-theme=\"danganronpa\"] { background: #ff005d; }
 
-/* Controles de Rango */
 .control-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    background: rgba(255,255,255,0.03);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
-input[type="range"] {
-    appearance: none;
+.control-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+input[type=\"range\"] {
     width: 100%;
-    height: 6px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    outline: none;
+    accent-color: var(--accent, #fff);
+    cursor: pointer;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    background: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+@media (max-width: 480px) {
+    .customizer-panel {
+        width: 100%;
+    }
+    .theme-presets {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
