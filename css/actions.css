@@ -235,6 +235,22 @@
     color: #3498db;
 }
 
+/* 20. JOJOS */
+.theme-jojos .card-btn {
+    border-radius: 0;
+    background: #ffd700;
+    border: 2px solid #000;
+    color: #000;
+    font-weight: 900;
+    transform: rotate(5deg);
+}
+.theme-jojos .card-btn:hover {
+    background: #ff00ff;
+    color: #fff;
+    transform: scale(1.2) rotate(-10deg);
+}
+
+
 
 
 

@@ -1,0 +1,21 @@
+/* --- JOJO'S THEME: ANIMATIONS --- */
+@keyframes menacing-float {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.1; }
+    50% { transform: translateY(-20px) scale(1.1); opacity: 0.2; }
+}
+
+@keyframes stand-aura {
+    0% { filter: drop-shadow(0 0 5px #ffd700); }
+    100% { filter: drop-shadow(0 0 20px #ff00ff) hue-rotate(90deg); }
+}
+
+@keyframes logo-shake {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0); }
+}
+
+.theme-jojos .logo-icon {
+    animation: logo-shake 0.5s infinite;
+}

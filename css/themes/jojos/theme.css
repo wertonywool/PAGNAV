@@ -1,0 +1,35 @@
+/* --- JOJO'S THEME: BASE & ATMOSPHERE --- */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@900&display=swap');
+
+:root {
+    --bg-main: #2a0845; /* Purple JoJo */
+    --bg-card-base: #1a0530;
+    --text-main: #ffd700; /* Golden Spirit */
+    --text-muted: #ff00ff;
+    --accent: #ffd700;
+    --accent-glow: rgba(255, 215, 0, 0.6);
+    --border-color: #ffd700;
+}
+
+body.theme-jojos {
+    background: linear-gradient(135deg, #2a0845 0%, #6441a5 100%);
+    background-attachment: fixed;
+    font-family: 'Barlow Condensed', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Onomatopeyas flotantes "Menacing" (ゴゴゴ) */
+body.theme-jojos::before {
+    content: 'ゴ\Aゴ\Aゴ';
+    white-space: pre;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Bangers', cursive;
+    font-size: 5rem;
+    color: rgba(255, 215, 0, 0.1);
+    line-height: 0.8;
+    pointer-events: none;
+    animation: menacing-float 3s infinite ease-in-out;
+}
