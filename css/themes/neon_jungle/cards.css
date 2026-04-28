@@ -1,0 +1,24 @@
+/* --- NEON JUNGLE: CARD DESIGN --- */
+.theme-neon_jungle .nav-card {
+    border-radius: 40px 10px 40px 10px !important;
+    border: 2px solid #0b2d0b;
+    background: rgba(6, 26, 6, 0.9) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.theme-neon_jungle .nav-card:hover {
+    border-color: #39ff14;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.3);
+    transform: rotate(1deg) scale(1.03);
+}
+
+.theme-neon_jungle .card-icon-wrapper {
+    background: #000;
+    border-radius: 30px 5px 30px 5px !important;
+}
+
+.theme-neon_jungle .card-title {
+    color: #39ff14;
+    font-weight: 800;
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+}

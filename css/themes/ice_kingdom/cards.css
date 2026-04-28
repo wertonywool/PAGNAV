@@ -1,0 +1,25 @@
+/* --- ICE KINGDOM: CARD DESIGN --- */
+.theme-ice_kingdom .nav-card {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 5px 25px 5px 25px !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+.theme-ice_kingdom .nav-card:hover {
+    background: rgba(255, 255, 255, 0.4) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(52, 152, 219, 0.2);
+}
+
+.theme-ice_kingdom .card-icon-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.theme-ice_kingdom .card-title {
+    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: 1px;
+}

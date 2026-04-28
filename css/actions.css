@@ -198,6 +198,44 @@
     box-shadow: 0 0 10px #00ff41;
 }
 
+/* 17. GLITCH VOID */
+.theme-glitch_void .card-btn {
+    border-radius: 0;
+    background: #000;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.theme-glitch_void .card-btn:hover {
+    background: #ff00ff;
+    box-shadow: -3px 0 #00ffff, 3px 0 #ff00ff;
+}
+
+/* 18. NEON JUNGLE */
+.theme-neon_jungle .card-btn {
+    border-radius: 50% 5px;
+    background: #040d04;
+    border: 1px solid #39ff14;
+    color: #39ff14;
+}
+.theme-neon_jungle .card-btn:hover {
+    background: #39ff14;
+    color: #000;
+}
+
+/* 19. ICE KINGDOM */
+.theme-ice_kingdom .card-btn {
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid #fff;
+    color: #2c3e50;
+}
+.theme-ice_kingdom .card-btn:hover {
+    background: #fff;
+    color: #3498db;
+}
+
+
 
 
 

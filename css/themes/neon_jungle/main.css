@@ -1,0 +1,19 @@
+/* --- NEON JUNGLE: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+@import url('./animations.css');
+
+.theme-neon_jungle .main-header {
+    background: rgba(4, 13, 4, 0.9);
+    border-bottom: 2px solid #39ff14;
+}
+
+.theme-neon_jungle .header-btn {
+    border-radius: 20px;
+    border-color: #0b2d0b;
+}
+
+.theme-neon_jungle .header-btn:hover {
+    border-color: #ff00ff;
+    color: #ff00ff;
+}

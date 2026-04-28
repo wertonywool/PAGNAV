@@ -1,0 +1,16 @@
+/* --- ICE KINGDOM: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+@import url('./animations.css');
+
+.theme-ice_kingdom .main-header {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #3498db;
+}
+
+.theme-ice_kingdom .header-btn {
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    border-color: rgba(52, 152, 219, 0.2);
+}

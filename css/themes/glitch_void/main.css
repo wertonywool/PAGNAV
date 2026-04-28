@@ -1,0 +1,15 @@
+/* --- GLITCH VOID: MAIN ENTRY --- */
+@import url('./theme.css');
+@import url('./cards.css');
+@import url('./animations.css');
+
+.theme-glitch_void .main-header {
+    border-bottom: 2px solid #fff;
+    background: rgba(0,0,0,0.8);
+}
+
+.theme-glitch_void .header-btn {
+    border-radius: 0;
+    border-left: 4px solid #ff00ff;
+    border-right: 4px solid #00ffff;
+}

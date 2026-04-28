@@ -1,0 +1,16 @@
+/* --- ICE KINGDOM: ANIMATIONS --- */
+@keyframes snow-fall {
+    0% { transform: translateY(-50px) translateX(0); }
+    50% { transform: translateY(200px) translateX(20px); }
+    100% { transform: translateY(450px) translateX(-20px); }
+}
+
+@keyframes crystal-pulse {
+    0% { filter: brightness(1) drop-shadow(0 0 5px rgba(255,255,255,0)); }
+    50% { filter: brightness(1.2) drop-shadow(0 0 15px rgba(255,255,255,0.5)); }
+    100% { filter: brightness(1) drop-shadow(0 0 5px rgba(255,255,255,0)); }
+}
+
+.theme-ice_kingdom .logo-icon {
+    animation: crystal-pulse 4s infinite ease-in-out;
+}

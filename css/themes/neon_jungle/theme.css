@@ -1,0 +1,27 @@
+/* --- NEON JUNGLE: THEME & ATMOSPHERE --- */
+:root {
+    --bg-main: #040d04;
+    --bg-card-base: #061a06;
+    --text-main: #39ff14; /* Neon Green */
+    --text-muted: #ff00ff; /* Neon Pink */
+    --accent: #39ff14;
+    --accent-glow: rgba(57, 255, 20, 0.4);
+    --border-color: #0b2d0b;
+}
+
+body.theme-neon_jungle {
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(circle at 0% 0%, rgba(57, 255, 20, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(255, 0, 255, 0.05) 0%, transparent 50%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+body.theme-neon_jungle::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/leaves.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
