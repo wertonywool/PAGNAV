@@ -1,3 +1,179 @@
-/* --- LUXURY ONYX: THEME --- */
-:root { --bg-main: #050505; --bg-card-base: #0a0a0a; --text-main: #ffffff; --text-muted: #e5e4e2; --accent: #e5e4e2; --accent-glow: rgba(229, 228, 226, 0.3); --border-color: #1a1a1a; }
-body.theme-luxury_onyx { background: #050505; background-image: linear-gradient(135deg, #050505 0%, #1a1a1a 100%); font-family: 'Inter', sans-serif; }
+/* --- TEMA: IMPERIAL OBSIDIAN (ULTRA-LUXURY IMMERSION) --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;600&display=swap');
+
+:root {
+    --bg-main: #020202;
+    --bg-card-base: #050505;
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+    --accent: #d4af37; /* Oro Imperial */
+    --accent-glow: rgba(212, 175, 55, 0.3);
+    --border-color: #1a1a1a;
+    --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    --obsidian-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+}
+
+body.theme-luxury_onyx {
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        url('https://www.transparenttextures.com/patterns/dark-matter.png'),
+        #020202;
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- REINVENCIÓN DEL HEADER --- */
+.theme-luxury_onyx .main-header {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid #d4af37 !important;
+    box-shadow: 0 4px 30px rgba(212, 175, 55, 0.1) !important;
+}
+
+.theme-luxury_onyx .logo h1 {
+    font-family: 'Cinzel', serif;
+    background: var(--gold-gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.theme-luxury_onyx .logo-icon {
+    background: var(--gold-gradient) !important;
+    color: #000 !important;
+    border-radius: 0 !important;
+    transform: rotate(45deg);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4) !important;
+}
+
+.theme-luxury_onyx .logo-icon i {
+    transform: rotate(-45deg);
+}
+
+.theme-luxury_onyx .header-btn {
+    background: transparent !important;
+    border: 1px solid #333 !important;
+    border-radius: 0 !important;
+    color: #d4af37 !important;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.theme-luxury_onyx .header-btn:hover {
+    border-color: #d4af37 !important;
+    background: rgba(212, 175, 55, 0.05) !important;
+    box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.1) !important;
+}
+
+/* --- REINVENCIÓN DEL PANEL DE ESTILO --- */
+.theme-luxury_onyx .customizer-panel {
+    background: #050505 !important;
+    border-left: 1px solid #d4af37 !important;
+    background-image: radial-gradient(circle at center, #0a0a0a 0%, #020202 100%) !important;
+}
+
+.theme-luxury_onyx .panel-header {
+    border-bottom: 1px solid #333 !important;
+}
+
+.theme-luxury_onyx .panel-header h2 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37 !important;
+    letter-spacing: 2px;
+}
+
+.theme-luxury_onyx .settings-section h3 {
+    color: #d4af37 !important;
+    font-family: 'Cinzel', serif;
+    border-left: 3px solid #d4af37;
+    padding-left: 15px;
+}
+
+.theme-luxury_onyx .control-group {
+    background: #0a0a0a !important;
+    border: 1px solid #1a1a1a !important;
+}
+
+/* --- REINVENCIÓN DE MODALES --- */
+.theme-luxury_onyx .info-modal {
+    background: rgba(0, 0, 0, 0.95) !important;
+}
+
+.theme-luxury_onyx .info-modal-content {
+    background: #050505 !important;
+    border: 1px solid #d4af37 !important;
+    border-radius: 0 !important;
+    position: relative;
+}
+
+.theme-luxury_onyx .info-modal-content::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    pointer-events: none;
+}
+
+/* --- CARDS (IMPERIAL OBSIDIAN) --- */
+.theme-luxury_onyx .nav-card {
+    background: #000 !important;
+    border: 1px solid #1a1a1a !important;
+    border-radius: 0 !important;
+    overflow: hidden;
+}
+
+.theme-luxury_onyx .card-icon-wrapper {
+    background: linear-gradient(145deg, #0a0a0a, #000);
+    border: 1px solid #1a1a1a;
+    border-radius: 0 !important;
+    box-shadow: var(--obsidian-shadow);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.theme-luxury_onyx .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-15px) scale(1.02);
+    border-color: #d4af37;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 1), 0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+/* Destello Metálico */
+.theme-luxury_onyx .nav-card:hover .card-icon-wrapper::after {
+    content: "";
+    position: absolute;
+    top: -100%; left: -100%;
+    width: 200%; height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    animation: gold-flash 1.5s;
+}
+
+@keyframes gold-flash {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(50%, 50%) rotate(45deg); }
+}
+
+.theme-luxury_onyx .card-title {
+    font-family: 'Cinzel', serif;
+    color: #d4af37 !important;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 25px;
+    font-size: 0.75rem !important;
+}
+
+.theme-luxury_onyx .nav-card:hover .card-title {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Acciones */
+.theme-luxury_onyx .card-btn {
+    border-radius: 0 !important;
+    background: #000 !important;
+    border: 1px solid #d4af37 !important;
+    color: #d4af37 !important;
+}
