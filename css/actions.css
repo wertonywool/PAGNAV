@@ -81,12 +81,18 @@
     color: #fff;
 }
 
-/* 6. MINIMALIST */
+/* 6. PURE STUDIO */
 .theme-minimalist_white .card-btn {
     border-radius: 50%;
-    background: #fff;
-    border: 1px solid #ddd;
-    color: #666;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    color: #64748b;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.theme-minimalist_white .card-btn:hover {
+    background: #0f172a;
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 /* 7. MIKU HATSUNE */
