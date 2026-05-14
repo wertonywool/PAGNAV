@@ -6,6 +6,8 @@
     <title>Configurar App | PagNav 2.0</title>
     <!-- Icono de Pestaña (Favicon) -->
     <link rel="icon" type="image/png" href="assets/icono%20de%20la%20app-64x64.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#09090b">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/config.css">
@@ -198,6 +200,12 @@
             document.getElementById('theme-link').href = themePath;
             document.body.className = '';
             document.body.classList.add(`theme-${theme.themeName}`);
+        }
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js');
+            });
         }
     </script>
 </body>

@@ -1,7 +1,7 @@
 // --- CONFIGURACIÓN DE FIREBASE PARA PAGNAV 2.0 (REAL) ---
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { getFirestore, enableIndexedDbPersistence } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 import { getStorage } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
 
@@ -24,3 +24,12 @@ export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const db = getFirestore(app);
 export const storage = getStorage(app);
+
+// Activar Persistencia Offline
+enableIndexedDbPersistence(db).catch((err) => {
+    if (err.code == 'failed-precondition') {
+        console.warn("La persistencia falló: Múltiples pestañas abiertas.");
+    } else if (err.code == 'unimplemented') {
+        console.warn("La persistencia no es compatible con este navegador.");
+    }
+});

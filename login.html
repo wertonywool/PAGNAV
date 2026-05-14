@@ -7,6 +7,8 @@
     
     <!-- Icono de Pestaña (Favicon) -->
     <link rel="icon" type="image/png" href="assets/icono%20de%20la%20app-64x64.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#09090b">
     
     <!-- Estructura y Temas -->
     <link rel="stylesheet" href="css/reset.css">
@@ -53,6 +55,12 @@
         document.getElementById('login-google').onclick = () => {
             Auth.login();
         };
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js');
+            });
+        }
     </script>
 </body>
 </html>

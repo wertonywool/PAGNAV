@@ -1,0 +1,21 @@
+{
+  "name": "PagNav 2.0",
+  "short_name": "PagNav",
+  "description": "Tu Dashboard Personal en la Nube",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "assets/icono de la app-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icono de la app.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
