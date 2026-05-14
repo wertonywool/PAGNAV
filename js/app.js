@@ -69,6 +69,80 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('offline', updateOnlineStatus);
     updateOnlineStatus();
 
+    // --- RESPALDO: EXPORTAR E IMPORTAR ---
+    const exportBtn = document.getElementById('export-data');
+    const importBtnTrigger = document.getElementById('import-data-trigger');
+    const importFile = document.getElementById('import-data-file');
+
+    if (exportBtn) {
+        exportBtn.onclick = async () => {
+            const user = Auth.getCurrentUser();
+            if (!user) return alert("Debes estar logueado para exportar.");
+
+            // Obtener apps directamente del grid para asegurar que exportamos lo que se ve
+            const apps = Array.from(appGrid.children).map(card => {
+                // Esta es una forma simplificada; lo ideal es obtenerlo del Store si es posible
+                // Pero como Store.subscribePages ya las tiene, usaremos una variable global o pediremos al Store
+                return null; 
+            });
+
+            // Mejor: Pedir al Store los datos cacheados
+            const cachedKey = `pagnav_apps_${user.uid}`;
+            const appsData = JSON.parse(localStorage.getItem(cachedKey) || '[]');
+            const themeData = JSON.parse(localStorage.getItem(`pagnav_theme_${user.uid}`) || '{}');
+
+            const backup = {
+                version: "2.0",
+                date: new Date().toISOString(),
+                apps: appsData,
+                theme: themeData
+            };
+
+            const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `pagnav_backup_${new Date().getTime()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        };
+    }
+
+    if (importBtnTrigger) {
+        importBtnTrigger.onclick = () => importFile.click();
+    }
+
+    if (importFile) {
+        importFile.onchange = async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = async (event) => {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    if (!data.apps) throw new Error("Formato inválido");
+
+                    if (confirm(`Se importarán ${data.apps.length} aplicaciones. Esto sobreescribirá tus datos actuales en la nube. ¿Continuar?`)) {
+                        // 1. Limpiar actual (opcional, aquí mejor agregar)
+                        for (const app of data.apps) {
+                            const { id, ...cleanData } = app;
+                            await Store.savePage(cleanData);
+                        }
+                        if (data.theme) {
+                            await Store.saveTheme(data.theme);
+                        }
+                        alert("Importación completada con éxito. La página se recargará.");
+                        window.location.reload();
+                    }
+                } catch (err) {
+                    alert("Error al importar el archivo: " + err.message);
+                }
+            };
+            reader.readAsText(file);
+        };
+    }
+
     // --- PROTECCIÓN Y CARGA ---
     Auth.checkSession(async (user) => {
         if (user) {

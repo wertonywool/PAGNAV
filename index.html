@@ -280,6 +280,19 @@
                 </div>
             </section>
 
+            <section class="settings-section">
+                <h3>Respaldo & Seguridad</h3>
+                <div style="display: flex; gap: 10px; flex-direction: column;">
+                    <button id="export-data" class="primary-btn" style="width:100%; justify-content:center; background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2);">
+                        <i class="fas fa-download"></i> Exportar Configuración
+                    </button>
+                    <button id="import-data-trigger" class="primary-btn" style="width:100%; justify-content:center; background: rgba(59, 130, 246, 0.1); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.2);">
+                        <i class="fas fa-upload"></i> Importar Configuración
+                    </button>
+                    <input type="file" id="import-data-file" accept=".json" style="display: none;">
+                </div>
+            </section>
+
             <button id="reset-theme" class="primary-btn" style="width:100%; justify-content:center; background: rgba(255,255,255,0.05); color: #fff; margin-bottom: 10px;">
                 Restaurar Estilo Base
             </button>
