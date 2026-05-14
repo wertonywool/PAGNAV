@@ -114,12 +114,17 @@
     color: #fff;
 }
 
-/* 10. MODERN DARK */
+/* 10. ONYX EXECUTIVE */
 .theme-modern_dark .card-btn {
-    border-radius: 10px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: #fff;
+    border-radius: 4px;
+    background: #020203;
+    border: 1px solid #94a3b8;
+    color: #f8fafc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.theme-modern_dark .card-btn:hover {
+    background: var(--platinum);
+    color: #000;
 }
 
 /* 11. DANGANRONPA */

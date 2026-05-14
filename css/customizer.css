@@ -132,7 +132,7 @@
 /* Previsualización de colores en botones (Muestras de Estilo Fieles) */
 
 /* Prestigio & Negocios */
-.preset-btn[data-theme="modern_dark"] { background: radial-gradient(circle at top, #1e293b, #050505); border-color: #3b82f6; }
+.preset-btn[data-theme="modern_dark"] { background: radial-gradient(circle at center, #1e293b, #020203); border: 2px solid #94a3b8; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
 .preset-btn[data-theme="minimalist_white"] { background: #f8fafc; border-color: #cbd5e1; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
 .preset-btn[data-theme="luxury_onyx"] { background: linear-gradient(135deg, #000, #1a1a1a); border-color: #e5e4e2; box-shadow: 0 0 10px rgba(255,255,255,0.1); }
 .preset-btn[data-theme="industrial_gold"] { background: linear-gradient(135deg, #ca8a04, #0c0a09); border-color: #ca8a04; }
