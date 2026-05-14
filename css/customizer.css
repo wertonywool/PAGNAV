@@ -164,7 +164,23 @@
     transform: rotate(-45deg);
     opacity: 0.3;
 }
-.preset-btn[data-theme="industrial_gold"] { background: linear-gradient(135deg, #ca8a04, #0c0a09); border-color: #ca8a04; }
+.preset-btn[data-theme="industrial_gold"] { 
+    background: radial-gradient(circle at center, #c5a059, #1a1a1a); 
+    border: 2px solid #c5a059; 
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4), inset 0 0 10px #000;
+    position: relative;
+}
+.preset-btn[data-theme="industrial_gold"]::after {
+    content: "\f013";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: rgba(0,0,0,0.5);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
 .preset-btn[data-theme="coffee"] { background: linear-gradient(135deg, #6f4e37, #2c1810); border-color: #f3e5ab; }
 .preset-btn[data-theme="sports_psychology"] { background: linear-gradient(135deg, #27ae60, #f4f7f6); border-color: #1a2a3a; }
 

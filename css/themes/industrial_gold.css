@@ -1,110 +1,213 @@
-/* --- TEMA: INDUSTRIAL GOLD (ULTIMATE PRECISION) --- */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap');
+/* --- TEMA: PRECISION GOLD (LUXURY HOROLOGY IMMERSION) --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;500;800&display=swap');
 
 :root {
-    --bg-main: #0c0a09;
-    --bg-card-base: #1c1917;
-    --text-main: #f5f5f4;
-    --text-muted: #a8a29e;
-    --accent: #ca8a04;
-    --accent-secondary: #eab308;
-    --accent-glow: rgba(202, 138, 4, 0.4);
-    --border-color: #44403c;
+    --bg-main: #080808;
+    --bg-card-base: #111111;
+    --text-main: #f1f1f1;
+    --text-muted: #888888;
+    --accent: #c5a059; /* Oro Champagne */
+    --accent-glow: rgba(197, 160, 89, 0.2);
+    --border-color: #222222;
+    --titanium: linear-gradient(180deg, #2a2a2a 0%, #111111 50%, #2a2a2a 100%);
+    --laser-gold: #ffcc00;
 }
 
-body {
-    background: radial-gradient(circle at center, #1c1917 0%, #0c0a09 100%);
+body.theme-industrial_gold {
+    background: 
+        radial-gradient(circle at 50% 50%, #151515 0%, #080808 100%),
+        url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
     background-attachment: fixed;
     color: var(--text-main);
-    font-family: 'Inter', sans-serif;
+    font-family: 'JetBrains Mono', monospace;
     overflow-x: hidden;
 }
 
-/* Efecto de humo/vapor industrial */
-body::before {
+/* Efecto de chispas microscópicas (partículas sutiles) */
+body.theme-industrial_gold::after {
     content: "";
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/pinstripe-dark.png');
-    opacity: 0.05;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--accent) 1px, transparent 1px);
+    background-size: 100px 100px;
+    opacity: 0.03;
+    animation: particles-float 20s linear infinite;
+    pointer-events: none;
     z-index: -1;
 }
 
-/* Brillo de metal fundido en el fondo */
-body::after {
-    content: "";
-    position: fixed;
-    top: -50%; right: -50%;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle, rgba(202, 138, 4, 0.05) 0%, transparent 70%);
-    animation: foundry-glow 10s ease-in-out infinite;
-    z-index: -1;
+@keyframes particles-float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); }
 }
 
-@keyframes foundry-glow {
-    0%, 100% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(-10%, 10%) scale(1.2); }
+/* --- REINVENCIÓN DEL HEADER (TITANIUM BEAM) --- */
+.theme-industrial_gold .main-header {
+    background: var(--titanium) !important;
+    border-bottom: 1px solid var(--accent) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 -1px 0 rgba(255,255,255,0.05) !important;
+    padding: 0.8rem 2rem;
 }
 
-/* --- HEADER --- */
-.main-header {
-    background: rgba(12, 10, 9, 0.95) !important;
-    border-bottom: 5px solid var(--accent);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.8);
-}
-
-.logo h1 {
+.theme-industrial_gold .logo h1 {
     font-family: 'Bebas Neue', cursive;
     color: var(--accent) !important;
-    font-size: 2.5rem;
-    letter-spacing: 3px;
-    text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+    letter-spacing: 5px;
+    font-size: 2.2rem;
+    text-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
 }
 
-/* --- CARDS --- */
-.card-icon-wrapper {
-    background: linear-gradient(145deg, #292524, #0c0a09);
-    border: 3px solid var(--border-color);
-    border-radius: 4px;
+.theme-industrial_gold .logo-icon {
+    background: #111 !important;
+    color: var(--accent) !important;
+    border: 2px solid var(--accent) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 20px var(--accent-glow) !important;
     position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Remaches metálicos */
-.card-icon-wrapper::before {
+/* Pulsación de "mecanismo" en el logo */
+.theme-industrial_gold .logo-icon::after {
     content: "";
     position: absolute;
-    top: 5px; left: 5px; width: 4px; height: 4px;
-    background: #44403c;
+    inset: -5px;
+    border: 1px solid var(--accent);
+    opacity: 0.2;
     border-radius: 50%;
-    box-shadow: 0 100px 0 #44403c, 100px 0 0 #44403c, 100px 100px 0 #44403c;
+    animation: mechan-pulse 2s ease-out infinite;
 }
 
-.nav-card:hover .card-icon-wrapper {
-    transform: translateY(-10px) scale(1.03);
+@keyframes mechan-pulse {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.theme-industrial_gold .header-btn {
+    background: #151515 !important;
+    border: 1.5px solid #333 !important;
+    border-radius: 3px !important;
+    color: var(--text-muted) !important;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-industrial_gold .header-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 0; width: 3px; height: 3px;
+    background: var(--accent);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 5px var(--accent);
+    opacity: 0.5;
+}
+
+.theme-industrial_gold .header-btn:hover {
+    color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    background: #1a1a1a !important;
+}
+
+/* --- REINVENCIÓN DEL PANEL (CONTROL ATELIER) --- */
+.theme-industrial_gold .customizer-panel {
+    background: #0c0c0c !important;
+    border-left: 2px solid var(--accent) !important;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px) !important;
+}
+
+.theme-industrial_gold .panel-header h2 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--accent) !important;
+    letter-spacing: 2px;
+}
+
+.theme-industrial_gold .settings-section h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    background: var(--accent);
+    color: #000;
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.theme-industrial_gold .control-group {
+    background: #111 !important;
+    border: 1px solid #222 !important;
+    position: relative;
+}
+
+/* --- REINVENCIÓN DE MODALES --- */
+.theme-industrial_gold .info-modal-content {
+    background: #0c0c0c !important;
+    border: 2px solid var(--accent) !important;
+    border-radius: 4px !important;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* --- CARDS (CHRONOGRAPH PRECISION) --- */
+.theme-industrial_gold .nav-card {
+    background: transparent !important;
+}
+
+.theme-industrial_gold .card-icon-wrapper {
+    background: #111 !important;
+    border: 1.5px solid #222 !important;
+    border-radius: 8px !important;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Segundero de luz (Tic-Tac Animation) */
+.theme-industrial_gold .card-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.theme-industrial_gold .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-12px) scale(1.02);
     border-color: var(--accent);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 20px var(--accent-glow);
 }
 
-.card-title {
+/* Efecto de foco al hacer hover */
+.theme-industrial_gold .nav-card:hover .card-icon-wrapper img {
+    filter: contrast(1.1) brightness(1.1);
+}
+
+.theme-industrial_gold .card-title {
     font-family: 'Bebas Neue', cursive;
     color: var(--text-muted) !important;
-    font-size: 1.3rem;
     letter-spacing: 2px;
+    font-size: 1.1rem !important;
     margin-top: 15px;
+    transition: 0.4s;
 }
 
-.nav-card:hover .card-title {
+.theme-industrial_gold .nav-card:hover .card-title {
     color: var(--accent) !important;
-    transform: scale(1.1);
+    letter-spacing: 4px;
 }
 
-/* --- BOTONES --- */
-.primary-btn {
-    background: linear-gradient(to bottom, #ca8a04, #854d0e) !important;
+/* Acciones Mecanizadas */
+.theme-industrial_gold .card-btn {
+    border-radius: 2px !important;
+    background: #111 !important;
+    border: 1px solid #333 !important;
+    color: var(--accent) !important;
+}
+
+.theme-industrial_gold .card-btn:hover {
+    background: var(--accent) !important;
     color: #000 !important;
-    border: 2px solid #000 !important;
-    font-family: 'Bebas Neue', cursive;
-    letter-spacing: 1px;
+    box-shadow: 0 0 15px var(--accent);
 }
