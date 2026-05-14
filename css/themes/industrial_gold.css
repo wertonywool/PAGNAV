@@ -116,12 +116,27 @@ body.theme-industrial_gold::after {
     background: #0c0c0c !important;
     border-left: 2px solid var(--accent) !important;
     background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px) !important;
+    box-shadow: -20px 0 50px rgba(0,0,0,0.8) !important;
 }
 
 .theme-industrial_gold .panel-header h2 {
     font-family: 'Bebas Neue', cursive;
     color: var(--accent) !important;
     letter-spacing: 2px;
+}
+
+.theme-industrial_gold .icon-btn {
+    background: #111 !important;
+    border: 1px solid #333 !important;
+    color: var(--accent) !important;
+    border-radius: 4px !important;
+}
+
+.theme-industrial_gold .icon-btn:hover {
+    background: var(--accent) !important;
+    color: #000 !important;
+    transform: rotate(180deg);
+    box-shadow: 0 0 15px var(--accent);
 }
 
 .theme-industrial_gold .settings-section h3 {

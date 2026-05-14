@@ -147,6 +147,42 @@ body::before {
     box-shadow: 0 15px 30px rgba(0,0,0,0.5);
 }
 
+/* --- REINVENCIÓN DEL PANEL DE ESTILO --- */
+.theme-modern_dark .customizer-panel {
+    background: rgba(2, 2, 3, 0.9) !important;
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    border-left: 1px solid var(--border-color) !important;
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.8) !important;
+}
+
+.theme-modern_dark .panel-header h2 {
+    color: #fff !important;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.theme-modern_dark .icon-btn {
+    color: var(--text-muted) !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.theme-modern_dark .icon-btn:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: rotate(90deg);
+}
+
+.theme-modern_dark .settings-section h3 {
+    color: var(--accent) !important;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.theme-modern_dark .theme-name {
+    color: var(--text-muted) !important;
+}
+
 /* Modals */
 .info-modal-content {
     background: rgba(8, 8, 10, 0.95) !important;

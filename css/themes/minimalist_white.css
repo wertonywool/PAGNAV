@@ -112,6 +112,14 @@ body {
 
 .theme-minimalist_white .icon-btn {
     color: #020617 !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.theme-minimalist_white .icon-btn:hover {
+    background: #020617 !important;
+    color: #fff !important;
+    transform: rotate(90deg) scale(1.1);
 }
 
 /* --- REINVENCIÓN DE MODALES --- */
