@@ -1,5 +1,5 @@
-const CACHE_NAME = 'pagnav-v4';
-const STATIC_ASSETS = [
+const CACHE_NAME = 'pagnav-v5';
+const ASSETS = [
     './',
     'index.html',
     'login.html',
@@ -26,17 +26,13 @@ const STATIC_ASSETS = [
     'https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js'
 ];
 
-// Instalación
 self.addEventListener('install', (event) => {
     self.skipWaiting();
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(STATIC_ASSETS);
-        })
+        caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
     );
 });
 
-// Activación
 self.addEventListener('activate', (event) => {
     event.waitUntil(
         Promise.all([
@@ -50,41 +46,35 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// Fetch con manejo de errores robusto
 self.addEventListener('fetch', (event) => {
-    const url = new URL(event.request.url);
+    const request = event.request;
+    const url = new URL(request.url);
 
-    // 1. Filtrar solo peticiones HTTP/HTTPS (ignora chrome-extension, etc)
+    // Solo manejar esquemas http y https
     if (!url.protocol.startsWith('http')) return;
 
-    // 2. Ignorar Firebase y Analytics
-    if (url.hostname.includes('firestore') || url.hostname.includes('firebase') || url.hostname.includes('google-analytics')) {
+    // Ignorar Firebase/Analytics
+    if (url.hostname.includes('firestore') || url.hostname.includes('firebase') || url.hostname.includes('google')) {
         return;
     }
 
     event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-            // Estrategia: Cache First, pero actualizar en background si hay red
-            const fetchPromise = fetch(event.request).then((networkResponse) => {
+        caches.match(request).then((cachedResponse) => {
+            const networkFetch = fetch(request).then((networkResponse) => {
                 if (networkResponse && networkResponse.status === 200) {
                     const responseToCache = networkResponse.clone();
-                    caches.open(CACHE_NAME).then((cache) => {
-                        cache.put(event.request, responseToCache);
-                    });
+                    caches.open(CACHE_NAME).then((cache) => cache.put(request, responseToCache));
                 }
                 return networkResponse;
-            }).catch((err) => {
-                // Si falla la red y NO hay cache, devolvemos un error controlado
-                if (!cachedResponse) {
-                    if (event.request.mode === 'navigate') {
-                        return caches.match('index.html');
-                    }
-                    // Retornar una respuesta vacía válida para evitar el TypeError en la consola
-                    return new Response('', { status: 408, statusText: 'Network Error' });
-                }
+            }).catch(() => {
+                // Silenciar errores de red
+                return null;
             });
 
-            return cachedResponse || fetchPromise;
+            // Retornar cache si existe, si no esperar a red, y si red falla devolver un error vacío pero válido
+            return cachedResponse || networkFetch || new Response('Offline', { status: 503 });
+        }).catch(() => {
+            return new Response('Offline', { status: 503 });
         })
     );
 });

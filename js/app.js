@@ -50,6 +50,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const logoutBtn = document.getElementById('logout-btn');
+    const offlineIndicator = document.getElementById('offline-indicator');
+
+    // Manejo de Estado Online/Offline Visual
+    function updateOnlineStatus() {
+        if (navigator.onLine) {
+            offlineIndicator.style.color = '#10b981'; // Verde
+            offlineIndicator.title = 'Conectado a la Nube';
+            offlineIndicator.innerHTML = '<i class="fas fa-cloud"></i>';
+        } else {
+            offlineIndicator.style.color = '#f59e0b'; // Naranja
+            offlineIndicator.title = 'Modo Offline (Datos locales)';
+            offlineIndicator.innerHTML = '<i class="fas fa-cloud-slash"></i>';
+        }
+    }
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
 
     // --- PROTECCIÓN Y CARGA ---
     Auth.checkSession(async (user) => {
