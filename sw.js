@@ -1,5 +1,5 @@
-const CACHE_NAME = 'pagnav-v2';
-const ASSETS = [
+const CACHE_NAME = 'pagnav-v3';
+const STATIC_ASSETS = [
     'index.html',
     'login.html',
     'config.html',
@@ -25,21 +25,17 @@ const ASSETS = [
     'https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js'
 ];
 
-// Instalar Service Worker
+// Instalación: Cachear todo lo estático de inmediato
 self.addEventListener('install', (event) => {
     self.skipWaiting();
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            // Usamos addAll pero con un catch por si algún archivo falla, 
-            // no detenga la instalación de los demás si es crítico
-            return cache.addAll(ASSETS).catch(err => {
-                console.warn('Algunos activos no se pudieron cachear durante la instalación', err);
-            });
+            return cache.addAll(STATIC_ASSETS);
         })
     );
 });
 
-// Activar y tomar control inmediatamente
+// Activación: Limpiar caches viejos y tomar control
 self.addEventListener('activate', (event) => {
     event.waitUntil(
         Promise.all([
@@ -53,37 +49,42 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// Estrategia Network First (con fallback a Cache) para archivos dinámicos
-// o Cache First para activos estáticos.
+// Estrategia de Carga Inteligente
 self.addEventListener('fetch', (event) => {
     const url = event.request.url;
 
-    // No interceptar peticiones a Firebase
-    if (url.includes('firestore.googleapis.com') || url.includes('firebase')) {
+    // Ignorar peticiones de Firebase/Analytics (Firestore tiene su propia persistencia)
+    if (url.includes('firestore.googleapis.com') || url.includes('firebase') || url.includes('google-analytics')) {
         return;
     }
 
     event.respondWith(
         caches.match(event.request).then((cachedResponse) => {
+            // 1. Si está en cache, devolverlo DE INMEDIATO (Velocidad extrema)
             if (cachedResponse) {
+                // Opcional: Actualizar el cache en segundo plano (Stale-While-Revalidate)
+                fetch(event.request).then((networkResponse) => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, networkResponse));
+                    }
+                }).catch(() => {}); 
+                
                 return cachedResponse;
             }
 
+            // 2. Si no está en cache, ir a la red
             return fetch(event.request).then((networkResponse) => {
-                // Solo cachear respuestas válidas
                 if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
                     return networkResponse;
                 }
-
                 const responseToCache = networkResponse.clone();
-                caches.open(CACHE_NAME).then((cache) => {
-                    cache.put(event.request, responseToCache);
-                });
-
+                caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseToCache));
                 return networkResponse;
             }).catch(() => {
-                // Si falla el fetch y no hay cache, mostrar algo o fallar silenciosamente
-                return null;
+                // Si todo falla (offline y no en cache), intentar devolver index.html como fallback
+                if (event.request.mode === 'navigate') {
+                    return caches.match('index.html');
+                }
             });
         })
     );

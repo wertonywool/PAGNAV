@@ -7,25 +7,26 @@ const Store = {
     subscribePages(callback) {
         try {
             const user = auth.currentUser;
-            if (!user) {
-                // Si no hay usuario, intentar cargar de cache por si acaso
-                const cached = localStorage.getItem('pagnav_apps_cache');
-                if (cached) callback(JSON.parse(cached));
-                return;
-            }
-
-            // Cargar inmediatamente desde cache para velocidad
-            const cached = localStorage.getItem(`pagnav_apps_${user.uid}`);
+            
+            // Si no hay usuario o no hay red, cargar DE INMEDIATO lo último que tengamos en localStorage
+            const cachedKey = user ? `pagnav_apps_${user.uid}` : 'pagnav_apps_cache';
+            const cached = localStorage.getItem(cachedKey);
             if (cached) callback(JSON.parse(cached));
+
+            if (!user) return;
 
             const q = query(collection(db, "users", user.uid, "apps"), orderBy("order", "asc"));
             return onSnapshot(q, (snapshot) => {
                 const apps = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-                // Actualizar cache
-                localStorage.setItem(`pagnav_apps_${user.uid}`, JSON.stringify(apps));
-                callback(apps);
+                // Actualizar cache solo si hay cambios para no disparar re-renders innecesarios
+                const currentCache = localStorage.getItem(cachedKey);
+                if (currentCache !== JSON.stringify(apps)) {
+                    localStorage.setItem(cachedKey, JSON.stringify(apps));
+                    callback(apps);
+                }
             }, (error) => {
-                console.error("Error en suscripción:", error);
+                console.warn("Suscripción en modo offline (Firestore persistencia activa)");
+                // Firestore manejará la entrega de datos desde IndexedDB automáticamente
             });
         } catch (e) {
             console.error("Error crítico en subscribePages:", e);
