@@ -1,5 +1,6 @@
-const CACHE_NAME = 'pagnav-v3';
+const CACHE_NAME = 'pagnav-v4';
 const STATIC_ASSETS = [
+    './',
     'index.html',
     'login.html',
     'config.html',
@@ -25,7 +26,7 @@ const STATIC_ASSETS = [
     'https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js'
 ];
 
-// Instalación: Cachear todo lo estático de inmediato
+// Instalación
 self.addEventListener('install', (event) => {
     self.skipWaiting();
     event.waitUntil(
@@ -35,7 +36,7 @@ self.addEventListener('install', (event) => {
     );
 });
 
-// Activación: Limpiar caches viejos y tomar control
+// Activación
 self.addEventListener('activate', (event) => {
     event.waitUntil(
         Promise.all([
@@ -49,43 +50,41 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// Estrategia de Carga Inteligente
+// Fetch con manejo de errores robusto
 self.addEventListener('fetch', (event) => {
-    const url = event.request.url;
+    const url = new URL(event.request.url);
 
-    // Ignorar peticiones de Firebase/Analytics (Firestore tiene su propia persistencia)
-    if (url.includes('firestore.googleapis.com') || url.includes('firebase') || url.includes('google-analytics')) {
+    // 1. Filtrar solo peticiones HTTP/HTTPS (ignora chrome-extension, etc)
+    if (!url.protocol.startsWith('http')) return;
+
+    // 2. Ignorar Firebase y Analytics
+    if (url.hostname.includes('firestore') || url.hostname.includes('firebase') || url.hostname.includes('google-analytics')) {
         return;
     }
 
     event.respondWith(
         caches.match(event.request).then((cachedResponse) => {
-            // 1. Si está en cache, devolverlo DE INMEDIATO (Velocidad extrema)
-            if (cachedResponse) {
-                // Opcional: Actualizar el cache en segundo plano (Stale-While-Revalidate)
-                fetch(event.request).then((networkResponse) => {
-                    if (networkResponse && networkResponse.status === 200) {
-                        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, networkResponse));
-                    }
-                }).catch(() => {}); 
-                
-                return cachedResponse;
-            }
-
-            // 2. Si no está en cache, ir a la red
-            return fetch(event.request).then((networkResponse) => {
-                if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
-                    return networkResponse;
+            // Estrategia: Cache First, pero actualizar en background si hay red
+            const fetchPromise = fetch(event.request).then((networkResponse) => {
+                if (networkResponse && networkResponse.status === 200) {
+                    const responseToCache = networkResponse.clone();
+                    caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(event.request, responseToCache);
+                    });
                 }
-                const responseToCache = networkResponse.clone();
-                caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseToCache));
                 return networkResponse;
-            }).catch(() => {
-                // Si todo falla (offline y no en cache), intentar devolver index.html como fallback
-                if (event.request.mode === 'navigate') {
-                    return caches.match('index.html');
+            }).catch((err) => {
+                // Si falla la red y NO hay cache, devolvemos un error controlado
+                if (!cachedResponse) {
+                    if (event.request.mode === 'navigate') {
+                        return caches.match('index.html');
+                    }
+                    // Retornar una respuesta vacía válida para evitar el TypeError en la consola
+                    return new Response('', { status: 408, statusText: 'Network Error' });
                 }
             });
+
+            return cachedResponse || fetchPromise;
         })
     );
 });
