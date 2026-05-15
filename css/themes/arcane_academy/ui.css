@@ -1,0 +1,94 @@
+/* --- ARCANE ACADEMY: INTERFAZ INMERSIVA --- */
+
+.theme-arcane_academy .main-header {
+    background: linear-gradient(to bottom, #1e0b36, #0a0514) !important;
+    border-bottom: 3px solid var(--accent) !important;
+    box-shadow: 0 5px 30px rgba(142, 68, 173, 0.2) !important;
+}
+
+.theme-arcane_academy .logo h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: var(--accent) !important;
+    letter-spacing: 3px;
+    filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+.theme-arcane_academy .logo-icon {
+    background: var(--accent) !important;
+    color: #0a0514 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 20px var(--accent-glow) !important;
+}
+
+.theme-arcane_academy .header-btn {
+    background: rgba(142, 68, 173, 0.1) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--accent) !important;
+    font-family: 'Cinzel', serif;
+}
+
+.theme-arcane_academy .header-btn:hover {
+    background: var(--accent) !important;
+    color: #0a0514 !important;
+    box-shadow: 0 0 20px var(--accent-glow) !important;
+}
+
+/* Panel de Estilo "Santuario Místico" */
+.theme-arcane_academy .customizer-panel {
+    background: #0a0514 !important;
+    border-left: 3px solid var(--accent) !important;
+    background-image: url('https://www.transparenttextures.com/patterns/papyros.png') !important;
+}
+
+.theme-arcane_academy .panel-header {
+    border-bottom: 2px solid var(--border-color) !important;
+}
+
+.theme-arcane_academy .panel-header h2 {
+    font-family: 'MedievalSharp', cursive;
+    color: var(--accent) !important;
+}
+
+.theme-arcane_academy .icon-btn {
+    background: #1e0b36 !important;
+    color: var(--accent) !important;
+    border: 1px solid var(--accent) !important;
+}
+
+.theme-arcane_academy .icon-btn:hover {
+    background: var(--accent) !important;
+    color: #000 !important;
+    transform: rotate(180deg);
+}
+
+.theme-arcane_academy .settings-section h3 {
+    font-family: 'Cinzel', serif;
+    color: #9b59b6 !important;
+    border-left: 4px solid var(--accent);
+    padding-left: 15px;
+}
+
+.theme-arcane_academy .control-group {
+    background: rgba(30, 11, 54, 0.5) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Modales */
+.theme-arcane_academy .info-modal-content {
+    background: #1e0b36 !important;
+    border: 2px solid var(--accent) !important;
+    box-shadow: 0 0 50px rgba(0,0,0,1), 0 0 20px var(--accent-glow) !important;
+    font-family: 'Cinzel', serif;
+}
+
+.theme-arcane_academy .card-btn {
+    border-radius: 50% 5px !important;
+    background: #0a0514 !important;
+    border: 1px solid var(--accent) !important;
+    color: var(--accent) !important;
+}
+
+.theme-arcane_academy .card-btn:hover {
+    background: var(--accent) !important;
+    color: #000 !important;
+}

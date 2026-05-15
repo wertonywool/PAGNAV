@@ -1,35 +1,58 @@
-/* --- ARCANE ACADEMY: CARD DESIGN --- */
+/* --- ARCANE ACADEMY: COMPONENTES DE TARJETA --- */
+
 .theme-arcane_academy .nav-card {
-    background: linear-gradient(135deg, #2d144d 0%, #1a0a2e 100%) !important;
-    border: 2px solid #f1c40f;
-    border-radius: 0 !important;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8), inset 0 0 10px rgba(241, 196, 15, 0.2);
-    position: relative;
-}
-
-.theme-arcane_academy .nav-card:hover {
-    transform: scale(1.05) rotate(1deg);
-    border-color: #fff;
-    box-shadow: 0 0 40px rgba(241, 196, 15, 0.4);
-}
-
-/* Runas en las esquinas */
-.theme-arcane_academy .nav-card::before {
-    content: '✧';
-    position: absolute;
-    top: 5px; left: 5px;
-    color: #f1c40f;
-    font-size: 0.8rem;
+    background: transparent !important;
 }
 
 .theme-arcane_academy .card-icon-wrapper {
-    background: #000;
-    border: 1px solid #4a235a;
+    background: var(--bg-card-base);
+    border: 2px solid var(--accent);
+    border-radius: 10px 40px 10px 40px; /* Forma de pergamino/magia */
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.8),
+        inset 0 0 20px rgba(142, 68, 173, 0.3);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Runas Brillantes al Hover */
+.theme-arcane_academy .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-15px) rotate(-2deg) scale(1.05);
+    border-color: #fff;
+    box-shadow: 
+        0 40px 60px rgba(0,0,0,1),
+        0 0 30px var(--accent-glow);
+}
+
+.theme-arcane_academy .card-icon-wrapper::after {
+    content: "✨";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.theme-arcane_academy .nav-card:hover .card-icon-wrapper::after {
+    opacity: 0.1;
+    transform: translate(-50%, -50%) scale(1.5);
 }
 
 .theme-arcane_academy .card-title {
-    color: #f1c40f;
-    font-weight: 900;
+    font-family: 'MedievalSharp', cursive;
+    color: var(--accent) !important;
+    font-weight: 700;
+    font-size: 1.1rem !important;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-top: 15px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.theme-arcane_academy .nav-card:hover .card-title {
+    color: #fff !important;
+    letter-spacing: 4px;
 }

@@ -1,37 +1,63 @@
-/* --- ARCANE ACADEMY: THEME & ATMOSPHERE --- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;900&display=swap');
+/* --- ARCANE ACADEMY: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=MedievalSharp&display=swap');
 
 :root {
-    --bg-main: #1a0a2e;
-    --bg-card-base: #2d144d;
-    --text-main: #f1c40f;
-    --text-muted: #9b59b6;
-    --accent: #f1c40f;
+    --bg-main: #0a0514;
+    --bg-card-base: #1e0b36;
+    --text-main: #e2c0ff;
+    --text-muted: #8e44ad;
+    --accent: #f1c40f; 
     --accent-glow: rgba(241, 196, 15, 0.4);
-    --border-color: #4a235a;
+    --border-color: #4a148c;
+    --magic-dust: rgba(142, 68, 173, 0.2);
 }
 
 body.theme-arcane_academy {
-    background: #1a0a2e;
-    background-image: 
-        radial-gradient(circle at 50% 50%, rgba(155, 89, 182, 0.1) 0%, transparent 80%),
+    background: 
+        radial-gradient(circle at 50% 50%, #1a0a2e 0%, #0a0514 100%),
         url('https://www.transparenttextures.com/patterns/papyros.png');
+    background-attachment: fixed;
+    color: var(--text-main);
     font-family: 'Cinzel', serif;
+    overflow-x: hidden;
 }
 
-/* Partículas de maná */
-body.theme-arcane_academy::after {
-    content: '';
+/* --- ELEMENTO ILUSTRATIVO: GRIMORIO FLOTANTE --- */
+body.theme-arcane_academy::before {
+    content: "\f02d"; /* Icono de Libro de FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: radial-gradient(#f1c40f 1px, transparent 1px);
-    background-size: 80px 80px;
+    bottom: 50px;
+    right: 50px;
+    font-size: 8rem;
+    color: var(--accent);
     opacity: 0.1;
+    filter: drop-shadow(0 0 20px var(--accent-glow));
+    animation: book-float 6s ease-in-out infinite;
     pointer-events: none;
-    animation: mana-float 15s linear infinite;
+    z-index: -1;
 }
 
-@keyframes mana-float {
+/* Polvo Mágico en el fondo */
+body.theme-arcane_academy::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--accent) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.05;
+    animation: magic-particles 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes book-float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); opacity: 0.1; }
+    50% { transform: translateY(-30px) rotate(5deg); opacity: 0.2; }
+}
+
+@keyframes magic-particles {
     from { background-position: 0 0; }
-    to { background-position: 500px -500px; }
+    to { background-position: 500px 1000px; }
 }

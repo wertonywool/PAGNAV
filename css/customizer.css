@@ -203,7 +203,21 @@
 /* Resto de temas (Simplificados para la base) */
 .preset-btn[data-theme="coffee"] { background: linear-gradient(135deg, #6f4e37, #2c1810); border-color: #f3e5ab; }
 .preset-btn[data-theme="sports_psychology"] { background: linear-gradient(135deg, #27ae60, #f4f7f6); border-color: #1a2a3a; }
-.preset-btn[data-theme="arcane_academy"] { background: linear-gradient(135deg, #1a0a2e, #8e44ad); border-color: #f1c40f; }
+.preset-btn[data-theme="arcane_academy"] { 
+    background: radial-gradient(circle at center, #8e44ad, #1a0a2e); 
+    border: 2px solid #f1c40f; 
+    box-shadow: 0 0 15px rgba(142, 68, 173, 0.6), inset 0 0 10px #f1c40f; 
+    position: relative;
+}
+.preset-btn[data-theme="arcane_academy"]::after {
+    content: "✧";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f1c40f;
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 5px #fff);
+}
 .preset-btn[data-theme="dragon_lair"] { background: radial-gradient(circle, #ff9d00, #0c0800); border-color: #ff4500; }
 .preset-btn[data-theme="pirate_cove"] { background: linear-gradient(135deg, #1a120b, #daa520); border-color: #3d2b1f; }
 .preset-btn[data-theme="ancient_egypt"] { background: linear-gradient(135deg, #ffd700, #2d1e12); border-color: #ffd700; }
