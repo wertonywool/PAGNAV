@@ -24,28 +24,30 @@
 }
 
 .theme-modern_dark .customizer-panel {
-    background: rgba(2, 2, 3, 0.9) !important;
+    background: rgba(2, 2, 3, 0.95) !important;
     backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
     border-left: 1px solid var(--border-color) !important;
-    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.8) !important;
+}
+
+.theme-modern_dark .panel-header {
+    border-bottom: 1px solid var(--border-color) !important;
 }
 
 .theme-modern_dark .panel-header h2 {
     color: #fff !important;
     font-weight: 900;
-    letter-spacing: 1px;
 }
 
 .theme-modern_dark .icon-btn {
-    color: var(--text-muted) !important;
-    background: rgba(255, 255, 255, 0.03) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid var(--border-color) !important;
+    color: var(--text-muted) !important;
 }
 
 .theme-modern_dark .icon-btn:hover {
-    color: #fff !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    transform: rotate(90deg);
+    background: var(--platinum) !important;
+    color: #000 !important;
+    border-color: #fff !important;
 }
 
 .theme-modern_dark .settings-section h3 {

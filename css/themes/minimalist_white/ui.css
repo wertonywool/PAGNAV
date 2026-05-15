@@ -40,10 +40,13 @@
 }
 
 .theme-minimalist_white .customizer-panel {
-    background: rgba(255, 255, 255, 0.7) !important;
+    background: rgba(255, 255, 255, 0.8) !important;
     backdrop-filter: blur(50px) saturate(200%) !important;
     border-left: 1px solid rgba(255, 255, 255, 0.8) !important;
-    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.05) !important;
+}
+
+.theme-minimalist_white .panel-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 .theme-minimalist_white .panel-header h2 {
@@ -52,15 +55,14 @@
 }
 
 .theme-minimalist_white .icon-btn {
-    color: #020617 !important;
-    background: rgba(0, 0, 0, 0.05) !important;
+    background: rgba(0, 0, 0, 0.03) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    color: #020617 !important;
 }
 
 .theme-minimalist_white .icon-btn:hover {
     background: #020617 !important;
     color: #fff !important;
-    transform: rotate(90deg) scale(1.1);
 }
 
 .theme-minimalist_white .settings-section h3 {
