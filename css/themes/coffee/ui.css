@@ -1,0 +1,104 @@
+/* --- ARTISAN ROAST: INTERFAZ INMERSIVA --- */
+
+.theme-coffee .main-header {
+    background: #3d2b1f !important; /* Madera Oscura */
+    border-bottom: 4px solid #2c1810 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+}
+
+.theme-coffee .logo h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-main) !important;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.theme-coffee .logo-icon {
+    background: var(--text-main) !important;
+    color: #3d2b1f !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 15px var(--accent-glow) !important;
+}
+
+.theme-coffee .header-btn {
+    background: #2c1810 !important;
+    border: 1px solid var(--accent) !important;
+    color: var(--text-main) !important;
+    font-family: 'Playfair Display', serif;
+    border-radius: 8px !important;
+}
+
+.theme-coffee .header-btn:hover {
+    background: var(--accent) !important;
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Panel de Estilo "Menú de Cafetería" (Pizarra) */
+.theme-coffee .customizer-panel {
+    background: #1a0f0a !important;
+    border-left: 5px solid #3d2b1f !important;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png') !important;
+}
+
+.theme-coffee .panel-header {
+    border-bottom: 2px dashed var(--accent) !important;
+}
+
+.theme-coffee .panel-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-main) !important;
+}
+
+.theme-coffee .icon-btn {
+    background: var(--accent) !important;
+    color: var(--text-main) !important;
+    border: none !important;
+}
+
+.theme-coffee .icon-btn:hover {
+    background: #8b5e3c !important;
+    transform: rotate(180deg);
+}
+
+.theme-coffee .settings-section h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-main) !important;
+    font-style: italic;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 5px;
+}
+
+.theme-coffee .theme-name {
+    color: var(--text-muted) !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Modales (Papel Kraft) */
+.theme-coffee .info-modal-content {
+    background: #f3e5ab !important; /* Crema/Papel */
+    color: #2c1810 !important;
+    border: 8px solid #3d2b1f !important;
+    border-radius: 4px !important;
+    font-family: 'Playfair Display', serif;
+}
+
+.theme-coffee .info-modal h2 {
+    color: #2c1810 !important;
+}
+
+.theme-coffee .info-divider {
+    background: #2c1810 !important;
+    height: 2px;
+}
+
+.theme-coffee .card-btn {
+    background: #2c1810 !important;
+    border: 1px solid var(--accent) !important;
+    color: var(--text-main) !important;
+}
+
+.theme-coffee .card-btn:hover {
+    background: var(--accent) !important;
+    box-shadow: 0 0 10px var(--accent-glow);
+}

@@ -1,0 +1,47 @@
+/* --- ARTISAN ROAST: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --bg-main: #1a0f0a;
+    --bg-card-base: #2c1810;
+    --text-main: #f3e5ab;
+    --text-muted: #c0a080;
+    --accent: #6f4e37;
+    --accent-glow: rgba(111, 78, 55, 0.4);
+    --border-color: rgba(243, 229, 171, 0.15);
+    --wood: #3d2b1f;
+}
+
+body.theme-coffee {
+    background: 
+        radial-gradient(circle at 50% 50%, #2c1810 0%, #1a0f0a 100%),
+        url('https://www.transparenttextures.com/patterns/natural-paper.png');
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- ANIMACIÓN DE HUMO/VAPOR (COFFEE STEAM) --- */
+body.theme-coffee::after {
+    content: "";
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 20%),
+        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.01) 0%, transparent 15%);
+    filter: blur(50px);
+    opacity: 0.5;
+    animation: coffee-steam 15s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+    transform: translateX(-50%);
+}
+
+@keyframes coffee-steam {
+    0% { transform: translateX(-50%) translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateX(-45%) translateY(-100px) scale(1.1); opacity: 0.6; }
+    100% { transform: translateX(-50%) translateY(-200px) scale(1); opacity: 0.3; }
+}

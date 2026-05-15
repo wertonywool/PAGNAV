@@ -1,0 +1,46 @@
+/* --- ARTISAN ROAST: COMPONENTES DE TARJETA --- */
+
+.theme-coffee .card-icon-wrapper {
+    background: var(--bg-card-base);
+    border: 3px solid #3d2b1f; /* Marco de madera */
+    border-radius: 50% 15px 50% 15px;
+    box-shadow: 
+        10px 10px 20px rgba(0,0,0,0.4),
+        inset 0 0 15px rgba(0,0,0,0.5);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto Grano de Café al fondo de la tarjeta */
+.theme-coffee .card-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.theme-coffee .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-12px) rotate(3deg);
+    border-color: var(--text-main);
+    box-shadow: 
+        0 30px 40px rgba(0,0,0,0.6),
+        0 0 20px var(--accent-glow);
+}
+
+.theme-coffee .card-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-muted) !important;
+    font-weight: 700;
+    font-size: 1rem !important;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    transition: 0.4s;
+}
+
+.theme-coffee .nav-card:hover .card-title {
+    color: var(--text-main) !important;
+    transform: scale(1.1);
+}
