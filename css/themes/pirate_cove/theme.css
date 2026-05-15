@@ -1,3 +1,65 @@
-/* --- PIRATE COVE: THEME --- */
-:root { --bg-main: #1a120b; --bg-card-base: #2b1d12; --text-main: #f1c40f; --text-muted: #a67c00; --accent: #daa520; --accent-glow: rgba(218, 165, 32, 0.3); --border-color: #3e2a1a; }
-body.theme-pirate_cove { background: #1a120b; background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); font-family: 'MedievalSharp', cursive; }
+/* --- PIRATE'S COVE: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=MedievalSharp&display=swap');
+
+:root {
+    --bg-main: #0a0805;
+    --bg-card-base: #1e140d;
+    --text-main: #f1c40f;
+    --text-muted: #a67c00;
+    --accent: #daa520; /* Oro Doblón */
+    --accent-glow: rgba(218, 165, 32, 0.4);
+    --border-color: #3d2b1f;
+    --wood-plank: #2c1810;
+}
+
+body.theme-pirate_cove {
+    background: 
+        radial-gradient(circle at 50% 100%, #1a120b 0%, #0a0805 100%),
+        url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'MedievalSharp', cursive;
+    overflow-x: hidden;
+}
+
+/* --- ELEMENTO ILUSTRATIVO: NAVÍO BALANCEÁNDOSE --- */
+body.theme-pirate_cove::before {
+    content: "\f21a"; /* Icono de Barco de FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    font-size: 10rem;
+    color: #000;
+    opacity: 0.1;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.8));
+    animation: ship-rocking 10s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Niebla Marina / Espuma */
+body.theme-pirate_cove::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 20%),
+        radial-gradient(circle at 80% 90%, rgba(255, 255, 255, 0.01) 0%, transparent 15%);
+    filter: blur(40px);
+    opacity: 0.4;
+    animation: sea-mist 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes ship-rocking {
+    0%, 100% { transform: rotate(-3deg) translateY(0); }
+    50% { transform: rotate(5deg) translateY(-20px); }
+}
+
+@keyframes sea-mist {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 0; }
+}

@@ -232,7 +232,20 @@
     font-size: 1.2rem;
     display: flex; align-items: center; justify-content: center; height: 100%;
 }
-.preset-btn[data-theme="pirate_cove"] { background: linear-gradient(135deg, #1a120b, #daa520); border-color: #3d2b1f; }
+.preset-btn[data-theme="pirate_cove"] { 
+    background: radial-gradient(circle at center, #daa520, #2c1810); 
+    border: 2px solid #daa520; 
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.4);
+    position: relative;
+}
+.preset-btn[data-theme="pirate_cove"]::after {
+    content: "\f817"; /* Icono de Monedas */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: rgba(0,0,0,0.6);
+    font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center; height: 100%;
+}
 .preset-btn[data-theme="ancient_egypt"] { background: linear-gradient(135deg, #ffd700, #2d1e12); border-color: #ffd700; }
 .preset-btn[data-theme="viking_runes"] { background: #0f0f0f; border-color: #8e8e8e; }
 .preset-btn[data-theme="samurai"] { background: #f5f5f5; border: 3px solid #bc002d; }

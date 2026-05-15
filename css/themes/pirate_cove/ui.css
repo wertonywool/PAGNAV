@@ -1,0 +1,90 @@
+/* --- PIRATE'S COVE: INTERFAZ INMERSIVA --- */
+
+.theme-pirate_cove .main-header {
+    background: #2c1810 !important; /* Madera de Navío */
+    border-bottom: 5px solid #1a0f0a !important;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.7) !important;
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png') !important;
+}
+
+.theme-pirate_cove .logo h1 {
+    font-family: 'Pirata One', cursive;
+    color: var(--accent) !important;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px #000;
+}
+
+.theme-pirate_cove .logo-icon {
+    background: var(--accent) !important;
+    color: #000 !important;
+    border-radius: 0 !important;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    box-shadow: 0 0 20px var(--accent-glow) !important;
+}
+
+.theme-pirate_cove .header-btn {
+    background: #1a0f0a !important;
+    border: 1px solid var(--accent) !important;
+    color: var(--accent) !important;
+    font-family: 'Pirata One', cursive;
+    text-transform: uppercase;
+}
+
+.theme-pirate_cove .header-btn:hover {
+    background: var(--accent) !important;
+    color: #000 !important;
+}
+
+/* Panel de Estilo "Mapa del Tesoro" */
+.theme-pirate_cove .customizer-panel {
+    background: #d2b48c !important; /* Color Arena/Pergamino */
+    border-left: 8px solid #2c1810 !important;
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png') !important;
+    color: #2c1810 !important;
+}
+
+.theme-pirate_cove .panel-header {
+    border-bottom: 2px dashed #2c1810 !important;
+}
+
+.theme-pirate_cove .panel-header h2 {
+    font-family: 'Pirata One', cursive;
+    color: #2c1810 !important;
+}
+
+.theme-pirate_cove .icon-btn {
+    background: #2c1810 !important;
+    color: #d2b48c !important;
+    border: none !important;
+}
+
+.theme-pirate_cove .icon-btn:hover {
+    background: #1a0f0a !important;
+    transform: rotate(90deg) scale(1.1);
+}
+
+.theme-pirate_cove .settings-section h3 {
+    font-family: 'Pirata One', cursive;
+    color: #2c1810 !important;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(44, 24, 16, 0.2);
+}
+
+.theme-pirate_cove .theme-name {
+    color: #3d2b1f !important;
+    font-weight: 900;
+}
+
+/* Modales (Pergamino) */
+.theme-pirate_cove .info-modal-content {
+    background: #f3e5ab !important;
+    border: 15px solid #2c1810 !important;
+    border-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png') 30 round;
+    box-shadow: 0 0 100px #000 !important;
+    font-family: 'MedievalSharp', cursive;
+    color: #2c1810 !important;
+}
+
+.theme-pirate_cove .info-divider {
+    background: #2c1810 !important;
+}
