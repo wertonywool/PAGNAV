@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Soporte para estructura modular
         const modularThemes = [
-            'modern_dark', 'minimalist_white', 'industrial_gold', 'luxury_onyx', 'coffee',
+            'modern_dark', 'minimalist_white', 'industrial_gold', 'luxury_onyx', 'coffee', 'sports_psychology',
             'lava', 'glitch_void', 'neon_jungle', 'ice_kingdom', 'jojos', 
             'cyberpunk_red', 'abyssal_deep', 'galactic_horizon', 'arcane_academy', 'dragon_lair',
             'synthwave', 'samurai', 'rapture', 'gothic', 'emerald_forest', 

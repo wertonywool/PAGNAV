@@ -1,0 +1,105 @@
+/* --- PEAK PERFORMANCE: INTERFAZ INMERSIVA --- */
+
+.theme-sports_psychology .main-header {
+    background: #0a0b0c !important;
+    border-bottom: 2px solid var(--accent) !important;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.8) !important;
+}
+
+.theme-sports_psychology .logo h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--accent) !important;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.theme-sports_psychology .logo-icon {
+    background: var(--accent) !important;
+    color: #000 !important;
+    border-radius: 4px !important;
+    transform: skewX(-15deg);
+    box-shadow: 0 0 15px var(--accent-glow) !important;
+}
+
+.theme-sports_psychology .header-btn {
+    background: #111 !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    border-radius: 2px !important;
+}
+
+.theme-sports_psychology .header-btn:hover {
+    background: var(--accent) !important;
+    color: #000 !important;
+    border-color: var(--accent) !important;
+}
+
+/* Panel de Estilo "Technical Hub" */
+.theme-sports_psychology .customizer-panel {
+    background: #0a0b0c !important;
+    border-left: 2px solid var(--accent) !important;
+    background-image: 
+        linear-gradient(rgba(34, 197, 94, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 197, 94, 0.02) 1px, transparent 1px) !important;
+    background-size: 20px 20px !important;
+}
+
+.theme-sports_psychology .panel-header {
+    border-bottom: 2px solid #1f2937 !important;
+}
+
+.theme-sports_psychology .panel-header h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #fff !important;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.theme-sports_psychology .icon-btn {
+    background: #1f2937 !important;
+    color: var(--accent) !important;
+    border: 1px solid var(--accent) !important;
+}
+
+.theme-sports_psychology .icon-btn:hover {
+    background: var(--accent) !important;
+    color: #000 !important;
+    transform: scale(1.1) rotate(180deg);
+}
+
+.theme-sports_psychology .settings-section h3 {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent) !important;
+    background: rgba(34, 197, 94, 0.1);
+    padding: 5px 15px;
+    border-left: 4px solid var(--accent);
+}
+
+.theme-sports_psychology .theme-name {
+    color: var(--text-muted) !important;
+}
+
+/* Modales */
+.theme-sports_psychology .info-modal-content {
+    background: #0a0b0c !important;
+    border: 1px solid var(--accent) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 50px rgba(0,0,0,1) !important;
+}
+
+.theme-sports_psychology .card-btn {
+    background: #111 !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+    border-radius: 2px !important;
+}
+
+.theme-sports_psychology .card-btn:hover {
+    background: var(--accent) !important;
+    color: #000 !important;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
