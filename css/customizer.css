@@ -112,25 +112,25 @@
     background: rgba(255,255,255,0.05);
 }
 
-/* --- REJILLA DE TEMAS PRO --- */
+/* --- REJILLA DE TEMAS PRO (RESPONSIVE) --- */
 .theme-presets {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px 12px;
+    grid-template-columns: repeat(3, 1fr); /* Bajamos a 3 para dar espacio al texto */
+    gap: 30px 15px;
 }
 
 .theme-option {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     cursor: pointer;
     width: 100%;
 }
 
 .preset-btn {
-    width: 58px; /* Tamaño estandarizado */
-    height: 58px;
+    width: 64px; /* Un poco más grande y legible */
+    height: 64px;
     border-radius: 50%;
     border: 3px solid rgba(255,255,255,0.08);
     cursor: pointer;
@@ -139,20 +139,24 @@
     overflow: hidden;
     padding: 0;
     flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 .theme-name {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     text-align: center;
-    color: #71717a;
+    color: #a1a1aa;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    white-space: nowrap;
+    white-space: normal; /* Permitir que el texto baje de línea */
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Máximo 2 líneas */
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
     width: 100%;
+    min-height: 1.8rem; /* Reservar espacio para 2 líneas */
 }
 
 .theme-option:hover .preset-btn {
