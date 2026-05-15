@@ -218,7 +218,20 @@
     font-size: 1.2rem;
     filter: drop-shadow(0 0 5px #fff);
 }
-.preset-btn[data-theme="dragon_lair"] { background: radial-gradient(circle, #ff9d00, #0c0800); border-color: #ff4500; }
+.preset-btn[data-theme="dragon_lair"] { 
+    background: radial-gradient(circle at center, #ff4500, #0c0402); 
+    border: 2px solid #ff4500; 
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
+    position: relative;
+}
+.preset-btn[data-theme="dragon_lair"]::after {
+    content: "\f6d5";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: rgba(0,0,0,0.6);
+    font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center; height: 100%;
+}
 .preset-btn[data-theme="pirate_cove"] { background: linear-gradient(135deg, #1a120b, #daa520); border-color: #3d2b1f; }
 .preset-btn[data-theme="ancient_egypt"] { background: linear-gradient(135deg, #ffd700, #2d1e12); border-color: #ffd700; }
 .preset-btn[data-theme="viking_runes"] { background: #0f0f0f; border-color: #8e8e8e; }

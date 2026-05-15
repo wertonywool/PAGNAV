@@ -1,37 +1,66 @@
-/* --- DRAGON'S LAIR: THEME & ATMOSPHERE --- */
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+/* --- DRAGON LAIR: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Pirata+One&display=swap');
 
 :root {
-    --bg-main: #0c0800;
-    --bg-card-base: #1a1200;
+    --bg-main: #0c0402;
+    --bg-card-base: #1a0805;
     --text-main: #ff9d00;
-    --text-muted: #8b4500;
-    --accent: #ff9d00;
-    --accent-glow: rgba(255, 157, 0, 0.4);
-    --border-color: #3d2b00;
+    --text-muted: #8b2500;
+    --accent: #ff4500; 
+    --accent-glow: rgba(255, 69, 0, 0.5);
+    --border-color: #3d0c02;
+    --lava-gradient: linear-gradient(135deg, #ff4500, #ff8c00, #ff0000);
 }
 
 body.theme-dragon_lair {
-    background: #0c0800;
-    background-image: 
-        radial-gradient(circle at 50% 0%, rgba(255, 157, 0, 0.15) 0%, transparent 70%),
-        url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); /* Simula escamas */
+    background: 
+        radial-gradient(circle at 50% 50%, #1a0805 0%, #0c0402 100%),
+        url('https://www.transparenttextures.com/patterns/dark-leather.png');
+    background-attachment: fixed;
+    color: var(--text-main);
     font-family: 'MedievalSharp', cursive;
+    overflow-x: hidden;
 }
 
-/* Brillo de oro flotante */
-body.theme-dragon_lair::after {
-    content: '';
+/* --- ELEMENTO ILUSTRATIVO: SILUETA DE DRAGÓN --- */
+body.theme-dragon_lair::before {
+    content: "\f6d5"; /* Icono de Dragón de FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: radial-gradient(rgba(255, 215, 0, 0.1) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.3;
+    bottom: -20px;
+    left: -20px;
+    font-size: 12rem;
+    color: #000;
+    opacity: 0.15;
+    filter: drop-shadow(0 0 30px #ff4500);
+    animation: dragon-breathing 8s ease-in-out infinite;
     pointer-events: none;
-    animation: gold-glimmer 5s ease-in-out infinite alternate;
+    z-index: -1;
+    transform: rotate(15deg);
 }
 
-@keyframes gold-glimmer {
-    from { opacity: 0.1; transform: scale(1); }
-    to { opacity: 0.4; transform: scale(1.1); }
+/* Brasas ardientes (Fire Embers) */
+body.theme-dragon_lair::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 10% 90%, #ff4500 1px, transparent 1px),
+        radial-gradient(circle at 90% 10%, #ff8c00 1px, transparent 1px);
+    background-size: 100px 100px;
+    opacity: 0.2;
+    animation: fire-embers 10s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes dragon-breathing {
+    0%, 100% { transform: rotate(15deg) scale(1); opacity: 0.15; }
+    50% { transform: rotate(18deg) scale(1.1); opacity: 0.25; }
+}
+
+@keyframes fire-embers {
+    from { background-position: 0 0; }
+    to { background-position: -200px -400px; }
 }

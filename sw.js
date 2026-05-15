@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pagnav-v6';
+const CACHE_NAME = 'pagnav-v7';
 const ASSETS = [
     './',
     'index.html',
