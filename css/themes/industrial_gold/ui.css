@@ -1,0 +1,90 @@
+/* --- PRECISION GOLD: INTERFAZ INMERSIVA --- */
+
+.theme-industrial_gold .main-header {
+    background: var(--titanium) !important;
+    border-bottom: 1px solid var(--accent) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 -1px 0 rgba(255,255,255,0.05) !important;
+    padding: 0.8rem 2rem;
+}
+
+.theme-industrial_gold .logo h1 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--accent) !important;
+    letter-spacing: 5px;
+    font-size: 2.2rem;
+    text-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
+}
+
+.theme-industrial_gold .logo-icon {
+    background: #111 !important;
+    color: var(--accent) !important;
+    border: 2px solid var(--accent) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 20px var(--accent-glow) !important;
+}
+
+.theme-industrial_gold .header-btn {
+    background: #151515 !important;
+    border: 1.5px solid #333 !important;
+    border-radius: 3px !important;
+    color: var(--text-muted) !important;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.theme-industrial_gold .customizer-panel {
+    background: #0c0c0c !important;
+    border-left: 2px solid var(--accent) !important;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px) !important;
+    box-shadow: -20px 0 50px rgba(0,0,0,0.8) !important;
+}
+
+.theme-industrial_gold .panel-header h2 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--accent) !important;
+    letter-spacing: 2px;
+}
+
+.theme-industrial_gold .icon-btn {
+    background: #111 !important;
+    border: 1px solid #333 !important;
+    color: var(--accent) !important;
+    border-radius: 4px !important;
+}
+
+.theme-industrial_gold .icon-btn:hover {
+    background: var(--accent) !important;
+    color: #000 !important;
+    transform: rotate(180deg);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.theme-industrial_gold .settings-section h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    background: var(--accent);
+    color: #000;
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.theme-industrial_gold .info-modal-content {
+    background: #0c0c0c !important;
+    border: 2px solid var(--accent) !important;
+    border-radius: 4px !important;
+}
+
+.theme-industrial_gold .card-btn {
+    border-radius: 2px !important;
+    background: #111 !important;
+    border: 1px solid #333 !important;
+    color: var(--accent) !important;
+}
+
+.theme-industrial_gold .card-btn:hover {
+    background: var(--accent) !important;
+    color: #000 !important;
+    box-shadow: 0 0 15px var(--accent);
+}

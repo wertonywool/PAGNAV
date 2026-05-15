@@ -262,12 +262,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Soporte para estructura modular
         const modularThemes = [
+            'modern_dark', 'minimalist_white', 'industrial_gold', 'luxury_onyx',
             'lava', 'glitch_void', 'neon_jungle', 'ice_kingdom', 'jojos', 
             'cyberpunk_red', 'abyssal_deep', 'galactic_horizon', 'arcane_academy', 'dragon_lair',
             'synthwave', 'samurai', 'rapture', 'gothic', 'emerald_forest', 
             'cybercore', 'desert_mirage', 'fallout', 'celestial', 'shadow_realm',
             'mars_colony', 'liminal_space', 'candy_land', 'pirate_cove', 'ancient_egypt',
-            'cyber_city', 'viking_runes', 'doodle_sketch', 'toxic_slime', 'luxury_onyx'
+            'cyber_city', 'viking_runes', 'doodle_sketch', 'toxic_slime'
         ];
 
         const isModular = modularThemes.includes(theme.themeName);

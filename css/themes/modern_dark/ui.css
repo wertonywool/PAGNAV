@@ -1,0 +1,97 @@
+/* --- ONYX EXECUTIVE: INTERFAZ INMERSIVA --- */
+
+.theme-modern_dark .main-header {
+    background: rgba(2, 2, 3, 0.8) !important;
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+}
+
+.theme-modern_dark .logo h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(180deg, #ffffff 0%, #64748b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.theme-modern_dark .logo-icon {
+    background: var(--platinum) !important;
+    -webkit-background-clip: border-box;
+    color: #000 !important;
+    border-radius: 8px !important;
+}
+
+.theme-modern_dark .customizer-panel {
+    background: rgba(2, 2, 3, 0.9) !important;
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    border-left: 1px solid var(--border-color) !important;
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.8) !important;
+}
+
+.theme-modern_dark .panel-header h2 {
+    color: #fff !important;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.theme-modern_dark .icon-btn {
+    color: var(--text-muted) !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.theme-modern_dark .icon-btn:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: rotate(90deg);
+}
+
+.theme-modern_dark .settings-section h3 {
+    color: var(--accent) !important;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.theme-modern_dark .theme-name {
+    color: var(--text-muted) !important;
+}
+
+.theme-modern_dark .primary-btn {
+    background: var(--platinum) !important;
+    color: #000 !important;
+    border-radius: 6px !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border: none !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.theme-modern_dark .info-modal-content {
+    background: rgba(8, 8, 10, 0.95) !important;
+    backdrop-filter: blur(50px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.theme-modern_dark .info-divider {
+    background: var(--platinum);
+    height: 1px;
+    opacity: 0.3;
+}
+
+.theme-modern_dark .card-btn {
+    border-radius: 4px;
+    background: #020203;
+    border: 1px solid #94a3b8;
+    color: #f8fafc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.theme-modern_dark .card-btn:hover {
+    background: var(--platinum);
+    color: #000;
+}

@@ -1,0 +1,39 @@
+/* --- PURE STUDIO: COMPONENTES DE TARJETA --- */
+
+.theme-minimalist_white .card-icon-wrapper {
+    background: var(--bg-card-base);
+    border: 2px solid #fff;
+    border-radius: 40px;
+    backdrop-filter: blur(var(--glass-blur));
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.05),
+        inset 0 2px 10px rgba(255, 255, 255, 1);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-minimalist_white .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-20px) scale(1.05);
+    background: #ffffff;
+    box-shadow: 
+        0 60px 80px -20px rgba(0, 0, 0, 0.08),
+        0 30px 40px -15px rgba(0, 0, 0, 0.03);
+}
+
+.theme-minimalist_white .card-title {
+    color: var(--text-muted) !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    background: #fff;
+    padding: 8px 20px !important;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: all 0.5s;
+}
+
+.theme-minimalist_white .nav-card:hover .card-title {
+    color: #020617 !important;
+    transform: translateY(5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}

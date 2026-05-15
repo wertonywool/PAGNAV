@@ -1,0 +1,41 @@
+/* --- PRECISION GOLD: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;500;800&display=swap');
+
+:root {
+    --bg-main: #080808;
+    --bg-card-base: #111111;
+    --text-main: #f1f1f1;
+    --text-muted: #888888;
+    --accent: #c5a059; 
+    --accent-glow: rgba(197, 160, 89, 0.2);
+    --border-color: #222222;
+    --titanium: linear-gradient(180deg, #2a2a2a 0%, #111111 50%, #2a2a2a 100%);
+    --laser-gold: #ffcc00;
+}
+
+body.theme-industrial_gold {
+    background: 
+        radial-gradient(circle at 50% 50%, #151515 0%, #080808 100%),
+        url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'JetBrains Mono', monospace;
+    overflow-x: hidden;
+}
+
+body.theme-industrial_gold::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--accent) 1px, transparent 1px);
+    background-size: 100px 100px;
+    opacity: 0.03;
+    animation: particles-float 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes particles-float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); }
+}

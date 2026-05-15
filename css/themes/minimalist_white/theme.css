@@ -1,0 +1,35 @@
+/* --- PURE STUDIO: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&display=swap');
+
+:root {
+    --bg-main: #f0f4f8;
+    --bg-card-base: rgba(255, 255, 255, 0.8);
+    --text-main: #020617; 
+    --text-muted: #475569;
+    --accent: #0f172a; 
+    --accent-glow: rgba(15, 23, 42, 0.08);
+    --border-color: rgba(255, 255, 255, 1);
+    --glass-blur: 40px;
+    --studio-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+body.theme-minimalist_white {
+    background: 
+        radial-gradient(at 0% 0%, #e2e8f0 0, transparent 50%), 
+        radial-gradient(at 100% 0%, #f1f5f9 0, transparent 50%), 
+        radial-gradient(at 100% 100%, #cbd5e1 0, transparent 50%), 
+        radial-gradient(at 0% 100%, #e2e8f0 0, transparent 50%),
+        #f8fafc;
+    background-attachment: fixed;
+    background-size: 200% 200%;
+    animation: mesh-breathing 20s ease infinite;
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+@keyframes mesh-breathing {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}

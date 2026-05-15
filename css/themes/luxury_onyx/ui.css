@@ -1,0 +1,88 @@
+/* --- IMPERIAL OBSIDIAN: INTERFAZ INMERSIVA --- */
+
+.theme-luxury_onyx .main-header {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid #d4af37 !important;
+    box-shadow: 0 4px 30px rgba(212, 175, 55, 0.1) !important;
+}
+
+.theme-luxury_onyx .logo h1 {
+    font-family: 'Cinzel', serif;
+    background: var(--gold-gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.theme-luxury_onyx .logo-icon {
+    background: var(--gold-gradient) !important;
+    color: #000 !important;
+    border-radius: 0 !important;
+    transform: rotate(45deg);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4) !important;
+}
+
+.theme-luxury_onyx .header-btn {
+    background: transparent !important;
+    border: 1px solid #333 !important;
+    border-radius: 0 !important;
+    color: #d4af37 !important;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.theme-luxury_onyx .header-btn:hover {
+    border-color: #d4af37 !important;
+    background: rgba(212, 175, 55, 0.05) !important;
+    box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.1) !important;
+}
+
+.theme-luxury_onyx .customizer-panel {
+    background: #050505 !important;
+    border-left: 1px solid #d4af37 !important;
+    background-image: radial-gradient(circle at center, #0a0a0a 0%, #020202 100%) !important;
+    box-shadow: -20px 0 60px rgba(0,0,0,1) !important;
+}
+
+.theme-luxury_onyx .panel-header h2 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37 !important;
+    letter-spacing: 2px;
+}
+
+.theme-luxury_onyx .icon-btn {
+    color: #d4af37 !important;
+    background: rgba(212, 175, 55, 0.05) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    border-radius: 0 !important;
+}
+
+.theme-luxury_onyx .icon-btn:hover {
+    background: var(--gold-gradient) !important;
+    color: #000 !important;
+    transform: rotate(90deg);
+}
+
+.theme-luxury_onyx .settings-section h3 {
+    color: #d4af37 !important;
+    font-family: 'Cinzel', serif;
+    border-left: 3px solid #d4af37;
+    padding-left: 15px;
+}
+
+.theme-luxury_onyx .info-modal-content {
+    background: #050505 !important;
+    border: 1px solid #d4af37 !important;
+    border-radius: 0 !important;
+}
+
+.theme-luxury_onyx .card-btn {
+    border-radius: 0 !important;
+    background: #000 !important;
+    border: 1px solid #d4af37 !important;
+    color: #d4af37 !important;
+}
