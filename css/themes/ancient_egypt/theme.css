@@ -1,3 +1,63 @@
-/* --- ANCIENT EGYPT: THEME --- */
-:root { --bg-main: #1a120b; --bg-card-base: #2d1e12; --text-main: #ffd700; --text-muted: #c5a059; --accent: #ffd700; --accent-glow: rgba(255, 215, 0, 0.3); --border-color: #4a235a; }
-body.theme-ancient_egypt { background: #1a120b; background-image: radial-gradient(circle at 50% 50%, #2d1e12 0%, transparent 100%), url('https://www.transparenttextures.com/patterns/sandpaper.png'); font-family: 'Cinzel', serif; }
+/* --- ANCIENT EGYPT: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Pirata+One&display=swap');
+
+:root {
+    --bg-main: #0f0a05;
+    --bg-card-base: #1c140a;
+    --text-main: #ffd700; /* Oro Real */
+    --text-muted: #8b6b00;
+    --accent: #22d3ee; /* Azul Energía de Ra */
+    --accent-glow: rgba(34, 211, 238, 0.4);
+    --border-color: #ffd700;
+    --sand-texture: url('https://www.transparenttextures.com/patterns/sandpaper.png');
+}
+
+body.theme-ancient_egypt {
+    background: 
+        radial-gradient(circle at 50% 50%, #2d1e12 0%, #0f0a05 100%),
+        var(--sand-texture);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Cinzel', serif;
+    overflow-x: hidden;
+}
+
+/* --- ELEMENTO ILUSTRATIVO: LA GRAN ESFINGE --- */
+body.theme-ancient_egypt::before {
+    content: "\f670"; /* Icono de Monumento/Anubis/Esfinge (usando fontawesome) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: fixed;
+    bottom: -10px;
+    left: 40px;
+    font-size: 15rem;
+    color: #000;
+    opacity: 0.1;
+    filter: drop-shadow(0 0 20px #ffd700);
+    animation: esfinge-glow 10s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Tormenta de Arena (Sand Dust) */
+body.theme-ancient_egypt::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, #ffd700 0.5px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.05;
+    animation: sand-drift 15s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes esfinge-glow {
+    0%, 100% { opacity: 0.05; filter: drop-shadow(0 0 10px #ffd700); }
+    50% { opacity: 0.15; filter: drop-shadow(0 0 30px #ffd700); }
+}
+
+@keyframes sand-drift {
+    from { background-position: 0 0; }
+    to { background-position: 800px 400px; }
+}

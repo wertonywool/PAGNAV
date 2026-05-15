@@ -1,4 +1,70 @@
-/* --- ANCIENT EGYPT: CARDS --- */
-.theme-ancient_egypt .nav-card { background: #2d1e12 !important; border: 3px solid #ffd700; border-radius: 0 !important; box-shadow: 10px 10px 0px #1a120b; }
-.theme-ancient_egypt .nav-card:hover { border-color: #fff; transform: translateY(-5px); }
-.theme-ancient_egypt .card-title { color: #ffd700; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; }
+/* --- ANCIENT EGYPT: COMPONENTES DE TARJETA --- */
+
+.theme-ancient_egypt .nav-card {
+    background: transparent !important;
+}
+
+.theme-ancient_egypt .card-icon-wrapper {
+    background: var(--bg-card-base);
+    border: 3px solid #ffd700; /* Marco de Oro Macizo */
+    border-radius: 0 !important;
+    box-shadow: 
+        10px 10px 0px #000,
+        inset 0 0 15px rgba(255, 215, 0, 0.2);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de Jeroglíficos al fondo de la tarjeta */
+.theme-ancient_egypt .card-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/papyros.png');
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.theme-ancient_egypt .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-15px) scale(1.03);
+    border-color: #fff;
+    box-shadow: 
+        0 40px 60px rgba(0,0,0,1),
+        0 0 30px var(--accent-glow);
+}
+
+/* Líneas de Energía de Ra al Hover */
+.theme-ancient_egypt .card-icon-wrapper::after {
+    content: "";
+    position: absolute;
+    top: -100%; left: -100%;
+    width: 300%; height: 300%;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.theme-ancient_egypt .nav-card:hover .card-icon-wrapper::after {
+    opacity: 1;
+    top: -50%;
+}
+
+.theme-ancient_egypt .card-title {
+    font-family: 'Cinzel', serif;
+    color: #ffd700 !important;
+    font-weight: 900;
+    font-size: 1.1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 15px;
+    text-shadow: 2px 2px 5px #000;
+    transition: 0.4s;
+}
+
+.theme-ancient_egypt .nav-card:hover .card-title {
+    color: var(--accent) !important;
+    letter-spacing: 6px;
+    text-shadow: 0 0 15px var(--accent-glow);
+}
