@@ -1,23 +1,57 @@
-/* --- FALLOUT: CARD DESIGN --- */
+/* --- FALLOUT: COMPONENTES DE TARJETA --- */
+
 .theme-fallout .nav-card {
-    background: #1a1a0f !important;
-    border: 2px solid #32cd32;
-    border-radius: 0 !important;
-    box-shadow: 0 0 10px rgba(50, 205, 50, 0.2);
+    background: transparent !important;
+    perspective: 1000px;
 }
 
-.theme-fallout .nav-card:hover {
-    background: #32cd32 !important;
-    box-shadow: 0 0 25px #32cd32;
+.theme-fallout .card-icon-wrapper {
+    background: #0a140a;
+    border: 2px solid #1e601e;
+    border-radius: 4px;
+    box-shadow: 
+        0 10px 20px rgba(0,0,0,0.8),
+        inset 0 0 10px rgba(50, 205, 50, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-.theme-fallout .nav-card:hover .card-title,
-.theme-fallout .nav-card:hover .card-icon-container {
-    color: #000;
+.theme-fallout .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #32cd32;
+    box-shadow: 0 0 25px rgba(50, 205, 50, 0.3);
+    background: #102010;
+}
+
+/* Efecto de Interfaz Pip-Boy */
+.theme-fallout .card-icon-wrapper::after {
+    content: "[ STANDBY ]";
+    position: absolute;
+    bottom: -20px;
+    right: 5px;
+    font-size: 0.6rem;
+    color: #32cd32;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.theme-fallout .nav-card:hover .card-icon-wrapper::after {
+    opacity: 0.6;
+    bottom: 5px;
 }
 
 .theme-fallout .card-title {
-    color: #32cd32;
-    font-weight: bold;
+    font-family: 'Courier Prime', monospace;
+    color: var(--text-main) !important;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    text-shadow: 0 0 5px rgba(50, 205, 50, 0.5);
+}
+
+.theme-fallout .nav-card:hover .card-title {
+    color: #fff !important;
+    text-shadow: 0 0 15px #32cd32;
 }

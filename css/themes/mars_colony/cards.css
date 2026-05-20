@@ -1,4 +1,55 @@
-/* --- MARS COLONY: CARDS --- */
-.theme-mars_colony .nav-card { border: 2px solid #3e1a0a; background: #2a0f0a !important; border-radius: 4px !important; }
-.theme-mars_colony .nav-card:hover { border-color: #ff5e00; box-shadow: 0 0 20px rgba(255, 94, 0, 0.2); }
-.theme-mars_colony .card-title { color: #ff9d6a; font-weight: 800; text-transform: uppercase; }
+/* --- MARS COLONY: COMPONENTES DE TARJETA --- */
+
+.theme-mars_colony .nav-card {
+    background: transparent !important;
+    perspective: 1000px;
+}
+
+.theme-mars_colony .card-icon-wrapper {
+    background: #2a0f0a;
+    border: 2px solid #3e1a0a;
+    border-radius: 8px;
+    box-shadow: 
+        0 10px 20px rgba(0,0,0,0.8),
+        inset 0 0 10px rgba(255, 94, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-mars_colony .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-10px) rotateX(5deg);
+    border-color: #ff5e00;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.9),
+        0 0 20px rgba(255, 94, 0, 0.2);
+}
+
+/* Efecto de Interfaz de Habitat */
+.theme-mars_colony .card-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 5px; left: 5px; right: 5px; height: 1px;
+    background: rgba(255, 94, 0, 0.2);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.theme-mars_colony .nav-card:hover .card-icon-wrapper::before {
+    opacity: 1;
+}
+
+.theme-mars_colony .card-title {
+    font-family: 'Exo 2', sans-serif;
+    color: var(--text-main) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    text-shadow: 0 0 5px rgba(255, 94, 0, 0.3);
+}
+
+.theme-mars_colony .nav-card:hover .card-title {
+    color: #fff !important;
+    text-shadow: 0 0 10px #ff5e00;
+}

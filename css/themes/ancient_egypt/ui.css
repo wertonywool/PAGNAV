@@ -1,7 +1,7 @@
 /* --- ANCIENT EGYPT: INTERFAZ INMERSIVA --- */
 
 .theme-ancient_egypt .main-header {
-    background: linear-gradient(to bottom, #1c140a, #0f0a05) !important;
+    background: linear-gradient(to bottom, #1c140a, #0a0805) !important;
     border-bottom: 5px solid #ffd700 !important;
     box-shadow: 0 5px 30px rgba(255, 215, 0, 0.2) !important;
 }
@@ -9,20 +9,21 @@
 .theme-ancient_egypt .logo h1 {
     font-family: 'Cinzel', serif;
     color: #ffd700 !important;
-    letter-spacing: 5px;
+    letter-spacing: 6px;
     font-weight: 900;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .theme-ancient_egypt .logo-icon {
     background: #ffd700 !important;
     color: #000 !important;
     border-radius: 0 !important;
-    clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Forma de Pirámide */
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Pirámide */
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.6) !important;
 }
 
 .theme-ancient_egypt .header-btn {
-    background: #0f0a05 !important;
+    background: #1c140a !important;
     border: 2px solid #3d2b1f !important;
     color: #ffd700 !important;
     font-family: 'Cinzel', serif;
@@ -32,11 +33,12 @@
 .theme-ancient_egypt .header-btn:hover {
     background: #ffd700 !important;
     color: #000 !important;
+    border-color: #fff !important;
 }
 
-/* Panel de Estilo "Cámara del Rey" */
+/* Panel de Estilo "Cámara Secreta" */
 .theme-ancient_egypt .customizer-panel {
-    background: #1c140a !important;
+    background: #0a0805 !important;
     border-left: 5px solid #ffd700 !important;
     background-image: url('https://www.transparenttextures.com/patterns/sandpaper.png') !important;
 }
@@ -48,12 +50,13 @@
 .theme-ancient_egypt .panel-header h2 {
     font-family: 'Cinzel', serif;
     color: #ffd700 !important;
+    letter-spacing: 2px;
 }
 
 .theme-ancient_egypt .icon-btn {
     background: #ffd700 !important;
     color: #000 !important;
-    border: none !important;
+    border-radius: 0 !important;
 }
 
 .theme-ancient_egypt .icon-btn:hover {
@@ -66,29 +69,25 @@
     color: #ffd700 !important;
     border-bottom: 2px solid #ffd700;
     padding-bottom: 5px;
+    background: rgba(255, 215, 0, 0.05);
 }
 
-/* Modales (Piedra Caliza) */
+.theme-ancient_egypt .theme-name {
+    color: #8b6b00 !important;
+    font-weight: 800;
+}
+
+/* Modales (Sarcófago de Oro) */
 .theme-ancient_egypt .info-modal-content {
-    background: #fdf5e6 !important; /* Color Crema Caliza */
-    border: 10px solid #ffd700 !important;
-    box-shadow: 0 0 100px #000 !important;
+    background: #1c140a !important;
+    border: 5px solid #ffd700 !important;
+    box-shadow: 0 0 100px #000, 0 0 30px rgba(255, 215, 0, 0.2) !important;
     font-family: 'Cinzel', serif;
-    color: #1c140a !important;
+    color: #ffd700 !important;
+    border-radius: 0 !important;
 }
 
 .theme-ancient_egypt .info-divider {
-    background: #1c140a !important;
-}
-
-.theme-ancient_egypt .card-btn {
-    border-radius: 0 !important;
-    background: #1c140a !important;
-    border: 1px solid #ffd700 !important;
-    color: #ffd700 !important;
-}
-
-.theme-ancient_egypt .card-btn:hover {
     background: #ffd700 !important;
-    color: #000 !important;
+    height: 2px;
 }

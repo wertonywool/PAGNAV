@@ -1,63 +1,73 @@
 /* --- ANCIENT EGYPT: ATRIBUTOS CORE --- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
 
 :root {
-    --bg-main: #0f0a05;
+    --bg-main: #0a0805;
     --bg-card-base: #1c140a;
-    --text-main: #ffd700; /* Oro Real */
+    --text-main: #ffd700;
     --text-muted: #8b6b00;
-    --accent: #22d3ee; /* Azul Energía de Ra */
-    --accent-glow: rgba(34, 211, 238, 0.4);
+    --accent: #22d3ee; /* Energía de Ra (Azul) */
+    --accent-glow: rgba(34, 211, 238, 0.6);
     --border-color: #ffd700;
     --sand-texture: url('https://www.transparenttextures.com/patterns/sandpaper.png');
 }
 
 body.theme-ancient_egypt {
-    background: 
-        radial-gradient(circle at 50% 50%, #2d1e12 0%, #0f0a05 100%),
-        var(--sand-texture);
+    background: #0a0805;
+    background-image: 
+        radial-gradient(circle at 50% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        url('https://www.transparenttextures.com/patterns/sandpaper.png');
     background-attachment: fixed;
     color: var(--text-main);
     font-family: 'Cinzel', serif;
     overflow-x: hidden;
 }
 
-/* --- ELEMENTO ILUSTRATIVO: LA GRAN ESFINGE --- */
+/* --- ELEMENTO ILUSTRATIVO: INTERIOR DEL TEMPLO --- */
 body.theme-ancient_egypt::before {
-    content: "\f670"; /* Icono de Monumento/Anubis/Esfinge (usando fontawesome) */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
+    content: "";
     position: fixed;
-    bottom: -10px;
-    left: 40px;
-    font-size: 15rem;
-    color: #000;
-    opacity: 0.1;
-    filter: drop-shadow(0 0 20px #ffd700);
-    animation: esfinge-glow 10s ease-in-out infinite;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(28, 20, 10, 0.9) 0%, transparent 100%);
+    z-index: -2;
     pointer-events: none;
-    z-index: -1;
 }
 
-/* Tormenta de Arena (Sand Dust) */
+/* Antorchas / Luces laterales */
 body.theme-ancient_egypt::after {
     content: "";
     position: fixed;
     inset: 0;
-    background-image: radial-gradient(circle, #ffd700 0.5px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.05;
-    animation: sand-drift 15s linear infinite;
+    background: 
+        radial-gradient(circle at 10% 80%, rgba(255, 140, 0, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(255, 140, 0, 0.1) 0%, transparent 30%);
+    opacity: 0.5;
+    animation: torch-flicker 4s ease-in-out infinite alternate;
     pointer-events: none;
     z-index: -1;
 }
 
-@keyframes esfinge-glow {
-    0%, 100% { opacity: 0.05; filter: drop-shadow(0 0 10px #ffd700); }
-    50% { opacity: 0.15; filter: drop-shadow(0 0 30px #ffd700); }
+@keyframes torch-flicker {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.05); }
 }
 
-@keyframes sand-drift {
+/* Tormenta de Arena suave */
+.sand-drift-layer {
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0.5px, transparent 1px);
+    background-size: 50px 50px;
+    animation: sand-move 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes sand-move {
     from { background-position: 0 0; }
-    to { background-position: 800px 400px; }
+    to { background-position: 1000px 500px; }
 }

@@ -1,25 +1,70 @@
-/* --- ICE KINGDOM: CARD DESIGN --- */
-.theme-ice_kingdom .nav-card {
-    background: rgba(255, 255, 255, 0.2) !important;
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 5px 25px 5px 25px !important;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-}
+/* --- ICE KINGDOM: COMPONENTES DE TARJETA --- */
 
-.theme-ice_kingdom .nav-card:hover {
-    background: rgba(255, 255, 255, 0.4) !important;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 45px rgba(52, 152, 219, 0.2);
+.theme-ice_kingdom .nav-card {
+    background: transparent !important;
+    perspective: 1000px;
 }
 
 .theme-ice_kingdom .card-icon-wrapper {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    backdrop-filter: blur(var(--glass-blur));
+    box-shadow: 
+        0 8px 32px rgba(31, 38, 135, 0.15),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de Escarcha (Frost) */
+.theme-ice_kingdom .card-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.theme-ice_kingdom .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-12px) rotateY(5deg);
+    border-color: #fff;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.2),
+        0 0 20px var(--accent-glow);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Brillo Crio-Energético al Hover */
+.theme-ice_kingdom .card-icon-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.6s;
+    pointer-events: none;
+}
+
+.theme-ice_kingdom .nav-card:hover .card-icon-wrapper::after {
+    opacity: 1;
+    inset: 0;
 }
 
 .theme-ice_kingdom .card-title {
-    color: #2c3e50;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-main) !important;
     font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 1.1rem !important;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.theme-ice_kingdom .nav-card:hover .card-title {
+    color: var(--accent) !important;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
 }

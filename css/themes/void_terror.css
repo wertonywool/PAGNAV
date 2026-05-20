@@ -1,41 +1,97 @@
 /* --- TEMA: VOID TERROR (HORROR CÓSMICO) --- */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap');
+
 :root {
     --bg-main: #020005;
-    --bg-card-base: #050010;
-    --text-main: #9eff00;
-    --text-muted: #2d5a27;
-    --accent: #5d00ff;
-    --accent-glow: rgba(93, 0, 255, 0.5);
+    --bg-card-base: rgba(5, 0, 16, 0.95);
+    --text-main: #9eff00; /* Verde Radioactivo */
+    --text-muted: #4a008a;
+    --accent: #5d00ff; /* Púrpura del Vacío */
+    --accent-glow: rgba(93, 0, 255, 0.6);
     --border-color: #1a0033;
 }
 
 body.theme-void_terror {
-    background: #020005;
-    overflow: hidden;
+    background: radial-gradient(circle at center, #0a0020 0%, #020005 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Creepster', cursive;
+    overflow-x: hidden;
 }
 
+/* El Vórtice del Vacío */
 body.theme-void_terror::before {
     content: "";
     position: fixed;
-    inset: -50%;
-    background: radial-gradient(circle at center, rgba(93, 0, 255, 0.1) 0%, transparent 50%);
-    animation: void-swirl 20s linear infinite;
+    inset: -100%;
+    background: radial-gradient(circle at center, rgba(93, 0, 255, 0.05) 0%, transparent 40%);
+    animation: void-spin 30s linear infinite;
     z-index: -1;
+    pointer-events: none;
 }
 
-@keyframes void-swirl {
+@keyframes void-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-.theme-void_terror .card-icon-wrapper {
-    background: #000;
-    border: 1px solid var(--accent);
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
-    animation: organic-float 5s ease-in-out infinite alternate;
+/* Ojos en la Oscuridad (sutil) */
+body.theme-void_terror::after {
+    content: "• •";
+    position: fixed;
+    top: 20%; left: 15%;
+    font-size: 0.8rem;
+    color: var(--text-main);
+    opacity: 0;
+    animation: eyes-blink 10s infinite;
+    pointer-events: none;
+    z-index: -1;
 }
 
-@keyframes organic-float {
-    0% { border-radius: 40% 60% 70% 30%; }
-    100% { border-radius: 60% 40% 30% 70%; }
+@keyframes eyes-blink {
+    0%, 90%, 100% { opacity: 0; }
+    95% { opacity: 0.2; }
+}
+
+/* --- CARDS --- */
+.theme-void_terror .nav-card {
+    background: transparent !important;
+    perspective: 1000px;
+}
+
+.theme-void_terror .card-icon-wrapper {
+    background: #000;
+    border: 2px solid var(--accent);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+    box-shadow: 0 0 20px rgba(93, 0, 255, 0.2);
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+    animation: void-organic 6s ease-in-out infinite alternate;
+}
+
+@keyframes void-organic {
+    0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%; }
+    100% { border-radius: 70% 30% 40% 60% / 60% 70% 50% 40%; }
+}
+
+.theme-void_terror .nav-card:hover .card-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--text-main);
+    box-shadow: 0 0 40px var(--accent-glow), 0 0 20px var(--text-main);
+}
+
+.theme-void_terror .card-title {
+    font-family: 'Nosifer', cursive;
+    color: var(--text-main) !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.theme-void_terror .nav-card:hover .card-title {
+    color: #fff !important;
+    text-shadow: 0 0 10px var(--text-main);
+    transform: scale(1.1) translateY(-5px);
 }

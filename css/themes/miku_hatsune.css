@@ -1,127 +1,96 @@
-/* --- TEMA: HATSUENE MIKU (DIGITAL DIVA) --- */
+/* --- TEMA PRO: MIKU HATSUNE (VOCALOID STAR - REDUX) --- */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
 
 :root {
-    --bg-main: #0a0a0c;
-    --bg-card-base: rgba(57, 197, 187, 0.1);
-    --text-main: #ffffff;
-    --text-muted: #39c5bb;
-    --accent: #39c5bb; /* Color Miku */
-    --accent-secondary: #ff007f; /* Rosa Neón */
-    --accent-glow: rgba(57, 197, 187, 0.5);
+    --bg-main: #003333;
+    --bg-card-base: rgba(57, 197, 187, 0.2);
+    --text-main: #39c5bb;
+    --text-muted: #ff007f;
+    --accent: #39c5bb;
+    --accent-glow: rgba(57, 197, 187, 0.6);
     --border-color: rgba(57, 197, 187, 0.3);
     --glass-blur: 15px;
-    --radius-lg: 15px;
 }
 
-body {
-    background-color: var(--bg-main);
-    background-image: 
-        linear-gradient(rgba(57, 197, 187, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(57, 197, 187, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
+body.theme-miku_hatsune {
+    background: radial-gradient(circle at top, #005555 0%, #002222 100%);
     background-attachment: fixed;
     color: var(--text-main);
     font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
 }
 
-/* Decoración lateral inspirada en el ecualizador */
-body::after {
+/* Ondas Sonoras Digitales */
+body.theme-miku_hatsune::before {
     content: "01";
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 8rem;
+    bottom: 20px; right: 20px;
+    font-size: 10rem;
     font-weight: 900;
     color: var(--accent);
     opacity: 0.1;
     z-index: -1;
 }
 
-/* --- HEADER --- */
-.main-header {
-    background: rgba(10, 10, 12, 0.8) !important;
-    backdrop-filter: blur(var(--glass-blur));
-    border-bottom: 3px solid var(--accent);
-    box-shadow: 0 0 20px var(--accent-glow);
+/* Destellos de Estrella */
+body.theme-miku_hatsune::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 100px 100px;
+    opacity: 0.1;
+    animation: miku-sparkle 10s linear infinite;
+    pointer-events: none;
+    z-index: -1;
 }
 
-.logo h1 {
-    font-weight: 900;
-    color: var(--accent) !important;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+@keyframes miku-sparkle {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
 }
 
 /* --- CARDS --- */
-.card-icon-wrapper {
-    background: #000;
-    border: 2px solid var(--accent);
-    border-radius: 20px 0 20px 0;
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.theme-miku_hatsune .nav-card {
+    background: transparent !important;
+    perspective: 1000px;
 }
 
-.card-icon-wrapper::before {
-    content: "";
-    position: absolute;
-    top: -5px; left: -5px; right: -5px; bottom: -5px;
-    border: 1px solid var(--accent-secondary);
-    border-radius: 22px 0 22px 0;
-    opacity: 0;
+.theme-miku_hatsune .card-icon-wrapper {
+    background: rgba(57, 197, 187, 0.2);
+    border: 2px solid var(--border-color);
+    border-radius: 50% 0 50% 0; /* Estética de coletas */
+    backdrop-filter: blur(var(--glass-blur));
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.5),
+        inset 0 0 15px rgba(57, 197, 187, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-miku_hatsune .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-12px) rotate(-3deg);
+    border-color: #fff;
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,0.8),
+        0 0 25px var(--accent-glow);
+    background: rgba(57, 197, 187, 0.4);
+}
+
+.theme-miku_hatsune .card-title {
+    color: var(--text-main) !important;
+    font-weight: 800;
+    font-size: 1.1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    text-shadow: 0 0 10px rgba(57, 197, 187, 0.5);
     transition: 0.3s;
 }
 
-.nav-card:hover .card-icon-wrapper {
-    transform: translateY(-10px);
-    border-color: var(--accent-secondary);
-    box-shadow: 0 0 25px var(--accent-glow), 0 0 10px var(--accent-secondary);
-}
-
-.nav-card:hover .card-icon-wrapper::before {
-    opacity: 1;
-}
-
-.card-title {
-    color: var(--accent) !important;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 15px;
-}
-
-.nav-card:hover .card-title {
-    color: var(--accent-secondary) !important;
-    text-shadow: 0 0 10px var(--accent-secondary);
-}
-
-/* --- BOTONES --- */
-.primary-btn {
-    background: var(--accent) !important;
-    color: #000 !important;
-    border-radius: 0 !important;
-    font-weight: 900;
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-    transition: all 0.3s;
-}
-
-.primary-btn:hover {
-    background: var(--accent-secondary) !important;
-    color: #fff !important;
-    transform: scale(1.1);
-}
-
-/* Modal y Paneles */
-.info-modal-content, .customizer-panel {
-    background: rgba(10, 10, 12, 0.95) !important;
-    border: 2px solid var(--accent);
-    border-radius: 0 30px 0 30px;
-}
-
-/* Scrollbar Miku */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0a0a0c; }
-::-webkit-scrollbar-thumb { 
-    background: var(--accent); 
-    box-shadow: 0 0 10px var(--accent);
+.theme-miku_hatsune .nav-card:hover .card-title {
+    color: #ff007f !important;
+    text-shadow: 0 0 15px #ff007f;
+    letter-spacing: 4px;
 }

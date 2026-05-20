@@ -1,20 +1,49 @@
-/* --- FALLOUT: THEME & ATMOSPHERE --- */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap');
+/* --- FALLOUT: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 
 :root {
-    --bg-main: #0d0d08;
-    --bg-card-base: #1a1a0f;
-    --text-main: #32cd32;
+    --bg-main: #050a05;
+    --bg-card-base: rgba(10, 20, 10, 0.9);
+    --text-main: #32cd32; /* Verde Pip-Boy */
     --text-muted: #1e601e;
     --accent: #32cd32;
-    --accent-glow: rgba(50, 205, 50, 0.4);
-    --border-color: #2a2a1a;
+    --accent-glow: rgba(50, 205, 50, 0.5);
+    --border-color: #1a2e1a;
 }
 
 body.theme-fallout {
-    background: #0d0d08;
+    background: #050a05;
     background-image: 
-        repeating-linear-gradient(0deg, rgba(50, 205, 50, 0.03) 0px, rgba(50, 205, 50, 0.03) 1px, transparent 1px, transparent 2px),
-        url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
+        radial-gradient(circle at center, #0a200a 0%, #050a05 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
     font-family: 'Courier Prime', monospace;
+    overflow-x: hidden;
+}
+
+/* Scanlines Pip-Boy */
+body.theme-fallout::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Efecto de Parpadeo CRT sutil */
+body.theme-fallout::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(50, 205, 50, 0.02);
+    opacity: 0;
+    animation: crt-flicker 0.15s infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes crt-flicker {
+    0% { opacity: 0.1; }
+    100% { opacity: 0.2; }
 }

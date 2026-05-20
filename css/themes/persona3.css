@@ -1,76 +1,94 @@
-/* --- TEMA: PERSONA 3 (DARK HOUR EDITION) --- */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;900&display=swap');
+/* --- TEMA PRO: PERSONA 3 (MOONLIGHT MEMORIES) --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
 
 :root {
-    --bg-main: #000b1e;
-    --bg-card-base: #001f3f;
-    --text-main: #ffffff;
-    --text-muted: #00ccff;
-    --accent: #00ccff; /* P3 Light Blue */
-    --accent-glow: rgba(0, 204, 255, 0.4);
-    --border-color: #004080;
-    --glass-blur: 12px;
-    --radius-lg: 4px;
+    --bg-main: #001a2d;
+    --bg-card-base: rgba(0, 40, 80, 0.4);
+    --text-main: #00ccff;
+    --text-muted: #005a8b;
+    --accent: #00ccff;
+    --accent-glow: rgba(0, 204, 255, 0.5);
+    --border-color: rgba(0, 204, 255, 0.3);
+    --glass-blur: 15px;
 }
 
-body {
-    background-color: var(--bg-main);
-    background-image: 
-        /* Gradiente de luz de luna */
-        radial-gradient(circle at 50% -20%, #004080 0%, transparent 70%),
-        /* Sutil efecto de cuadrícula digital */
-        linear-gradient(rgba(0, 204, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 204, 255, 0.05) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
-    font-family: 'Kanit', sans-serif;
+body.theme-persona3 {
+    background: radial-gradient(circle at 50% 0%, #004080 0%, #001a2d 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
 }
 
-.nav-card {
-    border: 2px solid #00ccff;
-    background: rgba(0, 31, 63, 0.8) !important;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
-    box-shadow: inset 0 0 20px rgba(0, 204, 255, 0.2);
+/* Efecto de Luna y Ondas (Ripple) */
+body.theme-persona3::before {
+    content: "";
+    position: fixed;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(circle, rgba(0, 204, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
 }
 
-.nav-card:hover {
-    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
-    border-color: #fff;
-    box-shadow: 0 0 30px rgba(0, 204, 255, 0.4);
+body.theme-persona3::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0, 204, 255, 0.05) 1px, transparent 1px);
+    background-size: 100px 100px;
+    opacity: 0.3;
+    animation: p3-drift 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
 }
 
-.card-icon-wrapper {
-    background: linear-gradient(135deg, #001f3f, #004080);
-    border-radius: 0 !important;
+@keyframes p3-drift {
+    from { background-position: 0 0; }
+    to { background-position: 100px 200px; }
 }
 
-.card-title {
-    font-weight: 900;
-    text-transform: uppercase;
-    font-style: italic;
-    background: #00ccff;
-    color: #000;
-    padding: 4px 0;
-    letter-spacing: 1px;
+/* --- CARDS --- */
+.theme-persona3 .nav-card {
+    background: transparent !important;
+    perspective: 1000px;
 }
 
-.main-header {
-    background: rgba(0, 11, 30, 0.9);
-    border-bottom: 3px solid #00ccff;
-    box-shadow: 0 5px 20px rgba(0, 204, 255, 0.2);
-}
-
-.logo-icon {
-    border-radius: 50%;
-    background: #00ccff;
-    box-shadow: 0 0 15px #00ccff;
-}
-
-.logo-text h1 {
-    font-style: italic;
-    letter-spacing: 2px;
-}
-
-.header-btn {
+.theme-persona3 .card-icon-wrapper {
+    background: rgba(0, 40, 80, 0.6);
+    border: 2px solid var(--border-color);
     border-radius: 0;
-    transform: skewX(-10deg);
+    clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+    backdrop-filter: blur(var(--glass-blur));
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.5),
+        inset 0 0 15px rgba(0, 204, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-persona3 .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-10px) skewX(-5deg);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0, 204, 255, 0.2);
+    background: rgba(0, 60, 120, 0.8);
+}
+
+.theme-persona3 .card-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-muted) !important;
+    font-weight: 700;
+    font-size: 1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.theme-persona3 .nav-card:hover .card-title {
+    color: #fff !important;
+    text-shadow: 0 0 15px var(--accent);
+    letter-spacing: 4px;
 }

@@ -181,19 +181,52 @@
     box-shadow: 0 0 15px #00ccff;
 }
 
-/* 15. LAVA ERUPTION */
-.theme-lava_eruption .card-btn {
+/* 15. LAVA FLOW */
+.theme-lava .card-btn {
     border-radius: 4px;
     background: #111;
     border: 1px solid #ff4500;
     color: #ff4500;
     box-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
 }
-.theme-lava_eruption .card-btn:hover {
-    background: #ff454500;
+.theme-lava .card-btn:hover {
+    background: #ff4500;
     color: #fff;
     box-shadow: 0 0 20px #ff4500;
     transform: scale(1.1) rotate(5deg);
+}
+
+/* 46. FOREST NATURE */
+.theme-forest_nature .card-btn {
+    border-radius: 50% 15px;
+    background: #064e3b;
+    border: 1px solid #10b981;
+    color: #10b981;
+}
+
+/* 47. SAKURA ZEN */
+.theme-sakura_zen .card-btn {
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #ff85a2;
+    color: #ff85a2;
+}
+
+/* 48. SPACE NEBULA */
+.theme-space_nebula .card-btn {
+    border-radius: 50%;
+    background: rgba(129, 140, 248, 0.2);
+    border: 1px solid #818cf8;
+    color: #fff;
+    backdrop-filter: blur(5px);
+}
+
+/* 49. VOID TERROR */
+.theme-void_terror .card-btn {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background: #000;
+    border: 1px solid #5d00ff;
+    color: #9eff00;
 }
 
 /* 16. MATRIX */

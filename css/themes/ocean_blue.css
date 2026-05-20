@@ -3,16 +3,16 @@
 
 :root {
     --bg-main: #020617;
-    --bg-card-base: rgba(12, 74, 110, 0.2);
+    --bg-card-base: rgba(12, 74, 110, 0.3);
     --text-main: #f0f9ff;
     --text-muted: #7dd3fc;
     --accent: #22d3ee;
     --accent-glow: rgba(34, 211, 238, 0.6);
-    --border-color: rgba(56, 189, 248, 0.1);
-    --glass-blur: 30px;
+    --border-color: rgba(56, 189, 248, 0.2);
+    --glass-blur: 25px;
 }
 
-body {
+body.theme-ocean_blue {
     background: radial-gradient(circle at 50% -20%, #0c4a6e 0%, #020617 100%);
     background-attachment: fixed;
     color: var(--text-main);
@@ -20,113 +20,99 @@ body {
     overflow-x: hidden;
 }
 
-/* Lluvia de Burbujas Masiva */
-body::before, body::after {
-    content: "○";
+/* Lluvia de Burbujas Mejorada */
+body.theme-ocean_blue::before {
+    content: "";
     position: fixed;
-    bottom: -100px;
-    color: rgba(255, 255, 255, 0.15);
+    inset: 0;
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+    background-size: 100px 100px, 150px 150px;
+    animation: ocean-bubbles 20s linear infinite;
+    pointer-events: none;
     z-index: -1;
-    pointer-events: none;
 }
 
-body::before {
-    left: 10%;
-    font-size: 1.5rem;
-    /* Múltiples burbujas con sombras */
-    text-shadow: 
-        200px 300px 2px rgba(255,255,255,0.1),
-        400px 600px 5px rgba(255,255,255,0.05),
-        -100px 800px 1px rgba(255,255,255,0.1),
-        600px 200px 3px rgba(255,255,255,0.08),
-        800px 500px 2px rgba(255,255,255,0.12);
-    animation: bubble-float 15s linear infinite;
+@keyframes ocean-bubbles {
+    from { background-position: 0 0; }
+    to { background-position: 0 -300px; }
 }
 
-body::after {
-    right: 15%;
-    font-size: 1rem;
-    text-shadow: 
-        -250px 200px 1px rgba(255,255,255,0.1),
-        -500px 500px 4px rgba(255,255,255,0.05),
-        150px 700px 2px rgba(255,255,255,0.1),
-        -700px 300px 3px rgba(255,255,255,0.08);
-    animation: bubble-float 22s linear infinite 5s;
-    opacity: 0.6;
-}
-
-@keyframes bubble-float {
-    0% { 
-        transform: translateY(0) translateX(0) scale(1); 
-        opacity: 0; 
-    }
-    10% { opacity: 1; }
-    50% { transform: translateY(-60vh) translateX(30px) scale(1.2); }
-    90% { opacity: 1; }
-    100% { 
-        transform: translateY(-120vh) translateX(-20px) scale(1.5); 
-        opacity: 0; 
-    }
-}
-
-/* Resplandor de superficie */
-body > .surface-glow {
+/* Rayos de Luz (God Rays) */
+body.theme-ocean_blue::after {
+    content: "";
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 200px;
-    background: linear-gradient(to bottom, rgba(34, 211, 238, 0.1), transparent);
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(110deg, transparent 40%, rgba(34, 211, 238, 0.05) 45%, transparent 50%);
+    background-size: 200% 100%;
+    animation: god-rays 10s linear infinite;
     pointer-events: none;
-    z-index: 100;
+    z-index: -1;
 }
 
-/* --- HEADER --- */
-.main-header {
-    background: rgba(2, 6, 23, 0.7) !important;
-    backdrop-filter: blur(var(--glass-blur));
-    border-bottom: 2px solid var(--accent);
-}
-
-.logo h1 {
-    font-weight: 800;
-    text-shadow: 0 0 20px var(--accent-glow);
+@keyframes god-rays {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
 }
 
 /* --- CARDS --- */
-.card-icon-wrapper {
-    background: linear-gradient(145deg, rgba(12, 74, 110, 0.4), rgba(2, 6, 23, 0.6));
-    border: 1px solid var(--border-color);
-    border-radius: 45%;
-    backdrop-filter: blur(15px);
-    box-shadow: 
-        inset 0 0 20px rgba(34, 211, 238, 0.1),
-        0 15px 35px rgba(0,0,0,0.4);
-    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+.theme-ocean_blue .nav-card {
+    background: transparent !important;
+    perspective: 1000px;
 }
 
-.nav-card:hover .card-icon-wrapper {
-    transform: translateY(-20px) scale(1.1);
+.theme-ocean_blue .card-icon-wrapper {
+    background: linear-gradient(145deg, rgba(12, 74, 110, 0.4), rgba(2, 6, 23, 0.6));
+    border: 1px solid var(--border-color);
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%; /* Forma de burbuja irregular */
+    backdrop-filter: blur(var(--glass-blur));
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.4),
+        inset 0 0 20px rgba(34, 211, 238, 0.1);
+    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-ocean_blue .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-15px) scale(1.05) rotate(2deg);
     border-color: var(--accent);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 40px var(--accent-glow);
+    box-shadow: 
+        0 30px 60px rgba(0,0,0,0.6),
+        0 0 30px var(--accent-glow);
     border-radius: 50%;
 }
 
-.card-title {
-    color: var(--text-muted) !important;
-    font-weight: 600;
-    background: rgba(12, 74, 110, 0.3);
-    padding: 2px 12px !important;
-    border-radius: 10px;
-    margin-top: 15px;
+/* Reflejo de Agua al Hover */
+.theme-ocean_blue .card-icon-wrapper::after {
+    content: "";
+    position: absolute;
+    top: -100%; left: -100%;
+    width: 300%; height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.6s;
 }
 
-.nav-card:hover .card-title {
+.theme-ocean_blue .nav-card:hover .card-icon-wrapper::after {
+    opacity: 1;
+    top: -50%;
+}
+
+.theme-ocean_blue .card-title {
+    color: var(--text-muted) !important;
+    font-weight: 700;
+    font-size: 1.1rem !important;
+    background: rgba(12, 74, 110, 0.3);
+    padding: 4px 15px !important;
+    border-radius: 20px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.theme-ocean_blue .nav-card:hover .card-title {
     color: #fff !important;
     background: var(--accent);
-}
-
-/* --- BOTONES --- */
-.primary-btn {
-    background: linear-gradient(135deg, #0ea5e9, #22d3ee) !important;
-    color: #fff !important;
-    border-radius: 50px !important;
-    box-shadow: 0 5px 15px rgba(34, 211, 238, 0.3);
+    transform: translateY(-3px);
 }

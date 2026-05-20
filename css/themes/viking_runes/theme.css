@@ -1,3 +1,64 @@
-/* --- VIKING RUNES: THEME --- */
-:root { --bg-main: #0f0f0f; --bg-card-base: #1a1a1a; --text-main: #e0e0e0; --text-muted: #8e8e8e; --accent: #8e8e8e; --accent-glow: rgba(255,255,255,0.1); --border-color: #333; }
-body.theme-viking_runes { background: #0f0f0f; background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); font-family: 'Cinzel', serif; }
+/* --- VIKING RUNES: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=MedievalSharp&display=swap');
+
+:root {
+    --bg-main: #0c0d10;
+    --bg-card-base: #1a1c20;
+    --text-main: #e0e0e0;
+    --text-muted: #7f8c8d;
+    --accent: #3498db; /* Azul Hielo / Runas */
+    --accent-glow: rgba(52, 152, 219, 0.4);
+    --border-color: #2c3e50;
+    --stone-texture: url('https://www.transparenttextures.com/patterns/rocky-wall.png');
+}
+
+body.theme-viking_runes {
+    background: #0c0d10;
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(52, 152, 219, 0.05) 0%, transparent 70%),
+        url('https://www.transparenttextures.com/patterns/rocky-wall.png');
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Cinzel', serif;
+    overflow-x: hidden;
+}
+
+/* --- ELEMENTO ILUSTRATIVO: MONOLITO RÚNICO --- */
+body.theme-viking_runes::before {
+    content: "ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ"; /* Futhark Runes */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 4rem;
+    color: var(--accent);
+    opacity: 0.1;
+    filter: blur(2px);
+    letter-spacing: 15px;
+    pointer-events: none;
+    z-index: -1;
+    text-shadow: 0 0 20px var(--accent);
+    animation: runes-pulse 5s ease-in-out infinite;
+}
+
+@keyframes runes-pulse {
+    0%, 100% { opacity: 0.05; filter: blur(2px); }
+    50% { opacity: 0.15; filter: blur(0px); }
+}
+
+/* Nieve cayendo (Snow Particles) */
+body.theme-viking_runes::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 150px 150px;
+    opacity: 0.1;
+    animation: snow-fall 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes snow-fall {
+    from { background-position: 0 0; }
+    to { background-position: 150px 300px; }
+}

@@ -1,25 +1,68 @@
 /* --- EMERALD FOREST: CARD DESIGN --- */
 .theme-emerald_forest .nav-card {
-    background: rgba(10, 26, 10, 0.8) !important;
-    border: 1px solid #1a2e1a;
-    border-radius: 30px !important;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    overflow: hidden;
-}
-
-.theme-emerald_forest .nav-card:hover {
-    border-color: #2ecc71;
-    box-shadow: 0 0 25px rgba(46, 204, 113, 0.2);
-    transform: translateY(-5px);
-}
-
-.theme-emerald_forest .card-title {
-    color: #2ecc71;
-    font-weight: 600;
-    letter-spacing: 1px;
+    background: transparent !important;
+    perspective: 1000px;
 }
 
 .theme-emerald_forest .card-icon-wrapper {
-    background: #050f05;
-    border-radius: 20px !important;
+    background: linear-gradient(135deg, rgba(10, 26, 10, 0.8), rgba(5, 15, 5, 0.9));
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    border-radius: 40px 15px 40px 15px; /* Forma orgánica */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Textura de Hoja */
+.theme-emerald_forest .card-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/leaf.png');
+    opacity: 0.1;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+.theme-emerald_forest .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-15px) rotate(-2deg) scale(1.05);
+    border-color: #2ecc71;
+    box-shadow: 
+        0 30px 50px rgba(0,0,0,0.8),
+        0 0 20px rgba(46, 204, 113, 0.3);
+    border-radius: 30px;
+}
+
+/* Pulso de Vida al Hover */
+.theme-emerald_forest .card-icon-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle, rgba(46, 204, 113, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.6s;
+    pointer-events: none;
+}
+
+.theme-emerald_forest .nav-card:hover .card-icon-wrapper::after {
+    opacity: 1;
+    inset: 0;
+}
+
+.theme-emerald_forest .card-title {
+    color: var(--text-muted) !important;
+    font-weight: 700;
+    font-size: 1.15rem !important;
+    letter-spacing: 1.5px;
+    margin-top: 15px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.theme-emerald_forest .nav-card:hover .card-title {
+    color: #fff !important;
+    transform: translateY(-3px);
+    text-shadow: 0 0 15px var(--accent-glow);
 }

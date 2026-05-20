@@ -1,3 +1,52 @@
-/* --- CYBER CITY 2077: THEME --- */
-:root { --bg-main: #020202; --bg-card-base: #050505; --text-main: #fcee0a; --text-muted: #00f2ff; --accent: #fcee0a; --accent-glow: rgba(252, 238, 10, 0.4); --border-color: #00f2ff; }
-body.theme-cyber_city { background: #020202; background-image: repeating-linear-gradient(0deg, rgba(0, 242, 255, 0.03) 0px, rgba(0, 242, 255, 0.03) 1px, transparent 1px, transparent 2px); font-family: 'Orbitron', sans-serif; }
+/* --- CYBER CITY 2077: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+:root {
+    --bg-main: #020202;
+    --bg-card-base: #050505;
+    --text-main: #fcee0a; /* Amarillo Cyberpunk */
+    --text-muted: #00f2ff; /* Cyan Neon */
+    --accent: #fcee0a;
+    --accent-glow: rgba(252, 238, 10, 0.4);
+    --border-color: #00f2ff;
+}
+
+body.theme-cyber_city {
+    background: #020202;
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Scanlines (Líneas de Escaneo) */
+body.theme-cyber_city::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Niebla de Neón sutil */
+body.theme-cyber_city::after {
+    content: "";
+    position: fixed;
+    bottom: -10%; left: 10%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    animation: neon-flicker 4s infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+}

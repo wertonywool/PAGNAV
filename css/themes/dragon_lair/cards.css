@@ -2,47 +2,50 @@
 
 .theme-dragon_lair .nav-card {
     background: transparent !important;
+    perspective: 1000px;
 }
 
 .theme-dragon_lair .card-icon-wrapper {
-    background: var(--bg-card-base);
-    border: 3px solid #3d0c02; /* Marco de roca volcánica */
-    border-radius: 12px;
+    background: linear-gradient(145deg, #1a0805, #0c0402);
+    border: 4px solid transparent;
+    border-image: linear-gradient(to bottom, #8b2500, #3d0c02) 1;
+    border-radius: 8px; /* Pequeño para que parezca bloque tallado */
     box-shadow: 
-        0 10px 30px rgba(0,0,0,1),
-        inset 0 0 20px rgba(255, 69, 0, 0.2);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        0 15px 35px rgba(0,0,0,0.8),
+        inset 0 0 15px rgba(255, 69, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     overflow: hidden;
 }
 
-/* Grietas de Lava al fondo de la tarjeta */
+/* Efecto de Textura de Piedra/Escama */
 .theme-dragon_lair .card-icon-wrapper::before {
     content: "";
     position: absolute;
     inset: 0;
     background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
-    opacity: 0.15;
+    opacity: 0.1;
+    mix-blend-mode: overlay;
     pointer-events: none;
 }
 
 .theme-dragon_lair .nav-card:hover .card-icon-wrapper {
-    transform: translateY(-15px) scale(1.05);
-    border-color: #ff4500;
+    transform: translateY(-12px) rotateX(5deg) scale(1.03);
+    border-image: linear-gradient(to bottom, #ff4500, #ff8c00) 1;
     box-shadow: 
-        0 50px 70px rgba(0,0,0,1),
-        0 0 30px var(--accent-glow);
+        0 30px 60px rgba(0,0,0,1),
+        0 0 40px rgba(255, 69, 0, 0.3);
 }
 
-/* Efecto de aliento de fuego al hover */
+/* Brillo de Lava Interno */
 .theme-dragon_lair .card-icon-wrapper::after {
     content: "";
     position: absolute;
     bottom: -100%; left: -50%;
     width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(255, 69, 0, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 69, 0, 0.15) 0%, transparent 70%);
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.6s;
     pointer-events: none;
 }
 
@@ -55,14 +58,34 @@
     font-family: 'Pirata One', cursive;
     color: var(--text-main) !important;
     font-weight: 400;
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 15px;
-    text-shadow: 0 0 10px #000;
+    letter-spacing: 3px;
+    margin-top: 18px;
+    text-shadow: 2px 2px 4px #000, 0 0 10px rgba(255, 69, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .theme-dragon_lair .nav-card:hover .card-title {
     color: #ffd700 !important;
-    text-shadow: 0 0 15px #ff4500;
+    text-shadow: 0 0 15px #ff4500, 2px 2px 4px #000;
+    letter-spacing: 5px;
+    transform: translateY(-5px);
+}
+
+/* Decoración de Rincón (Corner Ornaments) */
+.theme-dragon_lair .card-icon-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 5px; right: 5px;
+    width: 20px; height: 20px;
+    border-top: 2px solid rgba(255, 69, 0, 0.3);
+    border-right: 2px solid rgba(255, 69, 0, 0.3);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.theme-dragon_lair .nav-card:hover .card-icon-wrapper::after {
+    opacity: 1;
+    top: 10px; right: 10px;
 }

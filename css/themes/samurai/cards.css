@@ -1,25 +1,63 @@
 /* --- SAMURAI: CARD DESIGN --- */
 .theme-samurai .nav-card {
-    border: 1px solid #000;
-    border-left: 8px solid #bc002d;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.theme-samurai .nav-card:hover {
-    transform: translateX(10px);
-    box-shadow: 15px 15px 0px rgba(188, 0, 45, 0.1);
-    border-color: #bc002d;
-}
-
-.theme-samurai .card-title {
-    font-family: 'Ma Shan Zheng', cursive;
-    font-size: 1.4rem !important;
-    color: #000;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
+    background: transparent !important;
+    perspective: 1000px;
 }
 
 .theme-samurai .card-icon-wrapper {
     background: #fff;
+    border: 1px solid #000;
+    border-left: 12px solid #bc002d;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Textura de Papel Washi */
+.theme-samurai .card-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.theme-samurai .nav-card:hover .card-icon-wrapper {
+    transform: translateX(15px) rotateY(-5deg);
+    box-shadow: 20px 20px 0px rgba(188, 0, 45, 0.05);
+    border-color: #000;
+}
+
+/* Efecto de Pincelada al Hover */
+.theme-samurai .card-icon-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: -100%;
+    width: 200%; height: 2px;
+    background: #bc002d;
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.theme-samurai .nav-card:hover .card-icon-wrapper::after {
+    left: -50%;
+    opacity: 0.2;
+}
+
+.theme-samurai .card-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.5rem !important;
+    color: #000 !important;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.theme-samurai .nav-card:hover .card-title {
+    color: #bc002d !important;
+    transform: scale(1.1);
+    letter-spacing: 2px;
 }

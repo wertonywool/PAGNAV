@@ -1,4 +1,63 @@
-/* --- DOODLE SKETCH: CARDS --- */
-.theme-doodle_sketch .nav-card { background: #fff !important; border: 3px solid #000; border-radius: 15px 5px 25px 8px !important; box-shadow: 5px 5px 0px #000; }
-.theme-doodle_sketch .nav-card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0px #000; }
-.theme-doodle_sketch .card-title { color: #000; font-weight: bold; font-size: 1.2rem !important; }
+/* --- DOODLE SKETCH: COMPONENTES DE TARJETA --- */
+
+.theme-doodle_sketch .nav-card {
+    background: transparent !important;
+    perspective: 1000px;
+}
+
+.theme-doodle_sketch .card-icon-wrapper {
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 15px 5px 25px 8px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de Trazado a Mano (Sketchy Border) */
+.theme-doodle_sketch .card-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px dashed rgba(0,0,0,0.1);
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.theme-doodle_sketch .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.05);
+    border-color: #000;
+}
+
+/* Efecto de Sello/Sticker al Hover */
+.theme-doodle_sketch .card-icon-wrapper::after {
+    content: "★";
+    position: absolute;
+    top: -20px;
+    right: 5px;
+    font-size: 1.2rem;
+    color: #f1c40f;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.theme-doodle_sketch .nav-card:hover .card-icon-wrapper::after {
+    opacity: 1;
+    top: 5px;
+}
+
+.theme-doodle_sketch .card-title {
+    font-family: 'Architects Daughter', cursive;
+    color: var(--text-main) !important;
+    font-weight: 700;
+    font-size: 1.2rem !important;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.theme-doodle_sketch .nav-card:hover .card-title {
+    color: #000 !important;
+    transform: scale(1.1) rotate(-2deg);
+}

@@ -1,36 +1,70 @@
-/* --- GOTHIC: CARD DESIGN --- */
+/* --- GOTHIC: COMPONENTES DE TARJETA --- */
+
 .theme-gothic .nav-card {
-    background: #0a0a0a !important;
-    border: 1px solid #333;
-    border-radius: 0 !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,1);
-    position: relative;
-}
-
-.theme-gothic .nav-card:hover {
-    border-color: #8b0000;
-    box-shadow: 0 0 40px rgba(139, 0, 0, 0.2);
-    transform: translateY(-5px);
-}
-
-.theme-gothic .card-title {
-    font-family: 'UnifrakturMaguntia', cursive;
-    font-size: 1.5rem !important;
-    color: #8b0000;
-    border-top: 1px solid #222;
-    padding-top: 15px;
+    background: transparent !important;
+    perspective: 1000px;
 }
 
 .theme-gothic .card-icon-wrapper {
-    background: #000;
-    border: 1px solid #111;
+    background: linear-gradient(135deg, #0a0a0a, #050505);
+    border: 3px solid #222;
+    border-radius: 4px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,1),
+        inset 0 0 20px rgba(139, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Esquinas ornamentales */
-.theme-gothic .nav-card::after {
-    content: '♰';
+/* Textura de Piedra de Catedral */
+.theme-gothic .card-icon-wrapper::before {
+    content: "";
     position: absolute;
-    bottom: 5px; right: 5px;
-    color: #333;
-    font-size: 0.8rem;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+.theme-gothic .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-12px) rotateX(10deg);
+    border-color: #8b0000;
+    box-shadow: 
+        0 30px 60px rgba(0,0,0,1),
+        0 0 30px rgba(255, 0, 0, 0.2);
+}
+
+/* Brillo de Sangre al Hover */
+.theme-gothic .card-icon-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 100%; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(139, 0, 0, 0.3) 0%, transparent 80%);
+    transition: 0.6s;
+    pointer-events: none;
+}
+
+.theme-gothic .nav-card:hover .card-icon-wrapper::after {
+    top: 0%;
+}
+
+.theme-gothic .card-title {
+    font-family: 'Creepster', cursive;
+    color: var(--text-main) !important;
+    font-weight: 400;
+    font-size: 1.3rem !important;
+    letter-spacing: 2px;
+    margin-top: 18px;
+    text-shadow: 3px 3px 6px #000;
+    transition: 0.3s;
+}
+
+.theme-gothic .nav-card:hover .card-title {
+    color: #ff0000 !important;
+    text-shadow: 0 0 15px #ff0000, 3px 3px 6px #000;
+    letter-spacing: 4px;
+    transform: translateY(-5px);
 }

@@ -7,89 +7,114 @@
     --text-main: #00ff41; /* Matrix Green */
     --text-muted: #008f11;
     --accent: #00ff41;
-    --accent-glow: rgba(0, 255, 65, 0.5);
+    --accent-glow: rgba(0, 255, 65, 0.4);
     --border-color: #003b00;
-    --glass-blur: 0px;
-    --radius-lg: 2px;
 }
 
-body {
+body.theme-matrix {
     background-color: #000;
     background-image: 
-        /* Efecto de lluvia de código sutil con gradiente */
-        linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+        linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-attachment: fixed;
     font-family: 'VT323', monospace;
+    color: var(--text-main);
+    overflow-x: hidden;
 }
 
-.nav-card {
-    border: 1px solid var(--accent);
+/* Lluvia de Código (Digital Rain sutil) */
+body.theme-matrix::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(0, 255, 65, 0.1) 50%, 
+        transparent 100%);
+    background-size: 100% 200%;
+    animation: digital-drift 10s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes digital-drift {
+    from { background-position: 0 -100%; }
+    to { background-position: 0 100%; }
+}
+
+/* Efecto CRT Scanlines */
+body.theme-matrix::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* --- HEADER --- */
+.theme-matrix .main-header {
     background: #000 !important;
-    box-shadow: 0 0 10px var(--border-color);
+    border-bottom: 2px solid var(--accent) !important;
 }
 
-.nav-card:hover {
-    box-shadow: 0 0 20px var(--accent);
-    transform: scale(1.02);
+.theme-matrix .logo-text h1 {
+    font-size: 2.2rem;
+    text-shadow: 0 0 15px var(--accent);
 }
 
-.card-icon-wrapper {
+/* --- CARDS --- */
+.theme-matrix .nav-card {
+    background: transparent !important;
+    perspective: 1000px;
+}
+
+.theme-matrix .card-icon-wrapper {
     background: #000;
     border: 1px solid var(--border-color);
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
+    overflow: hidden;
 }
 
-/* Efecto de escaneo en los iconos */
-.card-icon-wrapper::after {
-    content: '';
+.theme-matrix .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow: 0 0 30px var(--accent-glow);
+    background: #000500;
+}
+
+/* Escaneo de Código al Hover */
+.theme-matrix .card-icon-wrapper::after {
+    content: "01101001";
     position: absolute;
-    top: 0; left: 0; right: 0; height: 2px;
-    background: var(--accent);
-    opacity: 0.3;
-    animation: matrix-scan 2s linear infinite;
+    top: -20px;
+    left: 5px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    opacity: 0;
+    transition: 0.3s;
 }
 
-@keyframes matrix-scan {
-    0% { top: 0; }
-    100% { top: 100%; }
+.theme-matrix .nav-card:hover .card-icon-wrapper::after {
+    opacity: 0.5;
+    top: 5px;
 }
 
-.card-title {
-    font-size: 1.2rem !important;
-    color: var(--accent);
+.theme-matrix .card-title {
+    font-size: 1.3rem !important;
+    color: var(--text-muted) !important;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    margin-top: 15px;
+    transition: 0.3s;
 }
 
-.main-header {
-    background: #000;
-    border-bottom: 2px solid var(--accent);
-    height: 70px !important;
-}
-
-.logo-text h1 {
-    font-family: 'VT323', monospace;
-    font-size: 2.5rem;
-    color: var(--accent);
+.theme-matrix .nav-card:hover .card-title {
+    color: var(--accent) !important;
     text-shadow: 0 0 10px var(--accent);
-}
-
-.logo-icon {
-    background: #000;
-    border: 2px solid var(--accent);
-    color: var(--accent);
-    border-radius: 0;
-}
-
-.header-btn {
-    border-radius: 0;
-    background: #000;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-}
-
-.header-btn:hover {
-    background: var(--accent);
-    color: #000;
+    letter-spacing: 5px;
 }

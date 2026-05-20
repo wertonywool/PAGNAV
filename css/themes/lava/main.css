@@ -4,14 +4,19 @@
 @import url('./animations.css');
 
 /* Estilos específicos para el Header en Lava */
-.theme-lava_eruption .main-header {
-    background: rgba(10, 2, 0, 0.95);
-    border-bottom: 3px solid #ff4500;
-    box-shadow: 0 5px 30px rgba(255, 69, 0, 0.2);
+.theme-lava .main-header {
+    background: rgba(10, 2, 0, 0.9) !important;
+    border-bottom: 3px solid #ff4500 !important;
+    box-shadow: 0 5px 30px rgba(255, 69, 0, 0.2) !important;
 }
 
-.theme-lava_eruption .logo-text h1 {
-    font-family: 'Rubik Burned', system-ui;
-    color: #ff4500;
+.theme-lava .logo-text h1 {
+    font-family: 'Rubik Burned', cursive;
+    color: #ff4500 !important;
     letter-spacing: 2px;
+}
+
+.theme-lava .logo-icon {
+    background: #ff4500 !important;
+    color: #000 !important;
 }

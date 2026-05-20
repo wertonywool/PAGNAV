@@ -1,25 +1,61 @@
 /* --- GALACTIC HORIZON: CARD DESIGN --- */
 .theme-galactic_horizon .nav-card {
-    background: rgba(5, 5, 32, 0.6) !important;
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(142, 68, 173, 0.3);
-    border-radius: 50px !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.theme-galactic_horizon .nav-card:hover {
-    border-color: #fff;
-    box-shadow: 0 0 40px rgba(142, 68, 173, 0.4);
-    transform: translateY(-10px) scale(1.05);
+    background: transparent !important;
+    perspective: 1200px;
 }
 
 .theme-galactic_horizon .card-icon-wrapper {
-    background: radial-gradient(circle, #1a1a40 0%, #020210 100%);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(10, 10, 40, 0.7);
+    border: 1px solid rgba(142, 68, 173, 0.3);
+    border-radius: 50%; /* Planeta / Horizonte */
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.8),
+        inset 0 0 15px rgba(142, 68, 173, 0.2);
+    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-galactic_horizon .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-15px) scale(1.05);
+    border-color: #9b59b6;
+    box-shadow: 
+        0 30px 60px rgba(0,0,0,1),
+        0 0 30px rgba(142, 68, 173, 0.4);
+    background: rgba(20, 20, 60, 0.9);
+}
+
+/* Efecto Event Horizon al Hover */
+.theme-galactic_horizon .card-icon-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #8e44ad, #2980b9, transparent);
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.theme-galactic_horizon .nav-card:hover .card-icon-wrapper::after {
+    opacity: 1;
 }
 
 .theme-galactic_horizon .card-title {
-    color: #fff;
-    font-weight: 600;
-    text-shadow: 0 0 10px rgba(142, 68, 173, 0.8);
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-muted) !important;
+    font-weight: 700;
+    font-size: 1.1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    transition: 0.4s;
+}
+
+.theme-galactic_horizon .nav-card:hover .card-title {
+    color: #fff !important;
+    text-shadow: 0 0 15px #9b59b6;
+    letter-spacing: 4px;
+    transform: scale(1.1);
 }

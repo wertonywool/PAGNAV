@@ -1,23 +1,61 @@
-/* --- SYNTHWAVE: CARD DESIGN --- */
+/* --- SYNTHWAVE: COMPONENTES DE TARJETA --- */
+
 .theme-synthwave .nav-card {
-    background: rgba(26, 6, 51, 0.9) !important;
-    border: 2px solid #ff00ff;
-    border-radius: 0 !important;
-    box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
+    background: transparent !important;
+    perspective: 1000px;
 }
 
-.theme-synthwave .nav-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    border-color: #00ffff;
-    box-shadow: 0 0 30px #00ffff, inset 0 0 20px #00ffff;
+.theme-synthwave .card-icon-wrapper {
+    background: rgba(26, 6, 51, 0.8);
+    border: 2px solid #3d1b5d;
+    border-radius: 4px;
+    box-shadow: 
+        0 10px 20px rgba(0,0,0,0.8),
+        inset 0 0 15px rgba(255, 0, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-synthwave .nav-card:hover .card-icon-wrapper {
+    transform: translateY(-15px) rotateY(10deg);
+    border-color: #ff00ff;
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,1),
+        0 0 30px rgba(255, 0, 255, 0.4),
+        inset 0 0 20px rgba(0, 255, 255, 0.2);
+    background: #1a0633;
+}
+
+/* Efecto de Brillo de Neón al fondo */
+.theme-synthwave .card-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), rgba(0, 255, 255, 0.1));
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.theme-synthwave .nav-card:hover .card-icon-wrapper::before {
+    opacity: 1;
 }
 
 .theme-synthwave .card-title {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.6rem !important;
-    color: #ff00ff;
-    text-shadow: 2px 2px 0px #000;
-    background: #00ffff;
-    color: #000;
-    padding: 5px 0;
+    font-family: 'Exo 2', sans-serif;
+    color: var(--text-muted) !important;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.2rem !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    text-shadow: 2px 2px 0px #3d1b5d;
+}
+
+.theme-synthwave .nav-card:hover .card-title {
+    color: #fff !important;
+    text-shadow: 0 0 15px #ff00ff, 2px 2px 0px #000;
+    letter-spacing: 4px;
+    transform: translateY(-5px);
 }

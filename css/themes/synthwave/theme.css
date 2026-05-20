@@ -1,31 +1,58 @@
-/* --- SYNTHWAVE: THEME & ATMOSPHERE --- */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Exo+2:ital,wght@1,900&display=swap');
+/* --- SYNTHWAVE: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,700;1,900&family=Press+Start+2P&display=swap');
 
 :root {
-    --bg-main: #240b36;
-    --bg-card-base: #1a0633;
-    --text-main: #00ffff;
-    --text-muted: #ff00ff;
+    --bg-main: #140628;
+    --bg-card-base: rgba(26, 6, 51, 0.9);
+    --text-main: #00ffff; /* Cyan Cyber */
+    --text-muted: #ff00ff; /* Neon Pink */
     --accent: #ff00ff;
-    --accent-glow: rgba(255, 0, 255, 0.5);
+    --accent-glow: rgba(255, 0, 255, 0.6);
     --border-color: #3d1b5d;
 }
 
 body.theme-synthwave {
-    background: #240b36;
-    background-image: 
-        linear-gradient(180deg, #240b36 0%, #c31432 100%),
-        /* Rejilla retro */
-        linear-gradient(rgba(255, 0, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background: linear-gradient(180deg, #140628 0%, #300350 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
     font-family: 'Exo 2', sans-serif;
+    overflow-x: hidden;
 }
 
+/* Sol Retro (Outrun Sun) */
 body.theme-synthwave::before {
-    content: '';
+    content: "";
     position: fixed;
-    bottom: 0; left: 0; width: 100%; height: 50%;
-    background: linear-gradient(0deg, rgba(255, 0, 255, 0.1) 0%, transparent 100%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; height: 500px;
+    background: linear-gradient(to bottom, #f09, #f90 70%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 100px #f09;
+    opacity: 0.15;
+    z-index: -1;
     pointer-events: none;
+    -webkit-mask-image: repeating-linear-gradient(0deg, black, black 10px, transparent 10px, transparent 20px);
 }
+
+/* Rejilla Infinita (Perspective Grid) */
+body.theme-synthwave::after {
+    content: "";
+    position: fixed;
+    bottom: -100px; left: -50%;
+    width: 200%; height: 60%;
+    background-image: 
+        linear-gradient(rgba(255, 0, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 255, 0.2) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg);
+    animation: grid-move 5s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes grid-move {
+    from { background-position: 0 0; }
+    to { background-position: 0 50px; }
+}
+

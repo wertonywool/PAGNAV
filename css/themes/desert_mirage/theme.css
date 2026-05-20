@@ -1,18 +1,54 @@
-/* --- DESERT MIRAGE: THEME & ATMOSPHERE --- */
+/* --- DESERT MIRAGE: ATRIBUTOS CORE --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
+
 :root {
-    --bg-main: #1a120b;
-    --bg-card-base: #2d1e12;
+    --bg-main: #1a0f05;
+    --bg-card-base: rgba(45, 30, 18, 0.9);
     --text-main: #f39c12;
-    --text-muted: #e67e22;
+    --text-muted: #d35400;
     --accent: #e67e22;
-    --accent-glow: rgba(230, 126, 34, 0.3);
+    --accent-glow: rgba(230, 126, 34, 0.4);
     --border-color: #3e2a1a;
 }
 
 body.theme-desert_mirage {
-    background: #1a120b;
-    background-image: 
-        radial-gradient(circle at 50% 0%, #3e2a1a 0%, transparent 70%),
-        url('https://www.transparenttextures.com/patterns/sandpaper.png');
-    font-family: 'Montserrat', sans-serif;
+    background: radial-gradient(circle at top, #3e2a1a 0%, #1a0f05 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Cinzel', serif;
+    overflow-x: hidden;
+}
+
+/* Efecto de Espejismo (Heat Distortion) */
+body.theme-desert_mirage::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to top, rgba(230, 126, 34, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+    animation: heat-wave 6s ease-in-out infinite alternate;
+}
+
+@keyframes heat-wave {
+    0% { transform: scaleY(1); opacity: 0.3; }
+    100% { transform: scaleY(1.02) skewX(1deg); opacity: 0.6; }
+}
+
+/* Tormenta de Arena (Sandstorm Particles) */
+body.theme-desert_mirage::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, #f39c12 0.5px, transparent 0.5px);
+    background-size: 60px 60px;
+    opacity: 0.1;
+    animation: sand-drift 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes sand-drift {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 500px; }
 }
